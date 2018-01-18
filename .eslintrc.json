@@ -4,7 +4,9 @@
   "rules": {
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
-    "react/no-danger": "off"
+    "react/no-danger": "off",
+    "prefer-destructuring": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   },
   "settings": {
     "import/core-modules": []
