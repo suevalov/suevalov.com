@@ -5,7 +5,7 @@
   "private": true,
   "author": "Alexander Suevalov <suevalov.work@gmail.com>",
   "lint-staged": {
-    "*.js": [
+    "*.{js,jsx}": [
       "./node_modules/.bin/eslint --fix",
       "./node_modules/.bin/prettier --write",
       "git add"
@@ -79,7 +79,7 @@
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/posts/",
     "format:js": "prettier 'src/**/*.{js,jsx}' --write",
-    "precommit": "lint-staged"
+    "precommit": "./node_modules/.bin/lint-staged"
   },
   "remarkConfig": {
     "plugins": [
