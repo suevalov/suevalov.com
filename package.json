@@ -32,6 +32,7 @@
     "gatsby-plugin-sharp": "1.6.25",
     "gatsby-plugin-sitemap": "1.2.10",
     "gatsby-plugin-twitter": "1.0.14",
+    "gatsby-plugin-typography": "1.7.10",
     "gatsby-remark-autolink-headers": "1.4.11",
     "gatsby-remark-copy-linked-files": "1.5.25",
     "gatsby-remark-images": "1.5.37",
@@ -48,7 +49,9 @@
     "react-dom": "16.2.0",
     "react-helmet": "5.2.0",
     "react-share": "1.19.0",
-    "react-twitter-widgets": "1.7.1"
+    "react-twitter-widgets": "1.7.1",
+    "typography": "0.16.6",
+    "typography-theme-wordpress-2016": "0.15.10"
   },
   "devDependencies": {
     "cli-glob": "0.1.0",
