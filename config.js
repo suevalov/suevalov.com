@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: "Suevalov Alexander | Senior Web Developer", // Site title.
+  siteTitle: "Suevalov Alexander", // Site title.
   siteTitleAlt: "Suevalov Alexander | Senior Web Developer", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://suevalov.com", // Domain of your website without pathPrefix.

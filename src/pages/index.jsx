@@ -1,14 +1,15 @@
 import React from "react";
 import Helmet from "react-helmet";
 import config from "../../config";
+import PageContainer from "../components/PageContainer/PageContainer";
 
 class Index extends React.Component {
   render() {
     return (
-      <div className="index-container">
+      <PageContainer>
         <Helmet title={config.siteTitle} />
-        <h1>Index page</h1>
-      </div>
+        <p>test</p>
+      </PageContainer>
     );
   }
 }
