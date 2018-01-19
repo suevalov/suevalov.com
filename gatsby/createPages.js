@@ -52,7 +52,7 @@ module.exports = ({ graphql, boundActionCreators }) => {
         const tagList = Array.from(tagSet);
         tagList.forEach(tag => {
           createPage({
-            path: `/tags/${_.kebabCase(tag)}/`,
+            path: `/blog/tags/${_.kebabCase(tag)}/`,
             component: tagPage,
             context: {
               tag

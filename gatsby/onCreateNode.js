@@ -7,17 +7,15 @@ module.exports = ({ node, boundActionCreators, getNode }) => {
   if (node.internal.type === "MarkdownRemark") {
     const fileNode = getNode(node.parent);
     const parsedFilePath = path.parse(fileNode.relativePath);
+    let prefix = "";
+    if (fileNode.sourceInstanceName === "blog") {
+      prefix = "/blog";
+    }
     if (
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "slug")
     ) {
       slug = `/${_.kebabCase(node.frontmatter.slug)}`;
-    }
-    if (
-      Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`;
     } else if (parsedFilePath.name !== "index" && parsedFilePath.dir !== "") {
       slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
     } else if (parsedFilePath.dir === "") {
@@ -25,6 +23,6 @@ module.exports = ({ node, boundActionCreators, getNode }) => {
     } else {
       slug = `/${parsedFilePath.dir}/`;
     }
-    createNodeField({ node, name: "slug", value: slug });
+    createNodeField({ node, name: "slug", value: prefix + slug });
   }
 };

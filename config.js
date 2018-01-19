@@ -5,7 +5,7 @@ module.exports = {
   siteUrl: "https://suevalov.com", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "A GatsbyJS stater with Advanced design in mind.", // Website description used for RSS feeds/meta description tag.
-  siteRss: "/rss.xml", // Path to the RSS file.
+  siteRss: "/blog/rss.xml", // Path to the RSS file.
   siteFBAppID: "", // FB Application ID for using app insights
   googleAnalyticsID: "", // GA tracking ID.
   disqusShortname: "", // Disqus shortname.
