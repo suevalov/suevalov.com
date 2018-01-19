@@ -152,7 +152,6 @@ module.exports = {
                       title
                       cover
                       date
-                      category
                       tags
                     }
                   }

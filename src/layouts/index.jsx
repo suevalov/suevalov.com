@@ -17,8 +17,6 @@ export default class MainLayout extends React.Component {
       title = "Home";
     } else if (currentPath === "tags/") {
       title = "Tags";
-    } else if (currentPath === "categories/") {
-      title = "Categories";
     } else if (currentPath === "about/") {
       title = "About";
     } else if (currentPath.indexOf("posts")) {
@@ -29,12 +27,6 @@ export default class MainLayout extends React.Component {
         .replace("/", "")
         .replace("-", " ");
       title = `Tagged in ${capitalize(tag)}`;
-    } else if (currentPath.indexOf("categories/")) {
-      const category = currentPath
-        .replace("categories/", "")
-        .replace("/", "")
-        .replace("-", " ");
-      title = `${capitalize(category)}`;
     }
     return title;
   }

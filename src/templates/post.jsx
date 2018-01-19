@@ -16,9 +16,6 @@ export default class PostTemplate extends React.Component {
     if (!post.id) {
       post.id = slug;
     }
-    if (!post.category_id) {
-      post.category_id = config.postDefaultCategoryID;
-    }
     return (
       <div>
         <Helmet>
@@ -50,7 +47,6 @@ export const pageQuery = graphql`
         title
         cover
         date
-        category
         tags
       }
       fields {

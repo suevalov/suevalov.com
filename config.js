@@ -9,7 +9,6 @@ module.exports = {
   siteFBAppID: "", // FB Application ID for using app insights
   googleAnalyticsID: "", // GA tracking ID.
   disqusShortname: "", // Disqus shortname.
-  postDefaultCategoryID: "Tech", // Default category for posts.
   userName: "Alexander Suevalov", // Username to display in the author segment.
   userTwitter: "suevalov", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Wroclaw, Poland", // User location to display in the author segment.
