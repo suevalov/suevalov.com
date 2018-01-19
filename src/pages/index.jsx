@@ -8,7 +8,8 @@ class Index extends React.Component {
     return (
       <PageContainer>
         <Helmet title={config.siteTitle} />
-        <p>test</p>
+        <h1>Hi, I{"'"}m Alex</h1>
+        <h2>Senior JavaScript developer, based in Wroclaw</h2>
       </PageContainer>
     );
   }

@@ -1,6 +1,6 @@
 module.exports = {
-  siteTitle: "Suevalov Alexander", // Site title.
-  siteTitleAlt: "Suevalov Alexander | Senior Web Developer", // Alternative site title for SEO.
+  siteTitle: "Alex Suevalov", // Site title.
+  siteTitleAlt: "Alex Suevalov | Senior Web Developer", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://suevalov.com", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
@@ -9,10 +9,10 @@ module.exports = {
   siteFBAppID: "", // FB Application ID for using app insights
   googleAnalyticsID: "", // GA tracking ID.
   disqusShortname: "", // Disqus shortname.
-  userName: "Alexander Suevalov", // Username to display in the author segment.
+  userName: "Alex Suevalov", // Username to display in the author segment.
   userTwitter: "suevalov", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Wroclaw, Poland", // User location to display in the author segment.
-  userAvatar: "https://avatars3.githubusercontent.com/u/3672221", // User avatar to display in the author segment.
+  userAvatar: "/images/suevalov-300.jpg", // User avatar to display in the author segment.
   userDescription: "Passionate about making complex things simple.", // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [

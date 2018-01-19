@@ -3,6 +3,8 @@ import { css } from "emotion";
 import styled from "react-emotion";
 import Link from "gatsby-link";
 import { DEFAULT_WIDTH } from "typography-breakpoint-constants";
+import HexImage from "../HexImage/HexImage";
+import Config from "../../../config";
 
 const activeLinkClass = css`
   color: black;
@@ -10,10 +12,9 @@ const activeLinkClass = css`
   box-shadow: none;
 `;
 
-const HeaderContainer = styled("nav")`
-  height: 70px;
-  margin: 10px auto;
+const Nav = styled("nav")`
   display: flex;
+  margin: 10px auto 40px auto;
   max-width: ${DEFAULT_WIDTH};
 `;
 
@@ -22,12 +23,13 @@ const Menu = styled("ul")`
   flex-wrap: wrap;
   align-items: center;
   margin: 0;
+  margin-left: 16px;
   padding: 0;
   list-style: none;
 `;
 
 const MenuItem = styled("li")`
-  margin-right: 20px;
+  margin: 0 20px 0 0;
 
   a:not(.${activeLinkClass}) {
     position: relative;
@@ -60,10 +62,28 @@ const MenuItem = styled("li")`
   }
 `;
 
+const ProfileHexImage = styled(HexImage)`
+  width: 70px;
+  height: 70px;
+  transition: 0.5s;
+
+  &:hover {
+    transform: rotate(-3deg);
+  }
+`;
+
+const LogoLink = styled(Link)`
+  display: inline-flex;
+  box-shadow: none;
+`;
+
 export default class Header extends React.Component {
   render() {
     return (
-      <HeaderContainer>
+      <Nav>
+        <LogoLink to="/">
+          <ProfileHexImage image={Config.userAvatar} title={Config.userName} />
+        </LogoLink>
         <Menu>
           <MenuItem>
             <Link
@@ -106,7 +126,7 @@ export default class Header extends React.Component {
             </Link>
           </MenuItem>
         </Menu>
-      </HeaderContainer>
+      </Nav>
     );
   }
 }
