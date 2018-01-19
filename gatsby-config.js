@@ -17,12 +17,11 @@ module.exports = {
     }
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content/${config.blogPostDir}`
+        path: `${__dirname}/content/posts`
       }
     },
     {
@@ -56,10 +55,15 @@ module.exports = {
         color: config.themeColor
       }
     },
+    "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    "gatsby-transformer-yaml",
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",
+    "gatsby-plugin-lodash",
+    "gatsby-plugin-react-next",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
