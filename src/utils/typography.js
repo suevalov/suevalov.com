@@ -71,10 +71,45 @@ const typography = new Typography({
     a: {
       boxShadow: "0 1px 0 0 currentColor",
       color: "#007acc",
-      textDecoration: "none"
+      textDecoration: "none",
+      position: "relative",
+      transition: "color 0.2s ease-out"
     },
-    "a:hover,a:active": {
+    "a:hover, a:active": {
       boxShadow: "none"
+    },
+    "a:hover, a:focus": {
+      color: "#fff",
+      transitionDelay: "0.5s",
+      outline: "none"
+    },
+    "a:hover:before, a:focus:before": {
+      transition: "transform 0.2s ease-in",
+      transitionDelay: "0.5s",
+      transform: "scaleX(1)"
+    },
+    "a:before": {
+      transitionDelay: "0.5s",
+      content: "''",
+      position: "absolute",
+      left: "-2%",
+      top: "0",
+      width: "104%",
+      background: "#89bcfe",
+      transform: "scaleX(0)",
+      transition: "transform 0.1s ease-out",
+      height: "100%",
+      transformOrigin: "left top",
+      zIndex: "-1"
+    },
+    "a.clear": {
+      boxShadow: "none"
+    },
+    "a.clear:hover:before, a.clear:focus:before": {
+      transform: "scaleX(0)"
+    },
+    "a.clear:hover": {
+      color: "#007acc"
     },
     "mark,ins": {
       background: "#007acc",

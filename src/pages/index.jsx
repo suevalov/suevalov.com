@@ -1,15 +1,55 @@
 import React from "react";
 import Helmet from "react-helmet";
-import config from "../../config";
+import { css } from "emotion";
+import styled from "react-emotion";
+import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
 import PageContainer from "../components/PageContainer/PageContainer";
+import LeadText from "../components/LeadText/LeadText";
+import LeadContacts from "../components/LeadContacts/LeadContacts";
+import Config from "../../config";
+
+const Row = styled("div")`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  ${TABLET_MEDIA_QUERY} {
+    flex-direction: column;
+  }
+`;
+
+const classes = {
+  leadContacts: css`
+    width: 300px;
+    min-height: 100px;
+
+    ${TABLET_MEDIA_QUERY} {
+      width: 100%;
+    }
+  `,
+  leadText: css`
+    flex-grow: 0;
+    margin-right: 20px;
+
+    ${TABLET_MEDIA_QUERY} {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  `
+};
 
 class Index extends React.Component {
   render() {
     return (
       <PageContainer>
-        <Helmet title={config.siteTitle} />
-        <h1>Hi, I{"'"}m Alex</h1>
-        <h2>Senior JavaScript developer, based in Wroclaw</h2>
+        <Helmet title={Config.siteTitle} />
+        <Row>
+          <LeadText className={classes.leadText} />
+          <LeadContacts
+            links={Config.userLinks}
+            className={classes.leadContacts}
+          />
+        </Row>
       </PageContainer>
     );
   }

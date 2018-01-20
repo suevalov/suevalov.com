@@ -17,19 +17,29 @@ module.exports = {
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [
     {
-      label: "GitHub",
-      url: "https://github.com/suevalov",
-      iconClassName: "fa fa-github"
+      label: "suevalov.me@gmail.com",
+      href: "mailto:suevalov.me@gmail.com",
+      type: "gmail"
     },
     {
       label: "Twitter",
-      url: "https://twitter.com/suevalov",
-      iconClassName: "fa fa-twitter"
+      href: "https://twitter.com/suevalov",
+      type: "twitter"
     },
     {
-      label: "Email",
-      url: "mailto:suevalov.work@gmail.com",
-      iconClassName: "fa fa-envelope"
+      label: "GitHub",
+      href: "https://github.com/suevalov",
+      type: "github"
+    },
+    {
+      label: "Instagram",
+      href: "https://instagram.com/suevalov",
+      type: "instagram"
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/alexander-suevalov-748b6731/",
+      type: "linkedin"
     }
   ],
   copyright: "Copyright © 2018. Alexander Suevalov",
