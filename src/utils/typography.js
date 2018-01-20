@@ -78,17 +78,17 @@ const typography = new Typography({
     "a:hover, a:active": {
       boxShadow: "none"
     },
-    "a:hover, a:focus": {
+    "a.animated:hover": {
       color: "#fff",
       transitionDelay: "0.5s",
       outline: "none"
     },
-    "a:hover:before, a:focus:before": {
+    "a.animated:hover:before": {
       transition: "transform 0.2s ease-in",
       transitionDelay: "0.5s",
       transform: "scaleX(1)"
     },
-    "a:before": {
+    "a.animated:before": {
       transitionDelay: "0.5s",
       content: "''",
       position: "absolute",
@@ -101,15 +101,6 @@ const typography = new Typography({
       height: "100%",
       transformOrigin: "left top",
       zIndex: "-1"
-    },
-    "a.clear": {
-      boxShadow: "none"
-    },
-    "a.clear:hover:before, a.clear:focus:before": {
-      transform: "scaleX(0)"
-    },
-    "a.clear:hover": {
-      color: "#007acc"
     },
     "mark,ins": {
       background: "#007acc",

@@ -7,11 +7,14 @@ import PageContainer from "../components/PageContainer/PageContainer";
 import LeadText from "../components/LeadText/LeadText";
 import LeadContacts from "../components/LeadContacts/LeadContacts";
 import Config from "../../config";
+import ExperienceBlock from "../components/ExperienceBlock/ExperienceBlock";
+import SkillsBlock from "../components/SkillsBlock/SkillsBlock";
 
 const Row = styled("div")`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: ${props => props.justifyContent};
+  margin-bottom: 20px;
 
   ${TABLET_MEDIA_QUERY} {
     flex-direction: column;
@@ -43,7 +46,7 @@ class Index extends React.Component {
     return (
       <PageContainer>
         <Helmet title={Config.siteTitle} />
-        <Row>
+        <Row justifyContent="space-between">
           <LeadText
             techs={Config.techInterestedIn}
             className={classes.leadText}
@@ -52,6 +55,12 @@ class Index extends React.Component {
             links={Config.userLinks}
             className={classes.leadContacts}
           />
+        </Row>
+        <Row>
+          <SkillsBlock />
+        </Row>
+        <Row style={{ marginTop: 40, flexGrow: 1 }}>
+          <ExperienceBlock />
         </Row>
       </PageContainer>
     );

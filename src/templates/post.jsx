@@ -8,6 +8,7 @@ import config from "../../config";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
 import PageContainer from "../components/PageContainer/PageContainer";
+import { FancyH1 } from "../components/FancyHeader/FancyHeader";
 
 export default class PostTemplate extends React.Component {
   render() {
@@ -24,7 +25,7 @@ export default class PostTemplate extends React.Component {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <div>
-          <h1>{post.title}</h1>
+          <FancyH1>{post.title}</FancyH1>
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div className="post-meta">
             <PostTags tags={post.tags} />

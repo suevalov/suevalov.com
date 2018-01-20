@@ -98,14 +98,19 @@ export default class LeadContacts extends React.Component<LeadContactsProps> {
             return (
               <li key={link.type}>
                 <a
+                  style={{ boxShadow: "none" }}
                   target={target}
                   rel="noopener noreferrer"
-                  className="clear"
                   href={link.href}
                 >
                   <IconComponent className={classes.icon} />
                 </a>
-                <a target={target} rel="noopener noreferrer" href={link.href}>
+                <a
+                  className="animated"
+                  target={target}
+                  rel="noopener noreferrer"
+                  href={link.href}
+                >
                   {link.label}
                 </a>
               </li>
