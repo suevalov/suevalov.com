@@ -20,7 +20,7 @@ const Row = styled("div")`
 
 const classes = {
   leadContacts: css`
-    width: 300px;
+    min-width: 250px;
     min-height: 100px;
 
     ${TABLET_MEDIA_QUERY} {
@@ -29,7 +29,7 @@ const classes = {
   `,
   leadText: css`
     flex-grow: 0;
-    margin-right: 20px;
+    margin-right: 60px;
 
     ${TABLET_MEDIA_QUERY} {
       margin-right: 0;
@@ -44,7 +44,10 @@ class Index extends React.Component {
       <PageContainer>
         <Helmet title={Config.siteTitle} />
         <Row>
-          <LeadText className={classes.leadText} />
+          <LeadText
+            techs={Config.techInterestedIn}
+            className={classes.leadText}
+          />
           <LeadContacts
             links={Config.userLinks}
             className={classes.leadContacts}
