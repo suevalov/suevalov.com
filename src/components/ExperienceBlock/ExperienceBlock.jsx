@@ -8,6 +8,7 @@ const Timeline = styled("section")`
   min-height: 600px;
   width: 100%;
   font-size: 0.9em;
+  font-family: "Montserrat", "Helvetica Neue", serif;
 
   ul {
     margin: 0;
@@ -18,7 +19,10 @@ const Timeline = styled("section")`
     list-style-type: none;
     position: relative;
     margin: 0;
-    margin-left: 100px;
+    max-width: 330px;
+    margin-left: 110px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 50px;
   }
 
@@ -26,7 +30,7 @@ const Timeline = styled("section")`
     content: "";
     position: absolute;
     left: -60px;
-    top: 0;
+    top: 1px;
     transform: translateX(-50%);
     width: 80px;
     height: 30px;
@@ -37,37 +41,72 @@ const Timeline = styled("section")`
 
 const Event = styled("div")`
   position: relative;
-  bottom: 0;
+  bottom: -2px;
   padding: 0;
   margin: 0;
-  left: 20px;
 `;
 
-const EventTime = styled("time")`
+const EventTime = styled("div")`
   height: 30px;
   width: 120px;
   position: absolute;
   left: -120px;
   text-align: center;
-  top: 0;
+  top: 1px;
   z-index: 99;
-  font-size: 0.9em;
+  font-size: 0.85em;
   line-height: 30px;
   white-space: nowrap;
   overflow: hidden;
+
+  time {
+    position: relative;
+  }
+  time:before {
+    content: "";
+    width: 100%;
+    height: 7px;
+    position: absolute;
+    left: -5px;
+    bottom: 0px;
+    background-color: #89bcfe;
+    opacity: 0.6;
+    z-index: -2;
+  }
 `;
 
-const EventTitle = styled("div")``;
+const EventTitle = styled("div")`
+  font-size: 1.1em;
+`;
 
-const EventSubtitle = styled("div")``;
+const MoveToEvent = styled("div")`
+  font-size: 0.9em;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
+  color: #888;
+  display: inline-block;
+`;
 
-const EventDescription = styled("div")``;
+const EventSubtitle = styled("div")`
+  font-size: 0.9em;
+  color: #999;
+  padding-left: 10px;
+  line-height: 0.9em;
+`;
+
+const EventDescription = styled("div")`
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 0.9em;
+  line-height: 1.3em;
+  font-family: "Open Sans", "Helvetica Neue", serif;
+`;
 
 const Line = styled("div")`
   position: absolute;
-  left: 40px;
+  left: 50px;
   top: -40px;
-  height: calc(100% - 50px);
+  height: 100%;
   z-index: -2;
   width: 1px;
   border-left: 2px solid #000;
@@ -82,51 +121,115 @@ export default class ExperienceBlock extends React.Component {
           <Line />
           <ul>
             <li>
-              <EventTime>Nov 2017</EventTime>
+              <EventTime>
+                <time>Nov 2017 - present</time>
+              </EventTime>
               <Event>
                 <EventTitle>Senior Front-end Developer</EventTitle>
-                <EventSubtitle>Opera Software, Wroclaw</EventSubtitle>
-                <EventDescription />
+                <EventSubtitle>
+                  <a
+                    className="animated"
+                    href="http://www.opera.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Opera Software
+                  </a>, Wroclaw
+                </EventSubtitle>
+                <EventDescription>
+                  Helping Browser Team with refactoring and changing main Opera
+                  product - Opera Browser. Supporting and developing different
+                  Chromium extensions.
+                  <br />Stack: JavaScript, CSS, React.
+                </EventDescription>
               </Event>
             </li>
             <li>
-              <EventTime>Jul 2016 - Oct 2017</EventTime>
+              <EventTime>
+                <time>Jul 2016 - Oct 2017</time>
+              </EventTime>
               <Event>
                 <EventTitle>Front-end Team Lead</EventTitle>
-                <EventSubtitle>DataArt, Wroclaw</EventSubtitle>
-                <EventDescription />
+                <EventSubtitle>
+                  <a
+                    className="animated"
+                    href="http://dataart.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    DataArt
+                  </a>, Wroclaw
+                </EventSubtitle>
+                <EventDescription>
+                  Being in charge of the architecture and implementation of
+                  technically challenging web-projects projects for financial
+                  and travel industries. Leading a team of 6 front-end
+                  developers.
+                  <br />Stack: JavaScript, CSS, React, Redux, MobX.
+                </EventDescription>
               </Event>
             </li>
             <li>
-              <EventTime>Jul 2016</EventTime>
+              <EventTime>
+                <time>Jul 2016</time>
+              </EventTime>
               <Event>
-                <EventTitle>Moved to Wroclaw, Poland</EventTitle>
+                <MoveToEvent>Moved to Wrocław, Poland</MoveToEvent>
               </Event>
             </li>
             <li>
-              <EventTime>Oct 2013 - Jun 2016</EventTime>
+              <EventTime>
+                <time>Oct 2013 - Jun 2016</time>
+              </EventTime>
               <Event>
                 <EventTitle>Senior Front-end Developer</EventTitle>
-                <EventSubtitle>DataArt, Saint-Petersburg</EventSubtitle>
-                <EventDescription />
+                <EventSubtitle>
+                  <a
+                    href="http://dataart.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    DataArt
+                  </a>, Saint-Petersburg
+                </EventSubtitle>
+                <EventDescription>
+                  Being involved in several projects for clients from travel and
+                  financial industries.
+                  <br /> The most remarkable project was for Skyscanner: a new
+                  white label web application, feature-packed and customizable.
+                  The product was translated into ~30 languages.
+                  <br />Stack: Java, Ruby, JavaScript, Backbone, Angular, React.
+                </EventDescription>
               </Event>
             </li>
             <li>
-              <EventTime>Jul 2016</EventTime>
+              <EventTime>
+                <time>Jul 2016</time>
+              </EventTime>
               <Event>
-                <EventTitle>Moved to Saint Petersburg, Russia</EventTitle>
+                <MoveToEvent>Moved to Saint Petersburg, Russia</MoveToEvent>
               </Event>
             </li>
             <li>
-              <EventTime>Aug 2012 - Oct 2013</EventTime>
+              <EventTime>
+                <time>Aug 2012 - Oct 2013</time>
+              </EventTime>
               <Event>
                 <EventTitle>Full-stack Developer</EventTitle>
                 <EventSubtitle>Brand System, Cherepovets</EventSubtitle>
-                <EventDescription />
+                <EventDescription>
+                  Developing a platform for creating small social networks for
+                  people with common interests. The service provided
+                  communication channels for registered users, companies and
+                  communities.
+                  <br />Stack: Java, Hibernate, Backbone, JavaScript.
+                </EventDescription>
               </Event>
             </li>
             <li>
-              <EventTime>Jul 2012</EventTime>
+              <EventTime>
+                <time>Jul 2012</time>
+              </EventTime>
               <Event>
                 <EventTitle>
                   Graduate as Software Engineer Specialist
@@ -137,11 +240,17 @@ export default class ExperienceBlock extends React.Component {
               </Event>
             </li>
             <li>
-              <EventTime>Sep 2010 - Dec 2011</EventTime>
+              <EventTime>
+                <time>Sep 2010 - Dec 2011</time>
+              </EventTime>
               <Event>
                 <EventTitle>Front-end Developer</EventTitle>
                 <EventSubtitle>ImBoss.ru, Cherepovets</EventSubtitle>
-                <EventDescription />
+                <EventDescription>
+                  Developing and building architecture for client side of
+                  web-service for managing accounting processes in small
+                  companies.
+                </EventDescription>
               </Event>
             </li>
           </ul>

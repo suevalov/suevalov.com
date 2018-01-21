@@ -3,7 +3,7 @@ import gray from "gray-percentage";
 import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants";
 
 const typography = new Typography({
-  baseFontSize: "18px",
+  baseFontSize: "16px",
   baseLineHeight: 1.75,
   scaleRatio: 5 / 2,
   googleFonts: [
@@ -12,12 +12,12 @@ const typography = new Typography({
       styles: ["400"]
     },
     {
-      name: "Source Sans Pro",
+      name: "Open Sans",
       styles: ["400", "400i", "700", "700i", "900", "900i"]
     }
   ],
   headerFontFamily: ["Montserrat", "Helvetica Neue", "serif"],
-  bodyFontFamily: ["Source Sans Pro", "Helvetica Neue", "serif"],
+  bodyFontFamily: ["Open Sans", "Helvetica Neue", "serif"],
   bodyColor: "hsla(0,0%,0%,0.9)",
   headerWeight: 400,
   bodyWeight: 400,

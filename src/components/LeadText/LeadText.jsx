@@ -10,7 +10,6 @@ const H2 = styled("h2")`
 const Text = styled("p")`
   margin: 0;
   padding: 0;
-  margin-top: 5px;
   font-size: 0.9em;
   line-height: 1.8em;
 

@@ -56,11 +56,11 @@ class Index extends React.Component {
             className={classes.leadContacts}
           />
         </Row>
-        <Row>
-          <div style={{ position: "relative", width: "60%" }}>
+        <Row style={{ marginTop: 50 }}>
+          <div style={{ position: "relative", flexGrow: 1 }}>
             <ExperienceBlock />
           </div>
-          <div style={{ position: "relative", width: "40%" }}>
+          <div style={{ position: "relative", flexGrow: 1, minWidth: "50%" }}>
             <SkillsBlock />
           </div>
         </Row>
