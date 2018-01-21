@@ -57,10 +57,12 @@ class Index extends React.Component {
           />
         </Row>
         <Row>
-          <SkillsBlock />
-        </Row>
-        <Row style={{ marginTop: 40, flexGrow: 1 }}>
-          <ExperienceBlock />
+          <div style={{ position: "relative", width: "60%" }}>
+            <ExperienceBlock />
+          </div>
+          <div style={{ position: "relative", width: "40%" }}>
+            <SkillsBlock />
+          </div>
         </Row>
       </PageContainer>
     );
