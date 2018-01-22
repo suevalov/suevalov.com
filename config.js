@@ -2,8 +2,8 @@ module.exports = {
   siteTitle: "Alex Suevalov | Senior Web Developer", // Site title.
   siteTitleAlt: "Alex Suevalov | Senior Web Developer", // Alternative site title for SEO.
   siteLogo: "/images/suevalov-300.jpg", // Logo used for SEO and manifest.
-  siteUrl: "/", // Domain of your website without pathPrefix.
-  pathPrefix: "/suevalov.com", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+  siteUrl: "https://suevalov.com", // Domain of your website without pathPrefix.
+  pathPrefix: "/",
   siteDescription:
     "Alex Suevalov's personal website and blog about programming", // Website description used for RSS feeds/meta description tag.
   siteRss: "/blog/rss.xml", // Path to the RSS file.
@@ -65,6 +65,6 @@ module.exports = {
       href: "http://graphql.org/"
     }
   ],
-  themeColor: "#c62828", // Used for setting manifest and progress theme colors.
+  themeColor: "#89bcfe", // Used for setting manifest and progress theme colors.
   backgroundColor: "#e0e0e0" // Used for setting manifest background color.
 };

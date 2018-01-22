@@ -11,7 +11,9 @@ module.exports = ({ graphql, boundActionCreators }) => {
       graphql(
         `
           {
-            allMarkdownRemark {
+            allMarkdownRemark(
+              filter: { frontmatter: { draft: { ne: true } } }
+            ) {
               edges {
                 node {
                   frontmatter {
@@ -33,7 +35,11 @@ module.exports = ({ graphql, boundActionCreators }) => {
         }
 
         const tagSet = new Set();
-        result.data.allMarkdownRemark.edges.forEach(edge => {
+        const edges =
+          result.data.allMarkdownRemark && result.data.allMarkdownRemark.edges
+            ? result.data.allMarkdownRemark.edges
+            : [];
+        edges.forEach(edge => {
           if (edge.node.frontmatter.tags) {
             edge.node.frontmatter.tags.forEach(tag => {
               tagSet.add(tag);

@@ -35,12 +35,7 @@ export default class Talk extends React.Component<TalkProps> {
     return (
       <TalkContainer>
         <div>
-          <a
-            className="animated"
-            target="_blank"
-            href={url}
-            rel="noopener noreferrer"
-          >
+          <a target="_blank" href={url} rel="noopener noreferrer">
             {title} / <small>{language}</small>
           </a>
           {video && (

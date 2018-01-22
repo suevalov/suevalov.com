@@ -133,7 +133,11 @@ module.exports = {
           {
             serialize(ctx) {
               const rssMetadata = ctx.query.site.siteMetadata.rssMetadata;
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
+              const edges =
+                ctx.query.allMarkdownRemark && ctx.query.allMarkdownRemark.edges
+                  ? ctx.query.allMarkdownRemark.edges
+                  : [];
+              return edges.map(edge => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.frontmatter.date,
                 title: edge.node.frontmatter.title,
@@ -149,6 +153,7 @@ module.exports = {
               allMarkdownRemark(
                 limit: 1000,
                 sort: { order: DESC, fields: [frontmatter___date] },
+                filter: { frontmatter: { draft: { ne: true } } }
               ) {
                 edges {
                   node {

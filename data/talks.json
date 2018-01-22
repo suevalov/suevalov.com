@@ -2,7 +2,7 @@
   {
     "title": "Code-Splitting in React apps",
     "place": "React Poznan, Poland & IT Talk, Wroclaw",
-    "url": "http://suevalov.com/presentations/code-splitting/",
+    "url": "http://suevalov.github.io/presentations/code-splitting",
     "video": "https://www.youtube.com/watch?v=Ek0pLou0np0",
     "date": "08.06.2017",
     "language": "English"
@@ -10,21 +10,21 @@
   {
     "title": "Power Up your JavaScript with Flow",
     "place": "IT Talk, Wroclaw, Poland",
-    "url": "http://suevalov.com/presentations/flow/",
+    "url": "http://suevalov.github.io/presentations/flow/",
     "date": "20.02.2017",
     "language": "English"
   },
   {
     "title": "Mastering HOC with Recompose",
     "place": "React.js Wroclaw, Poland",
-    "url": "http://suevalov.com/presentations/mastering-hoc-with-recompose",
+    "url": "http://suevalov.github.io/presentations/mastering-hoc-with-recompose",
     "date": "29.09.2016",
     "language": "English"
   },
   {
     "title": "React Native. Writing apps for iOS and Android",
     "place": "IT NonStop Conf, Saint-Petersburg, Russia",
-    "url": "/presentations/react-native/#/",
+    "url": "http://suevalov.github.io/presentations/react-native",
     "date": "06.11.2015",
     "language": "Russian",
     "video": "https://www.youtube.com/watch?v=j5VSvv94mls"
@@ -32,21 +32,21 @@
   {
     "title": "Electron. What if your application were a browser?",
     "place": "DataArt, Saint-Petersburg, Russia",
-    "url": "/presentations/electron/#/",
+    "url": "http://suevalov.github.io/presentations/electron",
     "date": "01.09.2015",
     "language": "Russian"
   },
   {
     "title": "CSS Regression Testing",
     "place": "IT Bar Klutch, Saint-Petersburg, Russia",
-    "url": "/presentations/css-regression-testing/",
+    "url": "http://suevalov.github.io/presentations/css-regression-testing",
     "date": "19.03.2015",
     "language": "Russian"
   },
   {
     "title": "Componentize the Web",
     "place": "Google Developers Fest, Voronezh, Russia",
-    "url": "/presentations/componentize-the-web/",
+    "url": "http://suevalov.github.io/presentations/componentize-the-web",
     "date": "3.11.2014",
     "language": "Russian",
     "video": "https://www.youtube.com/watch?v=AioXqOP0LQg"
@@ -54,7 +54,7 @@
   {
     "title": "Keep yourself up to date",
     "place": "DataArt, Saint Petersburg, Russia",
-    "url": "/presentations/keep-yourself-up-to-date/",
+    "url": "http://suevalov.github.io/presentations/keep-yourself-up-to-date",
     "date": "8.09.2014",
     "language": "Russian"
   }
