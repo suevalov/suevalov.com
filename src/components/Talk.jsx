@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "react-emotion";
-import YoutubeIcon from "../../components/Icons/YoutubeIcon";
+import YoutubeIcon from "./Icons/YoutubeIcon";
 
 const TalkContainer = styled("div")``;
 

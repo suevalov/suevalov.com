@@ -7,7 +7,7 @@ import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
 import config from "../../../config";
 import { FancyH1, FancyH2 } from "../../components/FancyHeader/FancyHeader";
 import PageContainer from "../../components/PageContainer/PageContainer";
-import Talk from "./Talk";
+import Talk from "../../components/Talk";
 
 const groupTalksByYear = talks => {
   const groups = {};

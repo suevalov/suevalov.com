@@ -13,7 +13,7 @@ module.exports = {
       description: config.siteDescription,
       image_url: `${config.siteUrl + pathPrefix}/logos/logo-512.png`,
       author: config.userName,
-      copyright: config.copyright
+      copyright: "© Alex Suevalov"
     }
   },
   plugins: [

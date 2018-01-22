@@ -8,7 +8,7 @@ import PageContainer from "../components/PageContainer/PageContainer";
 import LeadText from "../components/LeadText/LeadText";
 import LeadContacts from "../components/LeadContacts/LeadContacts";
 import Config from "../../config";
-import Talk from "./talks/Talk";
+import Talk from "../components/Talk";
 
 const Row = styled("div")`
   display: flex;
