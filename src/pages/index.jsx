@@ -49,11 +49,14 @@ class Index extends React.Component {
             techs={Config.techInterestedIn}
             className={classes.leadText}
           />
+          <LeadContacts
+            links={Config.userLinks}
+            className={classes.leadContacts}
+          />
+        </Row>
+        <Row justifyContent="space-between">
           <div>
-            <LeadContacts
-              links={Config.userLinks}
-              className={classes.leadContacts}
-            />
+            <h3 style={{ marginTop: 20 }}>Latest Talks</h3>
           </div>
         </Row>
       </PageContainer>

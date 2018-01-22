@@ -122,7 +122,12 @@ class RecommendationsBlock extends React.Component<Props, State> {
         </div>
         <p>
           See all recommendations on{" "}
-          <a href={linkedInLinkValue} target="_blank" rel="noopener noreferrer">
+          <a
+            className="animated"
+            href={linkedInLinkValue}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             my LinkedIn profile
           </a>
         </p>

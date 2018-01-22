@@ -7,7 +7,9 @@ import PageContainer from "../../components/PageContainer/PageContainer";
 
 class Blog extends React.Component {
   render() {
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+    const postEdges = this.props.data.allMarkdownRemark
+      ? this.props.data.allMarkdownRemark.edges
+      : [];
     return (
       <PageContainer>
         <Helmet title={config.siteTitle} />
@@ -26,6 +28,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { draft: { ne: true } } }
     ) {
       edges {
         node {
