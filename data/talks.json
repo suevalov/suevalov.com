@@ -24,7 +24,7 @@
   {
     "title": "React Native. Writing apps for iOS and Android",
     "place": "IT NonStop Conf, Saint-Petersburg, Russia",
-    "url": "http://suevalov.com/presentations/react-native/#/",
+    "url": "/presentations/react-native/#/",
     "date": "06.11.2015",
     "language": "Russian",
     "video": "https://www.youtube.com/watch?v=j5VSvv94mls"
@@ -32,21 +32,21 @@
   {
     "title": "Electron. What if your application were a browser?",
     "place": "DataArt, Saint-Petersburg, Russia",
-    "url": "http://suevalov.com/presentations/electron/#/",
+    "url": "/presentations/electron/#/",
     "date": "01.09.2015",
     "language": "Russian"
   },
   {
     "title": "CSS Regression Testing",
     "place": "IT Bar Klutch, Saint-Petersburg, Russia",
-    "url": "http://suevalov.com/presentations/css-regression-testing/",
+    "url": "/presentations/css-regression-testing/",
     "date": "19.03.2015",
     "language": "Russian"
   },
   {
     "title": "Componentize the Web",
     "place": "Google Developers Fest, Voronezh, Russia",
-    "url": "http://suevalov.com/presentations/componentize-the-web/",
+    "url": "/presentations/componentize-the-web/",
     "date": "3.11.2014",
     "language": "Russian",
     "video": "https://www.youtube.com/watch?v=AioXqOP0LQg"
@@ -54,7 +54,7 @@
   {
     "title": "Keep yourself up to date",
     "place": "DataArt, Saint Petersburg, Russia",
-    "url": "http://suevalov.com/presentations/keep-yourself-up-to-date/",
+    "url": "/presentations/keep-yourself-up-to-date/",
     "date": "8.09.2014",
     "language": "Russian"
   }
