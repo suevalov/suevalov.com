@@ -50,12 +50,12 @@ module.exports = {
         ]
       }
     },
-    // {
-    //   resolve: "gatsby-plugin-google-analytics",
-    //   options: {
-    //     trackingId: config.googleAnalyticsID
-    //   }
-    // },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: config.googleAnalyticsID
+      }
+    },
     {
       resolve: "gatsby-plugin-nprogress",
       options: {
@@ -74,7 +74,6 @@ module.exports = {
     "gatsby-transformer-json",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",
-    "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-lodash",
     "gatsby-plugin-react-next",
@@ -90,19 +89,20 @@ module.exports = {
         display: "minimal-ui",
         icons: [
           {
-            src: "/logos/logo-192x192.png",
-            sizes: "192x192",
-            type: "image/png"
-          },
-          {
-            src: "/logos/logo-512x512.png",
-            sizes: "512x512",
+            src: "/images/suevalov-300.jpg",
+            sizes: "300x300",
             type: "image/png"
           }
         ]
       }
     },
-    "gatsby-plugin-offline",
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        navigateFallback: null,
+        navigateFallbackWhitelist: []
+      }
+    },
     {
       resolve: "gatsby-plugin-feed",
       options: {

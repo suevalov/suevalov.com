@@ -4,7 +4,6 @@ import Link from "gatsby-link";
 import { css } from "emotion";
 import styled from "react-emotion";
 import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
-import PageContainer from "../components/PageContainer/PageContainer";
 import LeadText from "../components/LeadText/LeadText";
 import LeadContacts from "../components/LeadContacts/LeadContacts";
 import Config from "../../config";
@@ -70,7 +69,7 @@ class Index extends React.Component {
   render() {
     const talks = this.props.data.allTalksJson.edges.map(edge => edge.node);
     return (
-      <PageContainer>
+      <div>
         <Helmet title={Config.siteTitle} />
         <Row justifyContent="space-between">
           <LeadText
@@ -99,7 +98,7 @@ class Index extends React.Component {
             </ul>
           </TalksList>
         </Row>
-      </PageContainer>
+      </div>
     );
   }
 }

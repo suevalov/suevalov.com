@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled from "react-emotion";
 import Link from "gatsby-link";
 import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
-import PageContainer from "../PageContainer/PageContainer";
 
 const Footer = styled("footer")`
   justify-content: center;
@@ -39,18 +38,16 @@ export default class extends Component {
     const url = config.siteRss;
     const currentYear = new Date().getFullYear();
     return (
-      <PageContainer>
-        <Footer>
-          <NoticeContainer>
-            <h5>
-              © 2017...{currentYear} {config.userName}
-            </h5>
-            <Link className="animated" to={url}>
-              Subscribe
-            </Link>
-          </NoticeContainer>
-        </Footer>
-      </PageContainer>
+      <Footer>
+        <NoticeContainer>
+          <h5>
+            © 2017...{currentYear} {config.userName}
+          </h5>
+          <Link className="animated" to={url}>
+            Subscribe
+          </Link>
+        </NoticeContainer>
+      </Footer>
     );
   }
 }

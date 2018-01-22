@@ -1,10 +1,9 @@
 import React from "react";
 import Helmet from "react-helmet";
-import PostListing from "../../components/PostListing/PostListing";
-import SEO from "../../components/SEO/SEO";
-import config from "../../../config";
-import { FancyH1 } from "../../components/FancyHeader/FancyHeader";
-import PageContainer from "../../components/PageContainer/PageContainer";
+import PostListing from "../components/PostListing/PostListing";
+import SEO from "../components/SEO/SEO";
+import config from "../../config";
+import { FancyH1 } from "../components/FancyHeader/FancyHeader";
 
 class Blog extends React.Component {
   render() {
@@ -12,12 +11,12 @@ class Blog extends React.Component {
       ? this.props.data.allMarkdownRemark.edges
       : [];
     return (
-      <PageContainer>
+      <div>
         <Helmet title={config.siteTitle} />
         <SEO postEdges={postEdges} />
         <FancyH1>Blog</FancyH1>
         <PostListing postEdges={postEdges} />
-      </PageContainer>
+      </div>
     );
   }
 }

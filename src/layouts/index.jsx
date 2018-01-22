@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import config from "../../config";
 import Navigation from "../components/Navigation/Navigation";
 import Footer from "../components/Footer/Footer";
+import PageContainer from "../components/PageContainer/PageContainer";
 
 export default class MainLayout extends React.Component {
   render() {
@@ -14,8 +15,10 @@ export default class MainLayout extends React.Component {
           <meta name="description" content={config.siteDescription} />
         </Helmet>
         <Navigation currentPathname={location.pathname} />
-        {children()}
-        <Footer config={config} />
+        <PageContainer>{children()}</PageContainer>
+        <PageContainer>
+          <Footer config={config} />
+        </PageContainer>
       </div>
     );
   }

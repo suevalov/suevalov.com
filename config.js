@@ -8,7 +8,7 @@ module.exports = {
     "Alex Suevalov's personal website and blog about programming", // Website description used for RSS feeds/meta description tag.
   siteRss: "/blog/rss.xml", // Path to the RSS file.
   siteFBAppID: "", // FB Application ID for using app insights
-  googleAnalyticsID: "", // GA tracking ID.
+  googleAnalyticsID: "UA-112843005-1", // GA tracking ID.
   disqusShortname: "", // Disqus shortname.
   userName: "Alex Suevalov", // Username to display in the author segment.
   userTwitter: "suevalov", // Optionally renders "Follow Me" in the UserInfo segment.

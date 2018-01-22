@@ -4,10 +4,9 @@ import styled from "react-emotion";
 import keys from "lodash/keys";
 import sortBy from "lodash/sortBy";
 import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
-import config from "../../../config";
-import { FancyH1, FancyH2 } from "../../components/FancyHeader/FancyHeader";
-import PageContainer from "../../components/PageContainer/PageContainer";
-import Talk from "../../components/Talk";
+import config from "../../config";
+import { FancyH1, FancyH2 } from "../components/FancyHeader/FancyHeader";
+import Talk from "../components/Talk";
 
 const groupTalksByYear = talks => {
   const groups = {};
@@ -54,12 +53,12 @@ const TalksList = styled("ul")`
   margin-bottom: 40px;
 `;
 
-class TalksPage extends React.Component {
+class Talks extends React.Component {
   render() {
     const talks = this.props.data.allTalksJson.edges.map(edge => edge.node);
     const groupedTalks = groupTalksByYear(talks);
     return (
-      <PageContainer>
+      <div>
         <Helmet title={config.siteTitle} />
         <FancyH1>Talks</FancyH1>
         <GroupsContainer>
@@ -76,7 +75,7 @@ class TalksPage extends React.Component {
             </Group>
           ))}
         </GroupsContainer>
-      </PageContainer>
+      </div>
     );
   }
 }
@@ -99,4 +98,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default TalksPage;
+export default Talks;
