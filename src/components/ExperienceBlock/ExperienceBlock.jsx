@@ -115,7 +115,7 @@ const Line = styled("div")`
 export default class ExperienceBlock extends React.Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <FancyH2>Experience</FancyH2>
         <Timeline>
           <Line />
@@ -255,7 +255,7 @@ export default class ExperienceBlock extends React.Component {
             </li>
           </ul>
         </Timeline>
-      </div>
+      </React.Fragment>
     );
   }
 }

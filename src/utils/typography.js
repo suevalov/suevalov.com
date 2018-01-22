@@ -80,16 +80,16 @@ const typography = new Typography({
     },
     "a.animated:hover": {
       color: "#fff",
-      transitionDelay: "0.5s",
+      transitionDelay: "0.1s",
       outline: "none"
     },
     "a.animated:hover:before": {
       transition: "transform 0.2s ease-in",
-      transitionDelay: "0.5s",
+      transitionDelay: "0.1s",
       transform: "scaleX(1)"
     },
     "a.animated:before": {
-      transitionDelay: "0.5s",
+      transitionDelay: "0.1s",
       content: "''",
       position: "absolute",
       left: "-2%",

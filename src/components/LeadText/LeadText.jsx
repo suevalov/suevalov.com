@@ -30,8 +30,13 @@ export default class LeadText extends React.Component<LeadTextProps> {
     return (
       <div className={this.props.className}>
         <FancyH1>Hi, I{"'"}m Alex</FancyH1>
-        <H2>Senior JavaScript developer,</H2>
-        <H2>based in Wrocław</H2>
+        <H2>Senior JavaScript developer, based&nbsp;in&nbsp;Wrocław.</H2>
+        <H2>
+          Work for{" "}
+          <a className="animated" href="http://opera.com">
+            Opera&nbsp;Software
+          </a>.
+        </H2>
         <Text style={{ marginTop: 20 }}>
           {experience} years of professional expertise in web development and
           creating complex SPAs.

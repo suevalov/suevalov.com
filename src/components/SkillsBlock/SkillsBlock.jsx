@@ -5,7 +5,7 @@ import SkillBar from "./SkillBar";
 export default class SkillsBlock extends React.Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <FancyH2>Skills</FancyH2>
 
         <h4 style={{ marginTop: 10 }}>Development</h4>
@@ -39,7 +39,7 @@ export default class SkillsBlock extends React.Component {
         <SkillBar value={85} title="English" />
         <SkillBar value={20} title="Polish" />
         <SkillBar value={10} title="German" />
-      </div>
+      </React.Fragment>
     );
   }
 }

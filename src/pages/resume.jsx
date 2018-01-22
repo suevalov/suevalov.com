@@ -6,11 +6,12 @@ import PageContainer from "../components/PageContainer/PageContainer";
 import Config from "../../config";
 import ExperienceBlock from "../components/ExperienceBlock/ExperienceBlock";
 import SkillsBlock from "../components/SkillsBlock/SkillsBlock";
+import RecommendationsBlock from "../components/RecommendationsBlock/RecommendationsBlock";
 
 const Row = styled("div")`
   display: flex;
   flex-direction: row;
-  justify-content: ${props => props.justifyContent};
+  justify-content: flex-start;
   margin-bottom: 20px;
 
   ${TABLET_MEDIA_QUERY} {
@@ -19,15 +20,23 @@ const Row = styled("div")`
 
   > div:first-child {
     position: relative;
-    flex-grow: 1;
     margin-right: 20px;
+    width: 50%;
   }
 
   > div:last-child {
     position: relative;
-    flex-grow: 1;
-    min-width: 45%;
-    max-width: 90%;
+    width: 40%;
+  }
+
+  ${TABLET_MEDIA_QUERY} {
+    > div:first-child {
+      width: 100%;
+    }
+
+    > div:last-child {
+      width: 90%;
+    }
   }
 `;
 
@@ -39,6 +48,7 @@ class Resume extends React.Component {
         <Row style={{ marginTop: 50 }}>
           <div>
             <ExperienceBlock />
+            <RecommendationsBlock />
           </div>
           <div>
             <SkillsBlock />
