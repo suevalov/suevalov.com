@@ -2,7 +2,7 @@ module.exports = {
   siteTitle: "Alex Suevalov | Senior Web Developer", // Site title.
   siteTitleAlt: "Alex Suevalov | Senior Web Developer", // Alternative site title for SEO.
   siteLogo: "/images/suevalov-300.jpg", // Logo used for SEO and manifest.
-  siteUrl: "https://suevalov.com", // Domain of your website without pathPrefix.
+  siteUrl: "/", // Domain of your website without pathPrefix.
   pathPrefix: "/suevalov.com", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
     "Alex Suevalov's personal website and blog about programming", // Website description used for RSS feeds/meta description tag.
