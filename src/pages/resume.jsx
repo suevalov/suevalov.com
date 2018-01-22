@@ -42,21 +42,88 @@ const Row = styled("div")`
 
 class Resume extends React.Component {
   render() {
+    const recommendations = this.props.data.allRecommendationsJson.edges.map(
+      edge => edge.node
+    );
+    const languages = this.props.data.allLanguagesJson.edges.map(
+      edge => edge.node
+    );
+    const personalQualities = this.props.data.allPersonalQualitiesJson.edges.map(
+      edge => edge.node
+    );
+    const designSkills = this.props.data.allDesignSkillsJson.edges.map(
+      edge => edge.node
+    );
+    const developmentSkills = this.props.data.allDevelopmentSkillsJson.edges.map(
+      edge => edge.node
+    );
     return (
       <PageContainer>
         <Helmet title={Config.siteTitle} />
         <Row style={{ marginTop: 50 }}>
           <div>
             <ExperienceBlock />
-            <RecommendationsBlock />
+            <RecommendationsBlock recommendations={recommendations} />
           </div>
           <div>
-            <SkillsBlock />
+            <SkillsBlock
+              languages={languages}
+              personalQualities={personalQualities}
+              designSkills={designSkills}
+              developmentSkills={developmentSkills}
+            />
           </div>
         </Row>
       </PageContainer>
     );
   }
 }
+
+/* eslint no-undef: "off" */
+export const pageQuery = graphql`
+  query ResumeQuery {
+    allRecommendationsJson {
+      edges {
+        node {
+          text
+          position
+          name
+        }
+      }
+    }
+    allPersonalQualitiesJson {
+      edges {
+        node {
+          label
+          value
+        }
+      }
+    }
+    allDesignSkillsJson {
+      edges {
+        node {
+          label
+          value
+        }
+      }
+    }
+    allLanguagesJson {
+      edges {
+        node {
+          label
+          value
+        }
+      }
+    }
+    allDevelopmentSkillsJson {
+      edges {
+        node {
+          label
+          value
+        }
+      }
+    }
+  }
+`;
 
 export default Resume;

@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Javascript",
+    "value": 95
+  },
+  {
+    "label": "React",
+    "value": 95
+  },
+  {
+    "label": "CSS",
+    "value": 90
+  },
+  {
+    "label": "Redux, Mobx",
+    "value": 85
+  },
+  {
+    "label": "Node.js",
+    "value": 80
+  },
+  {
+    "label": "React Native",
+    "value": 75
+  },
+  {
+    "label": "Vue",
+    "value": 65
+  },
+  {
+    "label": "Database Modelling",
+    "value": 50
+  },
+  {
+    "label": "Ruby on Rails",
+    "value": 40
+  },
+  {
+    "label": "Java",
+    "value": 30
+  }
+]

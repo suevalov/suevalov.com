@@ -25,6 +25,13 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "data",
+        path: `${__dirname}/data`
+      }
+    },
+    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
@@ -64,7 +71,7 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
-    "gatsby-transformer-yaml",
+    "gatsby-transformer-json",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",

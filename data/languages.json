@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Russian",
+    "value": 100
+  },
+  {
+    "label": "English",
+    "value": 90
+  },
+  {
+    "label": "Polish",
+    "value": 20
+  },
+  {
+    "label": "German",
+    "value": 10
+  }
+]

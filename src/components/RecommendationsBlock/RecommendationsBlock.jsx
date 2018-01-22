@@ -26,27 +26,6 @@ const Container = styled("div")`
   }
 `;
 
-const recommendations = [
-  {
-    text:
-      "...He was articulate and clear in describing the available technical options. He had a broad knowledge of the available technologies which he used to arrive at well balanced architectural decisions. ",
-    name: "Joe Sarre",
-    position: "Senior Product Manager at Skyscanner"
-  },
-  {
-    text:
-      "...hard working engineer who can make future-proof decisions, quickly pick up new libraries and help his colleagues grow... I would highly recommend him to any team that needs a strong frontend lead.",
-    name: "Sergey Titov",
-    position: "Staff Software Engineer at LinkedIn"
-  },
-  {
-    text:
-      "Alex is always in pursuit of new technologies and can quickly come up with a fresh solution to your problem... He's perfectly capable of managing a team of developers and has experience with it.",
-    name: "Alexander Antsiferov",
-    position: "Project Manager at DataArt"
-  }
-];
-
 const linkedInLink = Config.userLinks.filter(link => link.type === "linkedin");
 const linkedInLinkValue = linkedInLink ? linkedInLink[0].href : "";
 
@@ -135,9 +114,5 @@ class RecommendationsBlock extends React.Component<Props, State> {
     );
   }
 }
-
-RecommendationsBlock.defaultProps = {
-  recommendations
-};
 
 export default RecommendationsBlock;

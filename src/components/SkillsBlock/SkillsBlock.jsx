@@ -2,43 +2,46 @@ import React from "react";
 import { FancyH2 } from "../FancyHeader/FancyHeader";
 import SkillBar from "./SkillBar";
 
-export default class SkillsBlock extends React.Component {
+type Props = {
+  languages: Array<{ label: string, value: number }>,
+  personalQualities: Array<{ label: string, value: number }>,
+  designSkills: Array<{ label: string, value: number }>,
+  developmentSkills: Array<{ label: string, value: number }>
+};
+
+export default class SkillsBlock extends React.Component<Props> {
   render() {
     return (
       <React.Fragment>
         <FancyH2>Skills</FancyH2>
 
         <h4 style={{ marginTop: 10 }}>Development</h4>
-
-        <SkillBar value={95} title="Javascript" />
-        <SkillBar value={95} title="React" />
-        <SkillBar value={90} title="CSS" />
-        <SkillBar value={85} title="Redux, Mobx" />
-        <SkillBar value={80} title="Node.js" />
-        <SkillBar value={75} title="React Native" />
-        <SkillBar value={65} title="Vue" />
-        <SkillBar value={50} title="Database Modelling" />
-        <SkillBar value={40} title="Ruby on Rails" />
-        <SkillBar value={35} title="Java" />
+        {this.props.developmentSkills.map(skill => (
+          <SkillBar key={skill.label} value={skill.value} title={skill.label} />
+        ))}
 
         <h4>Design</h4>
-        <SkillBar value={80} title="Design Systems" />
-        <SkillBar value={75} title="UX" />
-        <SkillBar value={60} title="Photoshop" />
-        <SkillBar value={20} title="Sketch" />
+        {this.props.designSkills.map(skill => (
+          <SkillBar key={skill.label} value={skill.value} title={skill.label} />
+        ))}
 
         <h4>Personal</h4>
-        <SkillBar value={90} title="Self Management" />
-        <SkillBar value={90} title="Proactivity" />
-        <SkillBar value={75} title="Creativity" />
-        <SkillBar value={70} title="Communication" />
-        <SkillBar value={65} title="Team Player" />
+        {this.props.personalQualities.map(quality => (
+          <SkillBar
+            key={quality.label}
+            value={quality.value}
+            title={quality.label}
+          />
+        ))}
 
         <h4>Languages</h4>
-        <SkillBar value={100} title="Russian" />
-        <SkillBar value={85} title="English" />
-        <SkillBar value={20} title="Polish" />
-        <SkillBar value={10} title="German" />
+        {this.props.languages.map(language => (
+          <SkillBar
+            key={language.label}
+            value={language.value}
+            title={language.label}
+          />
+        ))}
       </React.Fragment>
     );
   }
