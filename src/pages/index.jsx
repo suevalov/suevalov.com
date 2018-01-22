@@ -7,8 +7,6 @@ import PageContainer from "../components/PageContainer/PageContainer";
 import LeadText from "../components/LeadText/LeadText";
 import LeadContacts from "../components/LeadContacts/LeadContacts";
 import Config from "../../config";
-import ExperienceBlock from "../components/ExperienceBlock/ExperienceBlock";
-import SkillsBlock from "../components/SkillsBlock/SkillsBlock";
 
 const Row = styled("div")`
   display: flex;
@@ -51,17 +49,11 @@ class Index extends React.Component {
             techs={Config.techInterestedIn}
             className={classes.leadText}
           />
-          <LeadContacts
-            links={Config.userLinks}
-            className={classes.leadContacts}
-          />
-        </Row>
-        <Row style={{ marginTop: 50 }}>
-          <div style={{ position: "relative", flexGrow: 1 }}>
-            <ExperienceBlock />
-          </div>
-          <div style={{ position: "relative", flexGrow: 1, minWidth: "50%" }}>
-            <SkillsBlock />
+          <div>
+            <LeadContacts
+              links={Config.userLinks}
+              className={classes.leadContacts}
+            />
           </div>
         </Row>
       </PageContainer>

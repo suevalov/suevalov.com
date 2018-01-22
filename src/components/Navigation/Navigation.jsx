@@ -100,6 +100,18 @@ export default class Header extends React.Component {
               Talks
             </Link>
           </MenuItem>
+          <MenuItem>
+            <Link
+              className="animated"
+              isActive={(match, location) =>
+                location.pathname.indexOf("/resume") === 0
+              }
+              to="/resume"
+              activeClassName={activeLinkClass}
+            >
+              Resume
+            </Link>
+          </MenuItem>
         </Menu>
       </Nav>
     );
