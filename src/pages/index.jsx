@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import Link from "gatsby-link";
 import { css } from "emotion";
 import styled from "react-emotion";
 import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
@@ -7,6 +8,7 @@ import PageContainer from "../components/PageContainer/PageContainer";
 import LeadText from "../components/LeadText/LeadText";
 import LeadContacts from "../components/LeadContacts/LeadContacts";
 import Config from "../../config";
+import Talk from "./talks/Talk";
 
 const Row = styled("div")`
   display: flex;
@@ -16,6 +18,31 @@ const Row = styled("div")`
 
   ${TABLET_MEDIA_QUERY} {
     flex-direction: column;
+  }
+`;
+
+const TalksList = styled("div")`
+  font-size: 0.9em;
+
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    a {
+      margin-left: 10px;
+      font-size: 0.6em;
+      vertical-align: middle;
+      font-family: "Open Sans", "Helvetica Neue", serif;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  li:last-child {
+    margin: 0;
   }
 `;
 
@@ -41,6 +68,7 @@ const classes = {
 
 class Index extends React.Component {
   render() {
+    const talks = this.props.data.allTalksJson.edges.map(edge => edge.node);
     return (
       <PageContainer>
         <Helmet title={Config.siteTitle} />
@@ -55,13 +83,43 @@ class Index extends React.Component {
           />
         </Row>
         <Row justifyContent="space-between">
-          <div>
-            <h3 style={{ marginTop: 20 }}>Latest Talks</h3>
-          </div>
+          <TalksList>
+            <h3>
+              Latest Talks
+              <Link className="animated" to="/talks">
+                see all
+              </Link>
+            </h3>
+            <ul>
+              {talks.map(talk => (
+                <li>
+                  <Talk talk={talk} />
+                </li>
+              ))}
+            </ul>
+          </TalksList>
         </Row>
       </PageContainer>
     );
   }
 }
+
+/* eslint no-undef: "off" */
+export const pageQuery = graphql`
+  query IndexQuery {
+    allTalksJson(limit: 3) {
+      edges {
+        node {
+          title
+          place
+          date
+          url
+          video
+          language
+        }
+      }
+    }
+  }
+`;
 
 export default Index;

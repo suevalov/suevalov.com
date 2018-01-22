@@ -78,6 +78,9 @@ const typography = new Typography({
     "a:hover, a:active": {
       boxShadow: "none"
     },
+    "a.anchor": {
+      boxShadow: "none"
+    },
     "a.animated:hover": {
       color: "#fff",
       transitionDelay: "0.1s",

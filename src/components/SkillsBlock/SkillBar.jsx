@@ -42,7 +42,7 @@ export default class SkillBar extends React.Component<SkillBarProps> {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ mounted: true });
-    }, 500);
+    }, 100);
   }
 
   render() {

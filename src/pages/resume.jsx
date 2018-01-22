@@ -4,6 +4,7 @@ import styled from "react-emotion";
 import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
 import PageContainer from "../components/PageContainer/PageContainer";
 import Config from "../../config";
+import { FancyH1 } from "../components/FancyHeader/FancyHeader";
 import ExperienceBlock from "../components/ExperienceBlock/ExperienceBlock";
 import SkillsBlock from "../components/SkillsBlock/SkillsBlock";
 import RecommendationsBlock from "../components/RecommendationsBlock/RecommendationsBlock";
@@ -60,6 +61,7 @@ class Resume extends React.Component {
     return (
       <PageContainer>
         <Helmet title={Config.siteTitle} />
+        <FancyH1>Resume</FancyH1>
         <Row style={{ marginTop: 50 }}>
           <div>
             <ExperienceBlock />
