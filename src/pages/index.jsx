@@ -91,7 +91,7 @@ class Index extends React.Component {
             </h3>
             <ul>
               {talks.map(talk => (
-                <li>
+                <li key={talk.title}>
                   <Talk talk={talk} />
                 </li>
               ))}
