@@ -11,7 +11,7 @@ module.exports = {
       feed_url: config.siteUrl + pathPrefix + config.siteRss,
       title: config.siteTitle,
       description: config.siteDescription,
-      image_url: `${config.siteUrl + pathPrefix}/logos/logo-512.png`,
+      image_url: `${config.siteUrl + pathPrefix}/logos/logo-512x512.png`,
       author: config.userName,
       copyright: "© Alex Suevalov"
     }
@@ -81,7 +81,7 @@ module.exports = {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: config.siteTitle,
-        short_name: config.siteTitle,
+        short_name: config.shortSiteTitle,
         description: config.siteDescription,
         start_url: config.pathPrefix,
         background_color: config.backgroundColor,
@@ -89,8 +89,13 @@ module.exports = {
         display: "minimal-ui",
         icons: [
           {
-            src: "/images/suevalov-300.jpg",
-            sizes: "300x300",
+            src: "/logos/logo-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
+          },
+          {
+            src: "/logos/logo-512x512.png",
+            sizes: "512x512",
             type: "image/png"
           }
         ]

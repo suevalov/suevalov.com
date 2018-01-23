@@ -5,6 +5,7 @@ export default function LinkedInIcon(props) {
     <svg
       className={props.className}
       role="img"
+      aria-label="LinkedIn"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >

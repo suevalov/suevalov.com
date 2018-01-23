@@ -13,6 +13,10 @@ const TalkVideoLink = styled("a")`
   :focus {
     opacity: 1;
   }
+
+  span {
+    display: none;
+  }
 `;
 
 const TalkVideoIcon = styled(YoutubeIcon)`
