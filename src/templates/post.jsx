@@ -7,7 +7,6 @@ import SEO from "../components/SEO/SEO";
 import config from "../../config";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
-import { FancyH1 } from "../components/FancyHeader/FancyHeader";
 
 export default class PostTemplate extends React.Component {
   render() {
@@ -23,15 +22,13 @@ export default class PostTemplate extends React.Component {
           <title>{`${post.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
-        <div>
-          <FancyH1>{post.title}</FancyH1>
-          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          <div className="post-meta">
-            <PostTags tags={post.tags} />
-            <SocialLinks postPath={slug} postNode={postNode} />
-          </div>
-          <UserInfo config={config} />
+        <h1 style={{ fontSize: "2.6em" }}>{post.title}</h1>
+        <article dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        <div className="post-meta">
+          <PostTags tags={post.tags} />
+          <SocialLinks postPath={slug} postNode={postNode} />
         </div>
+        <UserInfo config={config} />
       </React.Fragment>
     );
   }
