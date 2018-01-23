@@ -13,7 +13,7 @@ const typography = new Typography({
     },
     {
       name: "Open Sans",
-      styles: ["400", "400i", "700", "700i", "900", "900i"]
+      styles: ["400", "400i", "700"]
     }
   ],
   headerFontFamily: ["Montserrat", "Helvetica Neue", "serif"],
