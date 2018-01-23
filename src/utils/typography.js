@@ -6,18 +6,27 @@ const typography = new Typography({
   baseFontSize: "16px",
   baseLineHeight: 1.75,
   scaleRatio: 5 / 2,
-  googleFonts: [
-    {
-      name: "Montserrat",
-      styles: ["400"]
-    },
-    {
-      name: "Open Sans",
-      styles: ["400", "400i", "700"]
-    }
+  googleFonts: [],
+  headerFontFamily: [
+    "Montserrat",
+    "HelveticaNeue-Light",
+    "Helvetica Neue Light",
+    "Helvetica Neue",
+    "Helvetica",
+    "Arial",
+    "Lucida Grande",
+    "sans-serif"
   ],
-  headerFontFamily: ["Montserrat", "Helvetica Neue", "serif"],
-  bodyFontFamily: ["Open Sans", "Helvetica Neue", "serif"],
+  bodyFontFamily: [
+    "Open Sans",
+    "HelveticaNeue-Light",
+    "Helvetica Neue Light",
+    "Helvetica Neue",
+    "Helvetica",
+    "Arial",
+    "Lucida Grande",
+    "sans-serif"
+  ],
   bodyColor: "hsla(0,0%,0%,0.9)",
   headerWeight: 400,
   bodyWeight: 400,

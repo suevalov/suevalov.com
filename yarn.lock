@@ -9098,7 +9098,7 @@ react-twitter-widgets@1.7.1:
     prop-types "^15.3.0"
     scriptjs "^2.5.8"
 
-react-typography@^0.16.1:
+react-typography@0.16.13, react-typography@^0.16.1:
   version "0.16.13"
   resolved "https://registry.yarnpkg.com/react-typography/-/react-typography-0.16.13.tgz#94bdd2a9448823bc74d8ebf7465d86c7dbe20dcf"
 
@@ -11423,6 +11423,14 @@ type-of@^2.0.1:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+
+typeface-montserrat@0.0.45:
+  version "0.0.45"
+  resolved "https://registry.yarnpkg.com/typeface-montserrat/-/typeface-montserrat-0.0.45.tgz#17bd9a48d1b4a3ed7f3110db8e18ea828e88594b"
+
+typeface-open-sans@0.0.45:
+  version "0.0.45"
+  resolved "https://registry.yarnpkg.com/typeface-open-sans/-/typeface-open-sans-0.0.45.tgz#cd4700eb9ed4c83f5fe95ef0540b4053110bfccf"
 
 typography-breakpoint-constants@0.15.10, typography-breakpoint-constants@^0.15.10:
   version "0.15.10"

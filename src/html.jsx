@@ -29,6 +29,18 @@ export default class HTML extends React.Component {
     return (
       <html lang="en">
         <head>
+          <link
+            rel="preload"
+            href="/static/open-sans-latin-400.cffb686d.woff2"
+            as="font"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/static/montserrat-latin-400.501ce09c.woff2"
+            as="font"
+            crossOrigin="anonymous"
+          />
           <meta charSet="utf-8" />
           <meta
             name="viewport"
