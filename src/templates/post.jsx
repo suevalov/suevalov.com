@@ -12,6 +12,7 @@ import { FancyH1 } from "../components/FancyHeader/FancyHeader";
 import config from "../../config";
 import "./code-highlight.css";
 import "./post.css";
+import TableOfContents from "../components/TableOfContent/TableOfContent";
 
 const PostContainer = styled("div")`
   max-width: 660px;
@@ -20,6 +21,11 @@ const PostContainer = styled("div")`
   .breakout {
     margin-left: -100px;
     margin-right: -100px;
+  }
+
+  li ul,
+  li ol {
+    margin-top: 0;
   }
 
   ul {
@@ -164,6 +170,11 @@ export default class PostTemplate extends React.Component {
     const postNode = this.props.data.markdownRemark;
     const post = postNode.frontmatter;
     const timeToRead = postNode.timeToRead;
+    const headings = (postNode.headings || []).filter(
+      heading => heading.depth === 2
+    );
+    const hasTableOfContents = headings.length > 2;
+    const tableOfContents = postNode.tableOfContents;
     if (!post.id) {
       post.id = slug;
     }
@@ -187,6 +198,9 @@ export default class PostTemplate extends React.Component {
           </PostContainer>
           <hr />
           <PostContainer>
+            {hasTableOfContents && (
+              <TableOfContents tableOfContents={tableOfContents} />
+            )}
             <article dangerouslySetInnerHTML={{ __html: postNode.html }} />
             <SocialLinks postPath={slug} postNode={postNode} />
             <div style={{ textAlign: "center" }}>
@@ -206,9 +220,10 @@ export const pageQuery = graphql`
       html
       timeToRead
       excerpt
+      tableOfContents
       headings {
-        depth
         value
+        depth
       }
       frontmatter {
         title
