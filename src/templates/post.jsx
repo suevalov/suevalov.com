@@ -1,7 +1,10 @@
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "react-emotion";
-import { DEFAULT_MEDIA_QUERY } from "typography-breakpoint-constants";
+import {
+  DEFAULT_MEDIA_QUERY,
+  MOBILE_MEDIA_QUERY
+} from "typography-breakpoint-constants";
 import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
@@ -105,11 +108,62 @@ const PostContainer = styled("div")`
   }
 `;
 
+const MetaRow = styled("div")`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+
+  & > * {
+    margin-bottom: 10px;
+  }
+
+  time {
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  span:after {
+    content: "\\00B7";
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  span {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  ${MOBILE_MEDIA_QUERY} {
+    flex-direction: column;
+  }
+`;
+
+function convertDate(value: string) {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ];
+  const values = value.split("/").map(item => parseInt(item, 10));
+  return `${months[values[1]]} ${values[0]}, ${values[2]}`;
+}
+
 export default class PostTemplate extends React.Component {
   render() {
     const { slug } = this.props.pathContext;
     const postNode = this.props.data.markdownRemark;
     const post = postNode.frontmatter;
+    const timeToRead = postNode.timeToRead;
     if (!post.id) {
       post.id = slug;
     }
@@ -120,15 +174,26 @@ export default class PostTemplate extends React.Component {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <main>
-          <FancyH1>{post.title}</FancyH1>
-          <PostTags tags={post.tags} />
+          <FancyH1 style={{ marginBottom: 20 }}>{post.title}</FancyH1>
+          <PostContainer>
+            <MetaRow>
+              <PostTags tags={post.tags} />
+              <div>
+                <time>{convertDate(post.date)}</time>
+                <span />
+                <time>{timeToRead} min read</time>
+              </div>
+            </MetaRow>
+          </PostContainer>
+          <hr />
           <PostContainer>
             <article dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            <SocialLinks postPath={slug} postNode={postNode} />
+            <div style={{ textAlign: "center" }}>
+              <PostTags tags={post.tags} />
+            </div>
           </PostContainer>
         </main>
-        <div className="post-meta">
-          <SocialLinks postPath={slug} postNode={postNode} />
-        </div>
       </React.Fragment>
     );
   }

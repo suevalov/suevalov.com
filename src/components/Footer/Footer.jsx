@@ -11,6 +11,8 @@ const Footer = styled("footer")`
   h5 {
     font-size: 0.9em;
     margin: 0;
+    font-family: "Open Sans", "-apple-system", "BlinkMacSystemFont", "Arial",
+      sans-serif;
   }
 
   a {
