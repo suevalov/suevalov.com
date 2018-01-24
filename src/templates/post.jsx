@@ -3,7 +3,8 @@ import Helmet from "react-helmet";
 import styled from "react-emotion";
 import {
   DEFAULT_MEDIA_QUERY,
-  MOBILE_MEDIA_QUERY
+  MOBILE_MEDIA_QUERY,
+  TABLET_MEDIA_QUERY
 } from "typography-breakpoint-constants";
 import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
@@ -13,6 +14,13 @@ import config from "../../config";
 import "./code-highlight.css";
 import "./post.css";
 import TableOfContents from "../components/TableOfContent/TableOfContent";
+import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
+
+const HiddenOnTablet = styled("div")`
+  ${TABLET_MEDIA_QUERY} {
+    display: none;
+  }
+`;
 
 const PostContainer = styled("div")`
   max-width: 660px;
@@ -208,6 +216,9 @@ export default class PostTemplate extends React.Component {
             </div>
           </PostContainer>
         </main>
+        <HiddenOnTablet>
+          <ScrollToTop />
+        </HiddenOnTablet>
       </React.Fragment>
     );
   }
