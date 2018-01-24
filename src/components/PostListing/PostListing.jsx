@@ -49,9 +49,9 @@ class PostListing extends React.Component {
               <FancyH2>{group.label}</FancyH2>
             </div>
             {group.posts.map(post => (
-              <Link to={post.path} key={post.title}>
-                {post.title}
-              </Link>
+              <div key={post.title} style={{ marginBottom: 10 }}>
+                <Link to={post.path}>{post.title}</Link>
+              </div>
             ))}
           </div>
         ))}

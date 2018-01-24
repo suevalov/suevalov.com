@@ -169,7 +169,7 @@ function convertDate(value: string) {
     "Dec"
   ];
   const values = value.split("/").map(item => parseInt(item, 10));
-  return `${months[values[1]]} ${values[0]}, ${values[2]}`;
+  return `${months[values[1] - 1]} ${values[0]}, ${values[2]}`;
 }
 
 export default class PostTemplate extends React.Component {

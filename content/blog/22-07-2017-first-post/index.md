@@ -2,7 +2,7 @@
 title: "Optimizing Sketch Files: Lessons Learned In Creating The Reduce App"
 slug: "first-post"
 date: "01/08/2018"
-draft: false
+draft: true
 cover: ""
 tags:
     - performance
