@@ -8,7 +8,7 @@ const groupPostsByYear = posts => {
   const groups = {};
   posts.forEach(post => {
     const date = post.date;
-    const year = date.split("/")[2];
+    const year = date.split("-")[0];
     if (groups[year]) {
       groups[year].push(post);
     } else {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import get from "lodash/get";
 import Helmet from "react-helmet";
 import config from "../../../config";
 
@@ -15,7 +16,9 @@ class SEO extends Component {
       description = postMeta.description
         ? postMeta.description
         : postNode.excerpt;
-      image = postMeta.cover;
+      image =
+        get(postMeta.cover, "childImageSharp.resize.src", null) ||
+        config.siteLogo;
       postURL = config.siteUrl + config.pathPrefix + postPath;
     } else {
       title = config.siteTitle;

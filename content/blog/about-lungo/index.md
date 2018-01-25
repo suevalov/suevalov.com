@@ -1,9 +1,10 @@
 ---
 title: "Lungo: App That Keeps Your Mac Awake"
 slug: "about-lungo"
-date: "24/01/2018"
+date: "2018-01-24"
 draft: false
-cover: "./lungo.png"
+cover: "./lungo-2.png"
+showCoverInPost: true
 tags:
     - apps
     - productivity

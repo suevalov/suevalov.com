@@ -55,7 +55,6 @@ module.exports = {
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
           "gatsby-remark-autolink-headers",
-          "gatsby-remark-graph",
           "gatsby-remark-external-links"
         ]
       }
@@ -179,7 +178,6 @@ module.exports = {
                     fields { slug }
                     frontmatter {
                       title
-                      cover
                       date
                       tags
                     }

@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "react-emotion";
+import Image from "gatsby-image";
 import {
   DEFAULT_MEDIA_QUERY,
   MOBILE_MEDIA_QUERY,
@@ -170,25 +171,6 @@ const MetaRow = styled("div")`
   }
 `;
 
-function convertDate(value: string) {
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
-  ];
-  const values = value.split("/").map(item => parseInt(item, 10));
-  return `${months[values[1] - 1]} ${values[0]}, ${values[2]}`;
-}
-
 export default class PostTemplate extends React.Component {
   render() {
     const { slug } = this.props.pathContext;
@@ -198,6 +180,7 @@ export default class PostTemplate extends React.Component {
     const headings = (postNode.headings || []).filter(
       heading => heading.depth === 2
     );
+    const showCoverInPost = postNode.fields.showCoverInPost;
     const hasTableOfContents = headings.length > 2;
     const tableOfContents = postNode.tableOfContents;
     if (!post.id) {
@@ -215,7 +198,7 @@ export default class PostTemplate extends React.Component {
             <MetaRow>
               <PostTags tags={post.tags} />
               <div>
-                <time>{convertDate(post.date)}</time>
+                <time>{post.date}</time>
                 <span />
                 <time>{timeToRead} min read</time>
               </div>
@@ -226,6 +209,16 @@ export default class PostTemplate extends React.Component {
             {hasTableOfContents && (
               <TableOfContents tableOfContents={tableOfContents} />
             )}
+            {showCoverInPost &&
+              post.cover && (
+                <div
+                  style={{
+                    marginBottom: 30
+                  }}
+                >
+                  <Image sizes={post.cover.childImageSharp.sizes} />
+                </div>
+              )}
             <article dangerouslySetInnerHTML={{ __html: postNode.html }} />
             <SocialLinks postPath={slug} postNode={postNode} />
             <div style={{ textAlign: "center" }}>
@@ -255,12 +248,22 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-        date
-        cover
+        date(formatString: "MMMM Do, YYYY")
+        cover {
+          childImageSharp {
+            resize(width: 1000) {
+              src
+            }
+            sizes(maxWidth: 786) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
         tags
       }
       fields {
         slug
+        showCoverInPost
       }
     }
   }
