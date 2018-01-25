@@ -204,7 +204,7 @@ export default class ExperienceBlock extends React.Component {
             </li>
             <li>
               <EventTime>
-                <time>Jul 2016</time>
+                <time>Jul 2013</time>
               </EventTime>
               <Event>
                 <MoveToEvent>Moved to Saint Petersburg, Russia</MoveToEvent>
