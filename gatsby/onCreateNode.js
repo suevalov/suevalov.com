@@ -24,5 +24,12 @@ module.exports = ({ node, boundActionCreators, getNode }) => {
       slug = `/${parsedFilePath.dir}/`;
     }
     createNodeField({ node, name: "slug", value: prefix + slug });
+    const showCoverInPost = Object.prototype.hasOwnProperty.call(
+      node.frontmatter,
+      "showCoverInPost"
+    )
+      ? node.frontmatter.showCoverInPost
+      : false;
+    createNodeField({ node, name: "showCoverInPost", value: showCoverInPost });
   }
 };

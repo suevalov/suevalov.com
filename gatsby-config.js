@@ -35,18 +35,27 @@ module.exports = {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
+          `gatsby-plugin-sharp`,
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 690
+              maxWidth: 700,
+              linkImagesToOriginal: false
             }
           },
           {
-            resolve: "gatsby-remark-responsive-iframe"
+            resolve: "gatsby-remark-embed-video",
+            options: {
+              width: 600,
+              ratio: 1.77
+            }
           },
+          "gatsby-remark-responsive-iframe",
+          "gatsby-remark-emojis",
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers"
+          "gatsby-remark-autolink-headers",
+          "gatsby-remark-external-links"
         ]
       }
     },
@@ -68,6 +77,7 @@ module.exports = {
         pathToConfigModule: "src/utils/typography.js"
       }
     },
+    "gatsby-plugin-twitter",
     "gatsby-plugin-emotion",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
@@ -168,7 +178,6 @@ module.exports = {
                     fields { slug }
                     frontmatter {
                       title
-                      cover
                       date
                       tags
                     }

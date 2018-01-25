@@ -10,7 +10,6 @@ module.exports = {
   siteRss: "/blog/rss.xml", // Path to the RSS file.
   siteFBAppID: "", // FB Application ID for using app insights
   googleAnalyticsID: "UA-112843005-1", // GA tracking ID.
-  disqusShortname: "", // Disqus shortname.
   userName: "Alex Suevalov", // Username to display in the author segment.
   userTwitter: "suevalov", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Wroclaw, Poland", // User location to display in the author segment.

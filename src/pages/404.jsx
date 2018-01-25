@@ -8,9 +8,8 @@ class Blog extends React.Component {
     return (
       <div>
         <Helmet title={`Not Found - ${config.siteTitle}`} />
-        <FancyH1 style={{ marginTop: 100 }}>404</FancyH1>
+        <FancyH1 style={{ paddingTop: 100 }}>404</FancyH1>
         <FancyH2>Page you{"'"}re looking for is not found</FancyH2>
-        <div style={{ height: 100 }} />
       </div>
     );
   }

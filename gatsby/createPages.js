@@ -11,9 +11,7 @@ module.exports = ({ graphql, boundActionCreators }) => {
       graphql(
         `
           {
-            allMarkdownRemark(
-              filter: { frontmatter: { draft: { ne: true } } }
-            ) {
+            allMarkdownRemark {
               edges {
                 node {
                   frontmatter {

@@ -80,6 +80,18 @@ export default class Header extends React.Component {
             <Link
               className="animated"
               isActive={(match, location) =>
+                location.pathname.indexOf("/blog") === 0
+              }
+              to="/blog"
+              activeClassName={activeLinkClass}
+            >
+              Blog
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link
+              className="animated"
+              isActive={(match, location) =>
                 location.pathname.indexOf("/talks") === 0
               }
               to="/talks"

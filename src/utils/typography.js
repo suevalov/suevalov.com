@@ -19,12 +19,9 @@ const typography = new Typography({
   ],
   bodyFontFamily: [
     "Open Sans",
-    "HelveticaNeue-Light",
-    "Helvetica Neue Light",
-    "Helvetica Neue",
-    "Helvetica",
+    "-apple-system",
+    "BlinkMacSystemFont",
     "Arial",
-    "Lucida Grande",
     "sans-serif"
   ],
   bodyColor: "hsla(0,0%,0%,0.9)",
