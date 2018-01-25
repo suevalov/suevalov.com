@@ -6,3 +6,5 @@
   Cache-Control: public, max-age=2592000
 /images/*
   Cache-Control: public, max-age=2592000
+/sw.js
+  Cache-Control: no-cache
