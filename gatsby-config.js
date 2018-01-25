@@ -78,6 +78,7 @@ module.exports = {
         pathToConfigModule: "src/utils/typography.js"
       }
     },
+    "gatsby-plugin-twitter",
     "gatsby-plugin-emotion",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",

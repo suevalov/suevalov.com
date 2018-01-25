@@ -31,6 +31,16 @@ const PostContainer = styled("div")`
     margin-right: -100px;
   }
 
+  .highlight {
+    background-color: rgba(137, 188, 254, 0.3);
+
+    code {
+      font-size: 0.85em;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
   li ul,
   li ol {
     margin-top: 0;
@@ -45,6 +55,7 @@ const PostContainer = styled("div")`
 
     li {
       padding-left: 10px;
+      margin-bottom: 5px;
     }
   }
 
@@ -56,8 +67,8 @@ const PostContainer = styled("div")`
     li {
       position: relative;
       counter-increment: step-counter;
-      margin-bottom: 10px;
       padding-left: 5px;
+      margin-bottom: 5px;
       margin-left: 25px;
 
       &:before {
@@ -108,6 +119,12 @@ const PostContainer = styled("div")`
 
   blockquote {
     margin-left: 0;
+  }
+
+  twitterwidget {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px !important;
   }
 
   ${DEFAULT_MEDIA_QUERY} {
@@ -238,8 +255,8 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-        cover
         date
+        cover
         tags
       }
       fields {
