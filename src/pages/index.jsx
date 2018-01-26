@@ -92,7 +92,7 @@ class Index extends React.Component {
         <Row justifyContent="flex-start">
           <TalksList>
             <h3>
-              Latest posts
+              Latest Posts
               <Link className="animated" to="/blog">
                 see all
               </Link>
