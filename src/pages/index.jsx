@@ -43,6 +43,10 @@ const TalksList = styled("div")`
     margin: 0;
   }
 
+  ul li {
+    display: block;
+  }
+
   li:last-child {
     margin: 0;
   }
@@ -99,9 +103,9 @@ class Index extends React.Component {
             </h3>
             <ul>
               {posts.map(post => (
-                <Link key={post.slug} to={post.slug}>
-                  {post.title}
-                </Link>
+                <li key={post.slug}>
+                  <Link to={post.slug}>{post.title}</Link>
+                </li>
               ))}
             </ul>
           </TalksList>

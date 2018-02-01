@@ -108,10 +108,20 @@ const PostContainer = styled("div")`
     }
   }
 
+  h3 {
+    margin-top: 3rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    margin-top: 2rem;
+  }
+
   figure {
     figcaption {
       text-align: center;
-      font-size: 0.9em;
+      font-size: 1em;
       font-style: italic;
       color: #666;
       padding: 0.75em 2em 0.75em 0;
