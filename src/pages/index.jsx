@@ -23,8 +23,11 @@ const Row = styled("div")`
 const TalksList = styled("div")`
   font-size: 0.9em;
 
+  min-width: 50%;
+  margin-top: 40px;
+
   h3 {
-    margin-top: 20px;
+    margin-top: 0;
     margin-bottom: 20px;
 
     a {
@@ -48,7 +51,6 @@ const TalksList = styled("div")`
 const classes = {
   leadContacts: css`
     min-width: 250px;
-    min-height: 100px;
 
     ${TABLET_MEDIA_QUERY} {
       width: 100%;
@@ -68,10 +70,16 @@ const classes = {
 class Index extends React.Component {
   render() {
     const talks = this.props.data.allTalksJson.edges.map(edge => edge.node);
+    const posts = this.props.data.allMarkdownRemark.edges
+      .map(edge => edge.node)
+      .map(node => ({
+        title: node.frontmatter.title,
+        slug: node.fields.slug
+      }));
     return (
       <div>
         <Helmet title={Config.siteTitle} />
-        <Row justifyContent="space-between">
+        <Row justifyContent="space-between" style={{ marginBottom: 0 }}>
           <LeadText
             techs={Config.techInterestedIn}
             className={classes.leadText}
@@ -81,7 +89,22 @@ class Index extends React.Component {
             className={classes.leadContacts}
           />
         </Row>
-        <Row justifyContent="space-between">
+        <Row justifyContent="flex-start">
+          <TalksList>
+            <h3>
+              Latest Posts
+              <Link className="animated" to="/blog">
+                see all
+              </Link>
+            </h3>
+            <ul>
+              {posts.map(post => (
+                <Link key={post.slug} to={post.slug}>
+                  {post.title}
+                </Link>
+              ))}
+            </ul>
+          </TalksList>
           <TalksList>
             <h3>
               Latest Talks
@@ -106,6 +129,22 @@ class Index extends React.Component {
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
+    allMarkdownRemark(
+      limit: 5
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { draft: { ne: true } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
     allTalksJson(limit: 3) {
       edges {
         node {
