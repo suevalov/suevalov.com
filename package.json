@@ -21,9 +21,9 @@
     "classnames": "2.2.5",
     "emotion": "8.0.12",
     "emotion-server": "8.0.12",
-    "gatsby": "1.9.177",
+    "gatsby": "1.9.175",
     "gatsby-image": "1.0.34",
-    "gatsby-link": "1.6.36",
+    "gatsby-link": "1.6.35",
     "gatsby-plugin-catch-links": "1.0.15",
     "gatsby-plugin-emotion": "1.1.11",
     "gatsby-plugin-feed": "1.3.16",
@@ -97,14 +97,13 @@
     "develop": "gatsby develop",
     "dev": "npm run develop",
     "serve": "gatsby serve",
-    "build": "gatsby build",
-    "build:pp": "gatsby build --prefix-paths",
-    "build:gh": "npm run clean && npm run build:pp && gh-pages -d public",
+    "build": "npm run patch && gatsby build",
     "clean": "rm -rf public && rm -rf .cache",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/blog/",
     "format:js": "prettier 'src/**/*.{js,jsx}' --write",
-    "precommit": "./node_modules/.bin/lint-staged"
+    "precommit": "./node_modules/.bin/lint-staged",
+    "patch": "sed -i -e 's/if(c\\.initial) return;/if(!c||c.initial) return;/g' ./node_modules/extract-text-webpack-plugin/index.js"
   },
   "remarkConfig": {
     "plugins": [
