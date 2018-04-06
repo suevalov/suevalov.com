@@ -17,7 +17,7 @@ What is [Setapp]? First of all, it's a product I fell in love with from the very
 
 <figure>
     <img src="./setapp-menu.png" alt="Setapp menu" title="Setapp menu">
-    <figcaption>A list of apps is carefully split by categories to search experience</figcaption>
+    <figcaption>A list of apps is carefully split by categories to enhance search experience</figcaption>
 </figure>
 
 At the moment of writing this article they have 107 apps on the platform and the number constantly grows.
