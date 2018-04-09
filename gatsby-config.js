@@ -1,17 +1,14 @@
 const config = require("./config");
 
-const pathPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
-
 module.exports = {
-  pathPrefix: config.pathPrefix,
   siteMetadata: {
-    siteUrl: config.siteUrl + pathPrefix,
+    siteUrl: config.siteUrl,
     rssMetadata: {
-      site_url: config.siteUrl + pathPrefix,
-      feed_url: config.siteUrl + pathPrefix + config.siteRss,
+      site_url: config.siteUrl,
+      feed_url: config.siteUrl + config.siteRss,
       title: config.siteTitle,
       description: config.siteDescription,
-      image_url: `${config.siteUrl + pathPrefix}/logos/logo-512x512.png`,
+      image_url: `${config.siteUrl}/logos/logo-512x512.png`,
       author: config.userName,
       copyright: "© Alex Suevalov"
     }
@@ -93,7 +90,6 @@ module.exports = {
         name: config.siteTitle,
         short_name: config.shortSiteTitle,
         description: config.siteDescription,
-        start_url: config.pathPrefix,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: "minimal-ui",
@@ -112,11 +108,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        navigateFallback: null,
-        navigateFallbackWhitelist: []
-      }
+      resolve: `gatsby-plugin-remove-serviceworker`
     },
     {
       resolve: "gatsby-plugin-feed",

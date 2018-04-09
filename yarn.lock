@@ -4817,6 +4817,10 @@ gatsby-plugin-react-next@1.0.11:
     react "^16.0.0"
     react-dom "^16.0.0"
 
+gatsby-plugin-remove-serviceworker@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-remove-serviceworker/-/gatsby-plugin-remove-serviceworker-1.0.0.tgz#9fb433bc8bd766e14e1d3711c4ac6f051e1dff7c"
+
 gatsby-plugin-sharp@1.6.41, gatsby-plugin-sharp@^1.6.41:
   version "1.6.41"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.41.tgz#87dc28d226d70e63408bf31983268efdf10e8b1d"
