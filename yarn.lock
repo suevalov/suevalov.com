@@ -4862,9 +4862,9 @@ gatsby-remark-copy-linked-files@1.5.31:
     probe-image-size "^3.2.0"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-embed-video@1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-embed-video/-/gatsby-remark-embed-video-1.0.6.tgz#917773ab3f1caf410b5ad1a57a0eab61f98f674a"
+gatsby-remark-embed-video@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-embed-video/-/gatsby-remark-embed-video-1.0.2.tgz#e627cc12c7dea823c20d1784f6e2cc41a47fff65"
   dependencies:
     babel-runtime "^6.26.0"
     get-video-id "^2.1.7"
