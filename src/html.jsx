@@ -47,9 +47,9 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1.0"
           />
           <script>
-            if (navigator && navigator.serviceWorker &&
-            navigator.serviceWorker.getRegistrations){" "}
-            {navigator.serviceWorker.getRegistrations().then(registrations => {
+            if (window.navigator && window.navigator.serviceWorker &&
+              window.navigator.serviceWorker.getRegistrations){" "}
+            {window.navigator.serviceWorker.getRegistrations().then(registrations => {
               for (var i = 0; i < registrations.length; i += 1) {
                 registrations[i].unregister();
               }
