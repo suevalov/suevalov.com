@@ -16,6 +16,20 @@ if (process.env.NODE_ENV === "production") {
 }
 
 export default class HTML extends React.Component {
+  componentDidMount() {
+    if (
+      window.navigator &&
+      window.navigator.serviceWorker &&
+      window.navigator.serviceWorker.getRegistrations
+    ) {
+      window.navigator.serviceWorker.getRegistrations().then(registrations => {
+        for (let i = 0; i < registrations.length; i += 1) {
+          registrations[i].unregister();
+        }
+      });
+    }
+  }
+
   render() {
     let css;
     if (process.env.NODE_ENV === "production") {
@@ -46,15 +60,6 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <script>
-            if (window.navigator && window.navigator.serviceWorker &&
-              window.navigator.serviceWorker.getRegistrations){" "}
-            {window.navigator.serviceWorker.getRegistrations().then(registrations => {
-              for (var i = 0; i < registrations.length; i += 1) {
-                registrations[i].unregister();
-              }
-            })}
-          </script>
           {this.props.headComponents}
           <link rel="shortcut icon" href={favicon} />
           {css}
