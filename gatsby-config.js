@@ -116,7 +116,7 @@ module.exports = {
       options: {
         navigateFallback: null,
         navigateFallbackWhitelist: [],
-        cacheId: "gatsby-plugin-offline-3"
+        cacheId: "gatsby-plugin-offline-4"
       }
     },
     {
