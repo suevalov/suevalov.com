@@ -29,7 +29,6 @@ export default class HTML extends React.Component {
     return (
       <html lang="en">
         <head>
-          <script type="text/javascript" src="/unregister.js" />
           <link
             rel="preload"
             href="/static/open-sans-latin-400.cffb686d.woff2"

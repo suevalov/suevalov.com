@@ -112,6 +112,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        navigateFallback: null,
+        navigateFallbackWhitelist: []
+      }
+    },
+    {
       resolve: "gatsby-plugin-feed",
       options: {
         setup(ref) {
