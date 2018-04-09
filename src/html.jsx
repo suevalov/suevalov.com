@@ -16,20 +16,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 export default class HTML extends React.Component {
-  componentDidMount() {
-    if (
-      window.navigator &&
-      window.navigator.serviceWorker &&
-      window.navigator.serviceWorker.getRegistrations
-    ) {
-      window.navigator.serviceWorker.getRegistrations().then(registrations => {
-        for (let i = 0; i < registrations.length; i += 1) {
-          registrations[i].unregister();
-        }
-      });
-    }
-  }
-
   render() {
     let css;
     if (process.env.NODE_ENV === "production") {
@@ -43,6 +29,7 @@ export default class HTML extends React.Component {
     return (
       <html lang="en">
         <head>
+          <script type="text/javascript" src="/unregister.js" />
           <link
             rel="preload"
             href="/static/open-sans-latin-400.cffb686d.woff2"
