@@ -216,9 +216,6 @@ export default class PostTemplate extends React.Component {
           </PostContainer>
           <hr />
           <PostContainer>
-            {hasTableOfContents && (
-              <TableOfContents tableOfContents={tableOfContents} />
-            )}
             {showCoverInPost &&
               post.cover && (
                 <div
@@ -229,7 +226,12 @@ export default class PostTemplate extends React.Component {
                   <Image sizes={post.cover.childImageSharp.sizes} />
                 </div>
               )}
-            <article dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            <article>
+              {hasTableOfContents && (
+                <TableOfContents tableOfContents={tableOfContents} />
+              )}
+              <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            </article>
             <SocialLinks postPath={slug} postNode={postNode} />
             <div style={{ textAlign: "center" }}>
               <PostTags tags={post.tags} />

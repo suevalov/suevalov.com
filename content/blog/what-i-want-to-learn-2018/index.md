@@ -13,7 +13,9 @@ tags:
 
 Programming world evolves extremely quick and it's impossible to track all the news and be up to date with all technologies. We have to narrow down and pick carefully.
 
-I have picked a number of technologies I want to learn in 2018 and I'd like to share the list with you and try to explain why I did this choice.
+<div>
+    I have picked a number of technologies I want to learn in 2018 and I'd like to share the list with you and try to explain why I did this choice.
+</div>
 
 ## ReasonML
 
@@ -37,15 +39,13 @@ as you can use Kotlin syntax in existing Java code and it will work perfectly.
 
 [Apollo](https://www.apollographql.com/) allows to build GraphQL API on top of your existing REST APIs. It is a family of technologies you can incrementally add to your stack: Apollo Client to connect data to your UI, Apollo Engine for infrastructure and tooling, and Apollo Server to translate your REST API and backends into a GraphQL schema.
 
-* __Eliminates boilerplate__. No more action creators, async handling, and request waterfalls. Just ask for the data you need with GraphQL query and it shows up.
+* Eliminates boilerplate.
 
-* __Validation across the stack__. Identify breaking changes in our API before they are deployed and statically validate data fetching across all of your front-ends.
+* You can put computed fields, data transformations, and security logic into your API so your front-ends don't have to reimplement them every time.
 
-* __Pulls complexity out of the client__. Put computed fields, data transformations, and security logic into your API so your front-ends don't have to reimplement them every time.
+* Add fields to GraphQL as you go and deprecate old fields when you no longer need them. Mock some or all of your API and build the front-end in parallel.
 
-* __Incrementally evolve your API__. Add fields to GraphQL as you go and deprecate old fields when you no longer need them. Mock some or all of your API and build the front-end in parallel.
-
-* __Improve performance__. Fetch exactly data you need, no more and no less. Improve performance with GraphQL specific caching and optimizations across the stack.
+* Fetch exactly data you need, no more and no less. Improve performance with GraphQL specific caching and optimizations across the stack.
 
 ## Cypress
 
