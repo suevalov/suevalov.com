@@ -103,7 +103,8 @@
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/blog/",
     "format:js": "prettier 'src/**/*.{js,jsx}' --write",
-    "precommit": "./node_modules/.bin/lint-staged"
+    "precommit": "./node_modules/.bin/lint-staged",
+    "patch": "sed -i -e 's/if(c\\.initial) return;/if(!c||c.initial) return;/g' ./node_modules/extract-text-webpack-plugin/index.js"
   },
   "remarkConfig": {
     "plugins": [

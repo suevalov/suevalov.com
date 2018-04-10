@@ -78,7 +78,6 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
-    "gatsby-transformer-json",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-sitemap",
