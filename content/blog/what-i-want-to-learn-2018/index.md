@@ -21,7 +21,6 @@ Programming world evolves extremely quick and it's impossible to track all the n
 
 During the last several years I have barely used JavaScript without types. The web development became too complicated and in order to keep sanity, I prefer to give as much responsibility to the machine as possible. [Flow](https://flow.org/) by Facebook and [TypeScript](https://www.typescriptlang.org/) by Microsoft are excellent solutions that helped me and my teams to write more sound and maintainable code.
 
-The next big thing might be [ReasonML](https://reasonml.github.io/). It's not a new language, it's a new syntax and really powerful toolchain by the battle-tested language, OCaml. The syntax is really easy to pick up if you're JavaScript developer. Reason can be compiled to JavaScript using [BuckleScript](https://bucklescript.github.io/). Consider it as solidly statically typed, faster and simpler cousin of JavaScript. 
 The next big thing might be [ReasonML](https://reasonml.github.io/). It's not a new language, it's a new syntax and really powerful toolchain by the battle-tested language, OCaml. The syntax is really easy to pick up if you're JavaScript developer. Reason can be compiled to JavaScript using [BuckleScript](https://bucklescript.github.io/). Consider it as solidly statically typed, faster and simpler cousin of JavaScript.
 
 ## Kotlin
