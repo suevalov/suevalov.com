@@ -21,7 +21,7 @@ There are my use cases:
 * Learning German and having a textbook with exercises open on my Mac.
 * Watching videos in non-fullscreen mode.
 
-Going to <span class="highlight">`System Preferences -> Energy Saver`</span> and changing it every time doesn't seem productive to me.
+Going to `System Preferences -> Energy Saver` and changing it every time doesn't seem productive to me.
 
 And here comes [Lungo](https://sindresorhus.com/lungo):
 

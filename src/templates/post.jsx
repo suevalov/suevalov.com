@@ -32,14 +32,11 @@ const PostContainer = styled("div")`
     margin-right: -100px;
   }
 
-  .highlight {
-    background-color: rgba(137, 188, 254, 0.3);
-
-    code {
-      font-size: 0.85em;
-      padding-left: 5px;
-      padding-right: 5px;
-    }
+  code.language-text {
+    padding-left: 5px;
+    padding-right: 5px;
+    background: rgba(137, 188, 254, 0.25);
+    color: #1a1a1a;
   }
 
   li ul,
