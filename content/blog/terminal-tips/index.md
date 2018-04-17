@@ -22,8 +22,7 @@ Let's go thought all the steps I would do if I bought the new laptop and I need 
 
 ## iTerm and oh-my-zsh
 
-for [iTerm2](https://www.iterm2.com/), the best
-replacement of the default `Terminal.app`.
+Let's start from replacing default `Terminal.app` by [iTerm2](https://www.iterm2.com/), feature-packed and easily configurable solution that claimed to "do amazing things". Can't disagree with that.
 
 ## Open links from terminal
 
@@ -53,11 +52,11 @@ Clear buffer: `Cmd + K`
 
 ## Custom Hotkeys
 
-| Keys        | Action        | Value  | Purpose                       |
-| ------------|:-------------:|-------:|------------------------------:|
-| Cmd ←         | “HEX CODE”    | `0x01` | Jump to beginning of the line |
-| Cmd ➝         | “HEX CODE”    | `0x05` | Jump to end of the line       |
-| Cmd Backspace | “HEX CODE”    | `0x15` | Delete current line           |
-| Alt ←         | “ESCAPE SEQ”  | `b`    | Jump to beginning of the word |
-| Alt ➝         | “ESCAPE SEQ”  | `f`    | Jump to end of the word       |
-| Alt Backspace | “HEX CODE”    | `0x17` | Delete word                   |
+| Keys          |    Action    |  Value |                       Purpose |
+| ------------- | :----------: | -----: | ----------------------------: |
+| Cmd ←         |  “HEX CODE”  | `0x01` | Jump to beginning of the line |
+| Cmd ➝         |  “HEX CODE”  | `0x05` |       Jump to end of the line |
+| Cmd Backspace |  “HEX CODE”  | `0x15` |           Delete current line |
+| Alt ←         | “ESCAPE SEQ” |    `b` | Jump to beginning of the word |
+| Alt ➝         | “ESCAPE SEQ” |    `f` |       Jump to end of the word |
+| Alt Backspace |  “HEX CODE”  | `0x17` |                   Delete word |
