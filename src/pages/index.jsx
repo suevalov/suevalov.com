@@ -8,7 +8,7 @@ import LeadText from "../components/LeadText/LeadText";
 import LeadContacts from "../components/LeadContacts/LeadContacts";
 import Config from "../../config";
 import Talk from "../components/Talk";
-import allTalks from "../../data/talks.json";
+import allTalks from "../../content/talks.json";
 
 const Row = styled("div")`
   display: flex;
