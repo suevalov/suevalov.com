@@ -105,10 +105,9 @@ const PostContainer = styled("div")`
     }
   }
 
-  h3 {
-    margin-top: 3rem;
-  }
-
+  h1,
+  h2,
+  h3,
   h4,
   h5,
   h6 {
@@ -200,7 +199,9 @@ export default class PostTemplate extends React.Component {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <main>
-          <FancyH1 style={{ marginBottom: 20 }}>{post.title}</FancyH1>
+          <FancyH1 style={{ marginBottom: 20, lineHeight: "3.5rem" }}>
+            {post.title}
+          </FancyH1>
           <PostContainer>
             <MetaRow>
               <PostTags tags={post.tags} />
