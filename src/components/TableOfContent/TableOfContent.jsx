@@ -13,6 +13,7 @@ const Heading = styled(FancyH2)`
 `;
 
 const Container = styled("div")`
+  display: inline-block;
   float: right;
   margin-right: -100px;
   margin-left: 50px;

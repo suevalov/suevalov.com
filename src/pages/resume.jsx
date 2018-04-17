@@ -7,6 +7,11 @@ import { FancyH1 } from "../components/FancyHeader/FancyHeader";
 import ExperienceBlock from "../components/ExperienceBlock/ExperienceBlock";
 import SkillsBlock from "../components/SkillsBlock/SkillsBlock";
 import RecommendationsBlock from "../components/RecommendationsBlock/RecommendationsBlock";
+import recommendations from "../../data/recommendations.json";
+import languages from "../../data/languages.json";
+import personalQualities from "../../data/personalQualities.json";
+import designSkills from "../../data/designSkills.json";
+import developmentSkills from "../../data/developmentSkills.json";
 
 const Row = styled("div")`
   display: flex;
@@ -42,21 +47,6 @@ const Row = styled("div")`
 
 class Resume extends React.Component {
   render() {
-    const recommendations = this.props.data.allRecommendationsJson.edges.map(
-      edge => edge.node
-    );
-    const languages = this.props.data.allLanguagesJson.edges.map(
-      edge => edge.node
-    );
-    const personalQualities = this.props.data.allPersonalQualitiesJson.edges.map(
-      edge => edge.node
-    );
-    const designSkills = this.props.data.allDesignSkillsJson.edges.map(
-      edge => edge.node
-    );
-    const developmentSkills = this.props.data.allDevelopmentSkillsJson.edges.map(
-      edge => edge.node
-    );
     return (
       <div>
         <Helmet title={Config.siteTitle} />
@@ -79,52 +69,5 @@ class Resume extends React.Component {
     );
   }
 }
-
-/* eslint no-undef: "off" */
-export const pageQuery = graphql`
-  query ResumeQuery {
-    allRecommendationsJson {
-      edges {
-        node {
-          text
-          position
-          name
-        }
-      }
-    }
-    allPersonalQualitiesJson {
-      edges {
-        node {
-          label
-          value
-        }
-      }
-    }
-    allDesignSkillsJson {
-      edges {
-        node {
-          label
-          value
-        }
-      }
-    }
-    allLanguagesJson {
-      edges {
-        node {
-          label
-          value
-        }
-      }
-    }
-    allDevelopmentSkillsJson {
-      edges {
-        node {
-          label
-          value
-        }
-      }
-    }
-  }
-`;
 
 export default Resume;

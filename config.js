@@ -4,7 +4,6 @@ module.exports = {
   siteTitleAlt: "Alex Suevalov | Senior Web Developer", // Alternative site title for SEO.
   siteLogo: "/logos/logo-192x192.png", // Logo used for SEO and manifest.
   siteUrl: "https://suevalov.com", // Domain of your website without pathPrefix.
-  pathPrefix: "/",
   siteDescription:
     "Alex Suevalov's personal website and blog about programming", // Website description used for RSS feeds/meta description tag.
   siteRss: "/blog/rss.xml", // Path to the RSS file.

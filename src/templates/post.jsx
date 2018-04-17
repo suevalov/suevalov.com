@@ -32,14 +32,11 @@ const PostContainer = styled("div")`
     margin-right: -100px;
   }
 
-  .highlight {
-    background-color: rgba(137, 188, 254, 0.3);
-
-    code {
-      font-size: 0.85em;
-      padding-left: 5px;
-      padding-right: 5px;
-    }
+  code.language-text {
+    padding-left: 5px;
+    padding-right: 5px;
+    background: rgba(137, 188, 254, 0.25);
+    color: #1a1a1a;
   }
 
   li ul,
@@ -216,9 +213,6 @@ export default class PostTemplate extends React.Component {
           </PostContainer>
           <hr />
           <PostContainer>
-            {hasTableOfContents && (
-              <TableOfContents tableOfContents={tableOfContents} />
-            )}
             {showCoverInPost &&
               post.cover && (
                 <div
@@ -229,7 +223,12 @@ export default class PostTemplate extends React.Component {
                   <Image sizes={post.cover.childImageSharp.sizes} />
                 </div>
               )}
-            <article dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            <article>
+              {hasTableOfContents && (
+                <TableOfContents tableOfContents={tableOfContents} />
+              )}
+              <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            </article>
             <SocialLinks postPath={slug} postNode={postNode} />
             <div style={{ textAlign: "center" }}>
               <PostTags tags={post.tags} />

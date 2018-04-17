@@ -19,7 +19,6 @@ I have picked a number of technologies I want to learn in 2018 and I'd like to s
 
 During the last several years I have barely used JavaScript without types. The web development became too complicated and in order to keep sanity, I prefer to give as much responsibility to the machine as possible. [Flow](https://flow.org/) by Facebook and [TypeScript](https://www.typescriptlang.org/) by Microsoft are excellent solutions that helped me and my teams to write more sound and maintainable code.
 
-The next big thing might be [ReasonML](https://reasonml.github.io/). It's not a new language, it's a new syntax and really powerful toolchain by the battle-tested language, OCaml. The syntax is really easy to pick up if you're JavaScript developer. Reason can be compiled to JavaScript using [BuckleScript](https://bucklescript.github.io/). Consider it as solidly statically typed, faster and simpler cousin of JavaScript. 
 The next big thing might be [ReasonML](https://reasonml.github.io/). It's not a new language, it's a new syntax and really powerful toolchain by the battle-tested language, OCaml. The syntax is really easy to pick up if you're JavaScript developer. Reason can be compiled to JavaScript using [BuckleScript](https://bucklescript.github.io/). Consider it as solidly statically typed, faster and simpler cousin of JavaScript.
 
 ## Kotlin
@@ -37,15 +36,13 @@ as you can use Kotlin syntax in existing Java code and it will work perfectly.
 
 [Apollo](https://www.apollographql.com/) allows to build GraphQL API on top of your existing REST APIs. It is a family of technologies you can incrementally add to your stack: Apollo Client to connect data to your UI, Apollo Engine for infrastructure and tooling, and Apollo Server to translate your REST API and backends into a GraphQL schema.
 
-* __Eliminates boilerplate__. No more action creators, async handling, and request waterfalls. Just ask for the data you need with GraphQL query and it shows up.
+* Eliminates boilerplate.
 
-* __Validation across the stack__. Identify breaking changes in our API before they are deployed and statically validate data fetching across all of your front-ends.
+* You can put computed fields, data transformations, and security logic into your API so your front-ends don't have to reimplement them every time.
 
-* __Pulls complexity out of the client__. Put computed fields, data transformations, and security logic into your API so your front-ends don't have to reimplement them every time.
+* Add fields to GraphQL as you go and deprecate old fields when you no longer need them. Mock some or all of your API and build the front-end in parallel.
 
-* __Incrementally evolve your API__. Add fields to GraphQL as you go and deprecate old fields when you no longer need them. Mock some or all of your API and build the front-end in parallel.
-
-* __Improve performance__. Fetch exactly data you need, no more and no less. Improve performance with GraphQL specific caching and optimizations across the stack.
+* Fetch exactly data you need, no more and no less. Improve performance with GraphQL specific caching and optimizations across the stack.
 
 ## Cypress
 

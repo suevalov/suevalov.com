@@ -8,6 +8,7 @@ import LeadText from "../components/LeadText/LeadText";
 import LeadContacts from "../components/LeadContacts/LeadContacts";
 import Config from "../../config";
 import Talk from "../components/Talk";
+import allTalks from "../../data/talks.json";
 
 const Row = styled("div")`
   display: flex;
@@ -73,7 +74,7 @@ const classes = {
 
 class Index extends React.Component {
   render() {
-    const talks = this.props.data.allTalksJson.edges.map(edge => edge.node);
+    const talks = allTalks.slice(0, 3);
     const posts = this.props.data.allMarkdownRemark.edges
       .map(edge => edge.node)
       .map(node => ({
@@ -146,18 +147,6 @@ export const pageQuery = graphql`
           frontmatter {
             title
           }
-        }
-      }
-    }
-    allTalksJson(limit: 3) {
-      edges {
-        node {
-          title
-          place
-          date
-          url
-          video
-          language
         }
       }
     }

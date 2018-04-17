@@ -5,29 +5,25 @@ import SEO from "../components/SEO/SEO";
 import config from "../../config";
 import { FancyH1 } from "../components/FancyHeader/FancyHeader";
 
-class Blog extends React.Component {
-  render() {
-    const postEdges = this.props.data.allMarkdownRemark
-      ? this.props.data.allMarkdownRemark.edges
-      : [];
-    return (
-      <div>
-        <Helmet title={config.siteTitle} />
-        <SEO postEdges={postEdges} />
-        <FancyH1>Blog</FancyH1>
-        <PostListing postEdges={postEdges} />
-      </div>
-    );
-  }
-}
-
-export default Blog;
+const Blog = props => {
+  const postEdges = props.data.allMarkdownRemark
+    ? props.data.allMarkdownRemark.edges
+    : [];
+  return (
+    <div>
+      <Helmet title={config.siteTitle} />
+      <SEO postEdges={postEdges} />
+      <FancyH1>Blog</FancyH1>
+      <PostListing postEdges={postEdges} />
+    </div>
+  );
+};
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogQuery {
     allMarkdownRemark(
-      limit: 2000
+      limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { draft: { ne: true } } }
     ) {
@@ -47,3 +43,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default Blog;

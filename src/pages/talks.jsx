@@ -7,6 +7,7 @@ import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
 import config from "../../config";
 import { FancyH1, FancyH2 } from "../components/FancyHeader/FancyHeader";
 import Talk from "../components/Talk";
+import allTalks from "../../data/talks.json";
 
 const groupTalksByYear = talks => {
   const groups = {};
@@ -55,8 +56,7 @@ const TalksList = styled("ul")`
 
 class Talks extends React.Component {
   render() {
-    const talks = this.props.data.allTalksJson.edges.map(edge => edge.node);
-    const groupedTalks = groupTalksByYear(talks);
+    const groupedTalks = groupTalksByYear(allTalks);
     return (
       <div>
         <Helmet title={config.siteTitle} />
@@ -79,23 +79,5 @@ class Talks extends React.Component {
     );
   }
 }
-
-/* eslint no-undef: "off" */
-export const pageQuery = graphql`
-  query TalksQuery {
-    allTalksJson {
-      edges {
-        node {
-          title
-          place
-          date
-          url
-          video
-          language
-        }
-      }
-    }
-  }
-`;
 
 export default Talks;
