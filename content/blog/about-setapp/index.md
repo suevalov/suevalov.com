@@ -16,8 +16,7 @@ What is [Setapp]? First of all, it's a product I fell in love with from the very
 [Setapp] is a subscription service that is making a revolution in apps distribution on macOS. Instead of buying each application separately, you just pay a fixed amount of money each month as a subscription fee and get a huge list of apps available for download and use anytime you want.
 
 <figure>
-    <img src="./setapp-menu.png" alt="Setapp menu" title="Setapp menu">
-    <figcaption>A list of apps is carefully split by categories to enhance search experience</figcaption>
+    <img src="./setapp-menu.png" alt="Setapp menu" title="A list of apps is carefully split by categories to enhance search experience">
 </figure>
 
 At the moment of writing this article they have 107 apps on the platform and the number constantly grows.
@@ -89,8 +88,7 @@ Being exclusively built for macOS, Paw is a powerful app for developers to debug
 Actually, it's not. Let's do a quick calculation.
 
 <figure>
-    <img src="./setapp-cost.png" alt="Price for my 10 favourite apps" title="Price for my 10 favourite apps">
-    <figcaption>Total cost of my favourite apps is $286</figcaption>
+    <img src="./setapp-cost.png" alt="Price for my 10 favourite apps" title="Total cost of my favourite apps is $286">
 </figure>
 
 [Setapp] costs $9.99 + VAT per month, so would spend these $286 only after 2 years of having subscription, but there some other facts that should be considered along with price:

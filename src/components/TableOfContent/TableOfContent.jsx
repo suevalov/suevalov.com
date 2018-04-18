@@ -9,7 +9,8 @@ type Props = {
 
 const Heading = styled(FancyH2)`
   font-size: 1.2em;
-  margin-bottom: 15px;
+  margin-bottom: 15px !important;
+  margin-top: 0 !important;
 `;
 
 const Container = styled("div")`
@@ -24,6 +25,10 @@ const Container = styled("div")`
 
   ul li ul {
     display: none;
+  }
+
+  ul li p {
+    margin-bottom: 0;
   }
 
   ul li {

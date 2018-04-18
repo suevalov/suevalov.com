@@ -13,9 +13,7 @@ tags:
 
 Programming world evolves extremely quick and it's impossible to track all the news and be up to date with all technologies. We have to narrow down and pick carefully.
 
-<div>
-    I have picked a number of technologies I want to learn in 2018 and I'd like to share the list with you and try to explain why I did this choice.
-</div>
+I have picked a number of technologies I want to learn in 2018 and I'd like to share the list with you and try to explain why I did this choice.
 
 ## ReasonML
 

@@ -22,13 +22,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "data",
-        path: `${__dirname}/data`
-      }
-    },
-    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
@@ -37,7 +30,8 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 700,
-              linkImagesToOriginal: false
+              linkImagesToOriginal: false,
+              showCaptions: true
             }
           },
           {

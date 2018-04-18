@@ -7,11 +7,11 @@ import { FancyH1 } from "../components/FancyHeader/FancyHeader";
 import ExperienceBlock from "../components/ExperienceBlock/ExperienceBlock";
 import SkillsBlock from "../components/SkillsBlock/SkillsBlock";
 import RecommendationsBlock from "../components/RecommendationsBlock/RecommendationsBlock";
-import recommendations from "../../data/recommendations.json";
-import languages from "../../data/languages.json";
-import personalQualities from "../../data/personalQualities.json";
-import designSkills from "../../data/designSkills.json";
-import developmentSkills from "../../data/developmentSkills.json";
+import recommendations from "../../content/recommendations.json";
+import languages from "../../content/languages.json";
+import personalQualities from "../../content/personalQualities.json";
+import designSkills from "../../content/designSkills.json";
+import developmentSkills from "../../content/developmentSkills.json";
 
 const Row = styled("div")`
   display: flex;

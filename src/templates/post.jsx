@@ -105,10 +105,9 @@ const PostContainer = styled("div")`
     }
   }
 
-  h3 {
-    margin-top: 3rem;
-  }
-
+  h1,
+  h2,
+  h3,
   h4,
   h5,
   h6 {
@@ -116,6 +115,10 @@ const PostContainer = styled("div")`
   }
 
   figure {
+    img {
+      margin-bottom: 0;
+    }
+
     figcaption {
       text-align: center;
       font-size: 1em;
@@ -133,6 +136,20 @@ const PostContainer = styled("div")`
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px !important;
+  }
+
+  .gatsby-highlight {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: -80px;
+    margin-right: -80px;
+  }
+
+  ${DEFAULT_MEDIA_QUERY} {
+    .gatsby-highlight {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   ${DEFAULT_MEDIA_QUERY} {
@@ -200,7 +217,9 @@ export default class PostTemplate extends React.Component {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <main>
-          <FancyH1 style={{ marginBottom: 20 }}>{post.title}</FancyH1>
+          <FancyH1 style={{ marginBottom: 20, lineHeight: "3.5rem" }}>
+            {post.title}
+          </FancyH1>
           <PostContainer>
             <MetaRow>
               <PostTags tags={post.tags} />
