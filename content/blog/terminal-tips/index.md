@@ -116,7 +116,61 @@ iTerm offers the option to disable “native full screen mode.” This makes it 
 
 ## Add Plugins and Aliases
 
-* itermocil
-* thefuck
-* z
-* add plugins for zsh
+Add your custom aliases and plugins to `~/.zshrc`. I use the following things:
+
+```bash
+# enables my favorite oh-my-zsh plugins
+plugins=(git npm node extract yarn)
+
+# instead of 'sudo <command>' you can use 'please <command>'
+alias please=sudo
+
+# show only directories
+alias lsd='ls -l | grep "^d"'
+# show files and directories in as a table
+alias ll='ls -alF'
+
+# navigation shortcuts
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias cd..='cd ..'
+alias .....='cd ../../../..'
+
+# git aliases and common git typos
+alias g='git'
+alias gti='git'
+alias gi='git'
+alias gco='git checkout'
+alias gst='git status'
+alias gcm='git commit -m'
+alias gamend='git commit -a --amend'
+alias gdeletemerged='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+
+# open in browser
+alias safari="open -a safari"
+alias firefox="open -a firefox"
+alias opera="open -a opera"
+alias chrome="open -a google\ chrome"
+alias canary="open -a google\ chrome\ canary"
+
+# git log find by commit message
+glf() { git log --all --grep="$1"; }
+
+# open current folder in finder
+alias f='open -a Finder'
+
+# hide/show all desktop icons (useful when presenting)
+alias hidedesktop='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
+alias showdesktop='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
+```
+
+## More cool CLI that I use
+
+* [trash](https://github.com/sindresorhus/trash-cli) and [empty-trash](https://github.com/sindresorhus/empty-trash-cli) for deleting files
+* [fkill](https://github.com/sindresorhus/fkill-cli) for convenient killing processes
+* [imgcat](https://github.com/eddieantonio/imgcat) for checking images in terminal
+* [itermocil](https://github.com/TomAnthony/itermocil) for pre-defined window/pane configuration in iTerm2
+* [thefuck](https://github.com/nvbn/thefuck) for correcting wrong console commands
+* [z](https://github.com/rupa/z) for jumping around the most used folders
+
