@@ -115,6 +115,10 @@ const PostContainer = styled("div")`
   }
 
   figure {
+    img {
+      margin-bottom: 0;
+    }
+
     figcaption {
       text-align: center;
       font-size: 1em;
@@ -132,6 +136,20 @@ const PostContainer = styled("div")`
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px !important;
+  }
+
+  .gatsby-highlight {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: -80px;
+    margin-right: -80px;
+  }
+
+  ${DEFAULT_MEDIA_QUERY} {
+    .gatsby-highlight {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   ${DEFAULT_MEDIA_QUERY} {
