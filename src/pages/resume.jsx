@@ -45,12 +45,22 @@ const Row = styled("div")`
   }
 `;
 
+const DownloadLink = styled("a")`
+  font-size: 16px;
+  margin-left: 20px;
+`;
+
 class Resume extends React.Component {
   render() {
     return (
       <div>
         <Helmet title={Config.siteTitle} />
-        <FancyH1>Resume</FancyH1>
+        <FancyH1>
+          Resume{" "}
+          <DownloadLink href="/cv_alexander_suevalov.pdf">
+            Download as PDF
+          </DownloadLink>
+        </FancyH1>
         <Row style={{ marginTop: 50 }}>
           <div>
             <ExperienceBlock />
