@@ -3,7 +3,6 @@ import Helmet from "react-helmet";
 import PostListing from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";
 import config from "../../config";
-import { FancyH1 } from "../components/FancyHeader/FancyHeader";
 
 const Blog = props => {
   const postEdges = props.data.allMarkdownRemark
@@ -13,7 +12,6 @@ const Blog = props => {
     <div>
       <Helmet title={config.siteTitle} />
       <SEO postEdges={postEdges} />
-      <FancyH1>Blog</FancyH1>
       <PostListing postEdges={postEdges} />
     </div>
   );

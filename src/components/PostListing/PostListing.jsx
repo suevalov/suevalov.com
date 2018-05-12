@@ -1,8 +1,14 @@
 import React from "react";
+import styled from "react-emotion";
 import sortBy from "lodash/sortBy";
 import keys from "lodash/keys";
 import Link from "gatsby-link";
 import { FancyH2 } from "../../components/FancyHeader/FancyHeader";
+
+const PostListingContainer = styled("div")`
+  margin: 60px auto 0px auto;
+  max-width: 560px;
+`;
 
 const groupPostsByYear = posts => {
   const groups = {};
@@ -42,7 +48,7 @@ class PostListing extends React.Component {
     const postList = this.getPostList();
     const groupsPostList = groupPostsByYear(postList);
     return (
-      <div style={{ marginTop: 60 }}>
+      <PostListingContainer>
         {groupsPostList.map(group => (
           <div key={group.label}>
             <div>
@@ -55,7 +61,7 @@ class PostListing extends React.Component {
             ))}
           </div>
         ))}
-      </div>
+      </PostListingContainer>
     );
   }
 }

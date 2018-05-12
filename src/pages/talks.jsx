@@ -3,9 +3,8 @@ import Helmet from "react-helmet";
 import styled from "react-emotion";
 import keys from "lodash/keys";
 import sortBy from "lodash/sortBy";
-import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
 import config from "../../config";
-import { FancyH1, FancyH2 } from "../components/FancyHeader/FancyHeader";
+import { FancyH2 } from "../components/FancyHeader/FancyHeader";
 import Talk from "../components/Talk";
 import allTalks from "../../content/talks.json";
 
@@ -28,24 +27,13 @@ const groupTalksByYear = talks => {
 };
 
 const GroupsContainer = styled("div")`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 60px;
-
-  ${TABLET_MEDIA_QUERY} {
-    flex-direction: column;
-  }
+  margin: 60px auto 0 auto;
+  max-width: 560px;
 `;
 
 const Group = styled("div")`
-  width: 40%;
-  margin-right: 10%;
-
-  ${TABLET_MEDIA_QUERY} {
-    width: 100%;
-    margin-right: 0;
-  }
+  width: 100%;
+  margin-bottom: 60px;
 `;
 
 const TalksList = styled("ul")`
@@ -60,7 +48,6 @@ class Talks extends React.Component {
     return (
       <div>
         <Helmet title={config.siteTitle} />
-        <FancyH1>Talks</FancyH1>
         <GroupsContainer>
           {groupedTalks.map(group => (
             <Group key={group.label}>
