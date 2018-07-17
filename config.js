@@ -11,7 +11,7 @@ module.exports = {
   googleAnalyticsID: "UA-112843005-1", // GA tracking ID.
   userName: "Alex Suevalov", // Username to display in the author segment.
   userTwitter: "suevalov", // Optionally renders "Follow Me" in the UserInfo segment.
-  userLocation: "Wroclaw, Poland", // User location to display in the author segment.
+  userLocation: "Berlin, Germany", // User location to display in the author segment.
   userAvatar: "/images/suevalov-100.jpg", // User avatar to display in the author segment.
   userDescription: "Passionate about making complex things simple.", // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.

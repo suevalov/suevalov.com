@@ -24,19 +24,23 @@ type LeadTextProps = {
 };
 
 export default class LeadText extends React.Component<LeadTextProps> {
+  static defaultProps = {
+    className: ""
+  };
+
   render() {
     const currentYear = new Date().getFullYear();
     const experience = currentYear - 2010;
     return (
       <div className={this.props.className}>
         <FancyH1>Hi, I{"'"}m Alex</FancyH1>
-        <H2>Senior JavaScript developer, based&nbsp;in&nbsp;Wrocław.</H2>
-        <H2>
+        <H2>Senior JavaScript developer, based&nbsp;in&nbsp;Berlin.</H2>
+        {/* <H2>
           Work at{" "}
-          <a className="animated" href="http://opera.com">
-            Opera&nbsp;Software
+          <a className="animated" href="http://contentful.com">
+            Contentful
           </a>.
-        </H2>
+        </H2> */}
         <Text style={{ marginTop: 20 }}>
           {experience} years of professional expertise in web development and
           creating complex SPAs.
