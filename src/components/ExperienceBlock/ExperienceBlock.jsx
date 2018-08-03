@@ -122,6 +122,24 @@ export default class ExperienceBlock extends React.Component {
           <ul>
             <li>
               <EventTime>
+                <time>Aug 2018 - present</time>
+              </EventTime>
+              <Event>
+                <EventTitle>Fullstack JavaScript Developer</EventTitle>
+                <EventSubtitle>
+                  <a
+                    className="animated"
+                    href="http://www.contentful.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Contentful
+                  </a>, Berlin
+                </EventSubtitle>
+              </Event>
+            </li>
+            <li>
+              <EventTime>
                 <time>Jul 2018</time>
               </EventTime>
               <Event>
