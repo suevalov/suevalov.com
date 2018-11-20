@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import styled from "react-emotion";
 import keys from "lodash/keys";
 import sortBy from "lodash/sortBy";
+import Layout from "../components/Layout";
 import config from "../../config";
 import { FancyH2 } from "../components/FancyHeader/FancyHeader";
 import Talk from "../components/Talk";
@@ -46,7 +47,7 @@ class Talks extends React.Component {
   render() {
     const groupedTalks = groupTalksByYear(allTalks);
     return (
-      <div>
+      <Layout location={this.props.location}>
         <Helmet title={config.siteTitle} />
         <GroupsContainer>
           {groupedTalks.map(group => (
@@ -62,7 +63,7 @@ class Talks extends React.Component {
             </Group>
           ))}
         </GroupsContainer>
-      </div>
+      </Layout>
     );
   }
 }

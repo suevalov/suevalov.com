@@ -12,7 +12,7 @@ const PageWrapper = styled("div")`
   min-height: calc(100vh - 230px);
 `;
 
-export default class MainLayout extends React.Component {
+export default class Layout extends React.Component {
   render() {
     const { children, location } = this.props;
     return (
@@ -23,7 +23,7 @@ export default class MainLayout extends React.Component {
         </Helmet>
         <Navigation currentPathname={location.pathname} />
         <PageWrapper>
-          <PageContainer>{children()}</PageContainer>
+          <PageContainer>{children}</PageContainer>
         </PageWrapper>
         <PageContainer>
           <Footer config={config} />
