@@ -69,7 +69,12 @@ export default class Header extends React.Component {
           <MenuItem>
             <Link
               className="animated"
-              isActive={(match, location) => location.pathname === "/"}
+              getProps={props => {
+                if (props.location.pathname === "/") {
+                  return { className: activeLinkClass };
+                }
+                return null;
+              }}
               activeClassName={activeLinkClass}
               to="/"
             >
@@ -79,11 +84,13 @@ export default class Header extends React.Component {
           <MenuItem>
             <Link
               className="animated"
-              isActive={(match, location) =>
-                location.pathname.indexOf("/blog") === 0
-              }
+              getProps={props => {
+                if (props.location.pathname.indexOf("/blog") === 0) {
+                  return { className: activeLinkClass };
+                }
+                return null;
+              }}
               to="/blog"
-              activeClassName={activeLinkClass}
             >
               Blog
             </Link>
@@ -91,11 +98,13 @@ export default class Header extends React.Component {
           <MenuItem>
             <Link
               className="animated"
-              isActive={(match, location) =>
-                location.pathname.indexOf("/talks") === 0
-              }
+              getProps={props => {
+                if (props.location.pathname.indexOf("/talks") === 0) {
+                  return { className: activeLinkClass };
+                }
+                return null;
+              }}
               to="/talks"
-              activeClassName={activeLinkClass}
             >
               Talks
             </Link>
@@ -103,11 +112,13 @@ export default class Header extends React.Component {
           <MenuItem>
             <Link
               className="animated"
-              isActive={(match, location) =>
-                location.pathname.indexOf("/resume") === 0
-              }
+              getProps={props => {
+                if (props.location.pathname.indexOf("/resume") === 0) {
+                  return { className: activeLinkClass };
+                }
+                return null;
+              }}
               to="/resume"
-              activeClassName={activeLinkClass}
             >
               Resume
             </Link>

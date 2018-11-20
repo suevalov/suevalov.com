@@ -134,7 +134,8 @@ export default class ExperienceBlock extends React.Component {
                     rel="noopener noreferrer"
                   >
                     Contentful
-                  </a>, Berlin
+                  </a>
+                  , Berlin
                 </EventSubtitle>
               </Event>
             </li>
@@ -160,13 +161,15 @@ export default class ExperienceBlock extends React.Component {
                     rel="noopener noreferrer"
                   >
                     Opera Software
-                  </a>, Wroclaw
+                  </a>
+                  , Wroclaw
                 </EventSubtitle>
                 <EventDescription>
                   Helping Browser Team with refactoring and changing main Opera
                   product - Opera Browser. Supporting and developing different
                   Chromium extensions.
-                  <br />Stack: JavaScript, CSS, React.
+                  <br />
+                  Stack: JavaScript, CSS, React.
                 </EventDescription>
               </Event>
             </li>
@@ -184,14 +187,16 @@ export default class ExperienceBlock extends React.Component {
                     rel="noopener noreferrer"
                   >
                     DataArt
-                  </a>, Wroclaw
+                  </a>
+                  , Wroclaw
                 </EventSubtitle>
                 <EventDescription>
                   Being in charge of the architecture and implementation of
                   technically challenging web-projects projects for financial
                   and travel industries. Leading a team of 6 front-end
                   developers.
-                  <br />Stack: JavaScript, CSS, React, Redux, MobX.
+                  <br />
+                  Stack: JavaScript, CSS, React, Redux, MobX.
                 </EventDescription>
               </Event>
             </li>
@@ -216,7 +221,8 @@ export default class ExperienceBlock extends React.Component {
                     rel="noopener noreferrer"
                   >
                     DataArt
-                  </a>, Saint-Petersburg
+                  </a>
+                  , Saint-Petersburg
                 </EventSubtitle>
                 <EventDescription>
                   Being involved in several projects for clients from travel and
@@ -224,7 +230,8 @@ export default class ExperienceBlock extends React.Component {
                   <br /> The most remarkable project was for Skyscanner: a new
                   white label web application, feature-packed and customizable.
                   The product was translated into ~30 languages.
-                  <br />Stack: Java, Ruby, JavaScript, Backbone, Angular, React.
+                  <br />
+                  Stack: Java, Ruby, JavaScript, Backbone, Angular, React.
                 </EventDescription>
               </Event>
             </li>
@@ -248,7 +255,8 @@ export default class ExperienceBlock extends React.Component {
                   people with common interests. The service provided
                   communication channels for registered users, companies and
                   communities.
-                  <br />Stack: Java, Hibernate, Backbone, JavaScript.
+                  <br />
+                  Stack: Java, Hibernate, Backbone, JavaScript.
                 </EventDescription>
               </Event>
             </li>

@@ -16,7 +16,7 @@ export default class Layout extends React.Component {
   render() {
     const { children, location } = this.props;
     return (
-      <div>
+      <React.Fragment>
         <Helmet>
           <title>{`${config.siteTitle}`}</title>
           <meta name="description" content={config.siteDescription} />
@@ -28,7 +28,7 @@ export default class Layout extends React.Component {
         <PageContainer>
           <Footer config={config} />
         </PageContainer>
-      </div>
+      </React.Fragment>
     );
   }
 }
