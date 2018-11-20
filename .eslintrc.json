@@ -7,7 +7,9 @@
     "react/prop-types": "off",
     "react/no-danger": "off",
     "prefer-destructuring": "off",
-    "jsx-a11y/anchor-is-valid": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/destructuring-assignment": "off",
+    "react/jsx-one-expression-per-line": "off"
   },
   "settings": {
     "import/core-modules": []

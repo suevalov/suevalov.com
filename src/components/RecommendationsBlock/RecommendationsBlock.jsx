@@ -83,8 +83,12 @@ class RecommendationsBlock extends React.Component {
           </cite>
         </blockquote>
         <div style={{ textAlign: "center" }}>
-          <button onClick={this.onPrevClick}>Prev</button>
-          <button onClick={this.onNextClick}>Next</button>
+          <button type="button" onClick={this.onPrevClick}>
+            Prev
+          </button>
+          <button type="button" onClick={this.onNextClick}>
+            Next
+          </button>
         </div>
         <p>
           See all recommendations on{" "}

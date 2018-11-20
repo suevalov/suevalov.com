@@ -4,9 +4,9 @@ import styled from "react-emotion";
 import "typeface-open-sans/index.css";
 import "typeface-montserrat/index.css";
 import config from "../../config";
-import Navigation from "../components/Navigation/Navigation";
-import Footer from "../components/Footer/Footer";
-import PageContainer from "../components/PageContainer/PageContainer";
+import Navigation from "./Navigation/Navigation";
+import Footer from "./Footer/Footer";
+import PageContainer from "./PageContainer/PageContainer";
 
 const PageWrapper = styled("div")`
   min-height: calc(100vh - 230px);
