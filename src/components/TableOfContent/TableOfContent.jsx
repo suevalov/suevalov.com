@@ -3,10 +3,6 @@ import styled from "react-emotion";
 import { DEFAULT_MEDIA_QUERY } from "typography-breakpoint-constants";
 import { FancyH2 } from "../FancyHeader/FancyHeader";
 
-type Props = {
-  tableOfContents: string
-};
-
 const Heading = styled(FancyH2)`
   font-size: 1.2em;
   margin-bottom: 15px !important;
@@ -36,7 +32,7 @@ const Container = styled("div")`
   }
 `;
 
-export default class TableOfContents extends React.Component<Props> {
+export default class TableOfContents extends React.Component {
   render() {
     return (
       <Container>

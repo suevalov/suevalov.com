@@ -27,13 +27,7 @@ const TalkVideoIcon = styled(YoutubeIcon)`
   vertical-align: middle;
 `;
 
-type TalkProps = {
-  talk: {
-    title: string
-  }
-};
-
-export default class Talk extends React.Component<TalkProps> {
+export default class Talk extends React.Component {
   render() {
     const { title, date, place, video, url, language } = this.props.talk;
     return (

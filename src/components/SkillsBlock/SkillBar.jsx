@@ -26,12 +26,7 @@ const SkillValueBar = styled("div")`
   opacity: 0.6;
 `;
 
-type SkillBarProps = {
-  value: number,
-  title: string
-};
-
-export default class SkillBar extends React.Component<SkillBarProps> {
+export default class SkillBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

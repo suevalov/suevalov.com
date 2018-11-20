@@ -18,12 +18,7 @@ const Text = styled("p")`
   }
 `;
 
-type LeadTextProps = {
-  className?: string,
-  techs: Array<{ label: string, href: string }>
-};
-
-export default class LeadText extends React.Component<LeadTextProps> {
+export default class LeadText extends React.Component {
   static defaultProps = {
     className: ""
   };
@@ -39,7 +34,8 @@ export default class LeadText extends React.Component<LeadTextProps> {
           Work at{" "}
           <a className="animated" href="http://contentful.com">
             Contentful
-          </a>.
+          </a>
+          .
         </H2>
         <Text style={{ marginTop: 20 }}>
           {experience} years of professional expertise in web development and

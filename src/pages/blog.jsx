@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import PostListing from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";

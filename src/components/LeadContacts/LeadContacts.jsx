@@ -50,23 +50,12 @@ const classes = {
   `
 };
 
-type UserContant = {
-  type: "gmail" | "twitter" | "github" | "linkedin" | "instagram",
-  label: string,
-  href: string
-};
-
-type LeadContactsProps = {
-  className?: string,
-  links: UserContant[]
-};
-
-export default class LeadContacts extends React.Component<LeadContactsProps> {
+export default class LeadContacts extends React.Component {
   render() {
     return (
       <LeadContactsContainer className={this.props.className}>
         <ul>
-          {this.props.links.map((link: UserContant) => {
+          {this.props.links.map(link => {
             let IconComponent = null;
             let target = "_blank";
 

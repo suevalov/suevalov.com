@@ -76,7 +76,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-lodash",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
