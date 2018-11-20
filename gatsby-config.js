@@ -68,6 +68,7 @@ module.exports = {
         pathToConfigModule: "src/utils/typography.js"
       }
     },
+    "gatsby-plugin-postcss",
     "gatsby-plugin-twitter",
     "gatsby-plugin-emotion",
     "gatsby-transformer-sharp",
@@ -98,9 +99,6 @@ module.exports = {
           }
         ]
       }
-    },
-    {
-      resolve: `gatsby-plugin-remove-serviceworker`
     },
     {
       resolve: "gatsby-plugin-feed",
