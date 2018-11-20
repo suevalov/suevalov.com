@@ -1,10 +1,12 @@
 import React from "react";
 import Helmet from "react-helmet";
+import { graphql } from "gatsby";
 import Link from "gatsby-link";
 import { css } from "emotion";
 import styled from "react-emotion";
 import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
 import LeadText from "../components/LeadText/LeadText";
+import Layout from "../components/Layout";
 import LeadContacts from "../components/LeadContacts/LeadContacts";
 import Config from "../../config";
 import Talk from "../components/Talk";
@@ -82,7 +84,7 @@ class Index extends React.Component {
         slug: node.fields.slug
       }));
     return (
-      <div>
+      <Layout location={this.props.location}>
         <Helmet title={Config.siteTitle} />
         <Row justifyContent="space-between" style={{ marginBottom: 0 }}>
           <LeadText
@@ -126,7 +128,7 @@ class Index extends React.Component {
             </ul>
           </TalksList>
         </Row>
-      </div>
+      </Layout>
     );
   }
 }

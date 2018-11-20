@@ -1,5 +1,8 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Helmet from "react-helmet";
+import { Location } from "@reach/router";
+import Layout from "../components/Layout";
 import PostListing from "../components/PostListing/PostListing";
 import { FancyH1 } from "../components/FancyHeader/FancyHeader";
 
@@ -14,16 +17,24 @@ function toTitleCase(str) {
 
 export default class TagTemplate extends React.Component {
   render() {
-    const tag = this.props.pathContext.tag;
+    const tag = this.props.pageContext.tag;
     const postEdges = this.props.data.allMarkdownRemark
       ? this.props.data.allMarkdownRemark.edges
       : [];
     return (
-      <div className="tag-container">
-        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
-        <FancyH1>About {toTitleCase(tag)}</FancyH1>
-        <PostListing postEdges={postEdges} />
-      </div>
+      <Location>
+        {({ location }) => (
+          <Layout location={location}>
+            <div className="tag-container">
+              <Helmet
+                title={`Posts tagged as "${tag}" | ${config.siteTitle}`}
+              />
+              <FancyH1>About {toTitleCase(tag)}</FancyH1>
+              <PostListing postEdges={postEdges} />
+            </div>
+          </Layout>
+        )}
+      </Location>
     );
   }
 }

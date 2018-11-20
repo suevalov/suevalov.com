@@ -1,8 +1,8 @@
 const path = require("path");
 const _ = require("lodash");
 
-module.exports = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+module.exports = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     const postPage = path.resolve("src/templates/post.jsx");

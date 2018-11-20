@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "react-emotion";
-import _ from "lodash";
+import kebabCase from "lodash/kebabCase";
 import Link from "gatsby-link";
 
 const PostTagsContainer = styled("div")`
@@ -20,7 +20,7 @@ class PostTags extends Component {
               className="animated"
               key={tag}
               style={{ textDecoration: "none" }}
-              to={`/blog/tags/${_.kebabCase(tag)}`}
+              to={`/blog/tags/${kebabCase(tag)}`}
             >
               #{tag}
             </Link>

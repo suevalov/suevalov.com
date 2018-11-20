@@ -7,6 +7,7 @@ import { FancyH1 } from "../components/FancyHeader/FancyHeader";
 import ExperienceBlock from "../components/ExperienceBlock/ExperienceBlock";
 import SkillsBlock from "../components/SkillsBlock/SkillsBlock";
 import RecommendationsBlock from "../components/RecommendationsBlock/RecommendationsBlock";
+import Layout from "../components/Layout";
 import recommendations from "../../content/recommendations.json";
 import languages from "../../content/languages.json";
 import personalQualities from "../../content/personalQualities.json";
@@ -53,7 +54,7 @@ const DownloadLink = styled("a")`
 class Resume extends React.Component {
   render() {
     return (
-      <div>
+      <Layout location={this.props.location}>
         <Helmet title={Config.siteTitle} />
         <FancyH1>
           Resume{" "}
@@ -75,7 +76,7 @@ class Resume extends React.Component {
             />
           </div>
         </Row>
-      </div>
+      </Layout>
     );
   }
 }

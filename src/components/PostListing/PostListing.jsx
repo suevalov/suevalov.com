@@ -3,7 +3,7 @@ import styled from "react-emotion";
 import sortBy from "lodash/sortBy";
 import keys from "lodash/keys";
 import Link from "gatsby-link";
-import { FancyH2 } from "../../components/FancyHeader/FancyHeader";
+import { FancyH2 } from "../FancyHeader/FancyHeader";
 
 const PostListingContainer = styled("div")`
   margin: 60px auto 0px auto;
@@ -44,6 +44,7 @@ class PostListing extends React.Component {
     });
     return postList;
   }
+
   render() {
     const postList = this.getPostList();
     const groupsPostList = groupPostsByYear(postList);

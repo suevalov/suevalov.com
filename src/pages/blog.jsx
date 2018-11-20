@@ -1,7 +1,9 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import PostListing from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";
+import Layout from "../components/Layout";
 import config from "../../config";
 
 const Blog = props => {
@@ -9,11 +11,11 @@ const Blog = props => {
     ? props.data.allMarkdownRemark.edges
     : [];
   return (
-    <div>
+    <Layout location={props.location}>
       <Helmet title={config.siteTitle} />
       <SEO postEdges={postEdges} />
       <PostListing postEdges={postEdges} />
-    </div>
+    </Layout>
   );
 };
 

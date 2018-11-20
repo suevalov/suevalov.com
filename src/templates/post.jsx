@@ -1,12 +1,15 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import styled from "react-emotion";
 import Image from "gatsby-image";
+import { Location } from "@reach/router";
 import {
   DEFAULT_MEDIA_QUERY,
   MOBILE_MEDIA_QUERY,
   TABLET_MEDIA_QUERY
 } from "typography-breakpoint-constants";
+import Layout from "../components/Layout";
 import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
@@ -197,7 +200,7 @@ const MetaRow = styled("div")`
 
 export default class PostTemplate extends React.Component {
   render() {
-    const { slug } = this.props.pathContext;
+    const { slug } = this.props.pageContext;
     const postNode = this.props.data.markdownRemark;
     const post = postNode.frontmatter;
     const timeToRead = postNode.timeToRead;
@@ -211,53 +214,56 @@ export default class PostTemplate extends React.Component {
       post.id = slug;
     }
     return (
-      <React.Fragment>
-        <Helmet>
-          <title>{`${post.title} | ${config.siteTitle}`}</title>
-        </Helmet>
-        <SEO postPath={slug} postNode={postNode} postSEO />
-        <main>
-          <FancyH1 style={{ marginBottom: 20, lineHeight: "3.5rem" }}>
-            {post.title}
-          </FancyH1>
-          <PostContainer>
-            <MetaRow>
-              <PostTags tags={post.tags} />
-              <div>
-                <time>{post.date}</time>
-                <span />
-                <time>{timeToRead} min read</time>
-              </div>
-            </MetaRow>
-          </PostContainer>
-          <hr />
-          <PostContainer>
-            {showCoverInPost &&
-              post.cover && (
-                <div
-                  style={{
-                    marginBottom: 30
-                  }}
-                >
-                  <Image sizes={post.cover.childImageSharp.sizes} />
+      <Location>
+        {({ location }) => (
+          <Layout location={location}>
+            <Helmet>
+              <title>{`${post.title} | ${config.siteTitle}`}</title>
+            </Helmet>
+            <SEO postPath={slug} postNode={postNode} postSEO />
+            <main>
+              <FancyH1 style={{ marginBottom: 20, lineHeight: "3.5rem" }}>
+                {post.title}
+              </FancyH1>
+              <PostContainer>
+                <MetaRow>
+                  <PostTags tags={post.tags} />
+                  <div>
+                    <time>{post.date}</time>
+                    <span />
+                    <time>{timeToRead} min read</time>
+                  </div>
+                </MetaRow>
+              </PostContainer>
+              <hr />
+              <PostContainer>
+                {showCoverInPost && post.cover && (
+                  <div
+                    style={{
+                      marginBottom: 30
+                    }}
+                  >
+                    <Image sizes={post.cover.childImageSharp.sizes} />
+                  </div>
+                )}
+                <article>
+                  {hasTableOfContents && (
+                    <TableOfContents tableOfContents={tableOfContents} />
+                  )}
+                  <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+                </article>
+                <SocialLinks postPath={slug} postNode={postNode} />
+                <div style={{ textAlign: "center" }}>
+                  <PostTags tags={post.tags} />
                 </div>
-              )}
-            <article>
-              {hasTableOfContents && (
-                <TableOfContents tableOfContents={tableOfContents} />
-              )}
-              <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-            </article>
-            <SocialLinks postPath={slug} postNode={postNode} />
-            <div style={{ textAlign: "center" }}>
-              <PostTags tags={post.tags} />
-            </div>
-          </PostContainer>
-        </main>
-        <HiddenOnTablet>
-          <ScrollToTop />
-        </HiddenOnTablet>
-      </React.Fragment>
+              </PostContainer>
+            </main>
+            <HiddenOnTablet>
+              <ScrollToTop />
+            </HiddenOnTablet>
+          </Layout>
+        )}
+      </Location>
     );
   }
 }

@@ -68,6 +68,7 @@ module.exports = {
         pathToConfigModule: "src/utils/typography.js"
       }
     },
+    "gatsby-plugin-postcss",
     "gatsby-plugin-twitter",
     "gatsby-plugin-emotion",
     "gatsby-transformer-sharp",
@@ -75,8 +76,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-lodash",
-    "gatsby-plugin-react-next",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -99,9 +98,6 @@ module.exports = {
           }
         ]
       }
-    },
-    {
-      resolve: `gatsby-plugin-remove-serviceworker`
     },
     {
       resolve: "gatsby-plugin-feed",

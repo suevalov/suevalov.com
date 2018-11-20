@@ -29,21 +29,8 @@ const Container = styled("div")`
 const linkedInLink = Config.userLinks.filter(link => link.type === "linkedin");
 const linkedInLinkValue = linkedInLink ? linkedInLink[0].href : "";
 
-type Props = {
-  recommendations: Array<{
-    text: string,
-    name: string,
-    position: string
-  }>
-};
-
-type State = {
-  index: number,
-  maxIndex: number
-};
-
-class RecommendationsBlock extends React.Component<Props, State> {
-  constructor(props: Props) {
+class RecommendationsBlock extends React.Component {
+  constructor(props) {
     super(props);
     const min = 0;
     const max = props.recommendations.length - 1;
@@ -96,8 +83,12 @@ class RecommendationsBlock extends React.Component<Props, State> {
           </cite>
         </blockquote>
         <div style={{ textAlign: "center" }}>
-          <button onClick={this.onPrevClick}>Prev</button>
-          <button onClick={this.onNextClick}>Next</button>
+          <button type="button" onClick={this.onPrevClick}>
+            Prev
+          </button>
+          <button type="button" onClick={this.onNextClick}>
+            Next
+          </button>
         </div>
         <p>
           See all recommendations on{" "}

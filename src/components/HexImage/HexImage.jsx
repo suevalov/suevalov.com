@@ -1,12 +1,6 @@
 import React from "react";
 
-type HexImageProps = {
-  image: string,
-  title: string,
-  className?: string
-};
-
-export default class HexImage extends React.Component<HexImageProps> {
+export default class HexImage extends React.Component {
   render() {
     return (
       <svg

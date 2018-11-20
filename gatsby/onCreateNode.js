@@ -1,8 +1,8 @@
 const path = require("path");
 const _ = require("lodash");
 
-module.exports = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators;
+module.exports = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
   let slug;
   if (node.internal.type === "MarkdownRemark") {
     const fileNode = getNode(node.parent);

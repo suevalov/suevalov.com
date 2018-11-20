@@ -2,14 +2,7 @@ import React from "react";
 import { FancyH2 } from "../FancyHeader/FancyHeader";
 import SkillBar from "./SkillBar";
 
-type Props = {
-  languages: Array<{ label: string, value: number }>,
-  personalQualities: Array<{ label: string, value: number }>,
-  designSkills: Array<{ label: string, value: number }>,
-  developmentSkills: Array<{ label: string, value: number }>
-};
-
-export default class SkillsBlock extends React.Component<Props> {
+export default class SkillsBlock extends React.Component {
   render() {
     return (
       <React.Fragment>
