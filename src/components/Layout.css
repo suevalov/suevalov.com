@@ -1,0 +1,9 @@
+html,
+body {
+  height: 100%;
+}
+
+.root,
+.root > div {
+  height: 100%;
+}

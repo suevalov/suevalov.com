@@ -27,7 +27,8 @@ const ProfileHexImage = styled(HexImage)`
 
 const Nav = styled("nav")`
   display: flex;
-  margin: 10px auto 40px auto;
+  padding-top: 10px;
+  margin: 0 auto 40px auto;
   max-width: ${DEFAULT_WIDTH};
 
   ${DEFAULT_MEDIA_QUERY} {
