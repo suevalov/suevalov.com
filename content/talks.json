@@ -1,5 +1,12 @@
 [
   {
+    "title": "Driving Migration",
+    "place": "JAMStack_Berlin #7, Germany",
+    "url": "http://suevalov.github.io/presentations/driving-migration/",
+    "date": "21.01.2019",
+    "language": "English"
+  },
+  {
     "title": "Building Chrome extensions without pain",
     "place": "IT Talk, Wroclaw",
     "url": "http://suevalov.github.io/presentations/chrome-extensions",
