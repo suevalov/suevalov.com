@@ -87,14 +87,8 @@ class Index extends React.Component {
       <Layout location={this.props.location}>
         <Helmet title={Config.siteTitle} />
         <Row justifyContent="space-between" style={{ marginBottom: 0 }}>
-          <LeadText
-            techs={Config.techInterestedIn}
-            className={classes.leadText}
-          />
-          <LeadContacts
-            links={Config.userLinks}
-            className={classes.leadContacts}
-          />
+          <LeadText techs={Config.techInterestedIn} css={classes.leadText} />
+          <LeadContacts links={Config.userLinks} css={classes.leadContacts} />
         </Row>
         <Row justifyContent="flex-start">
           <TalksList>

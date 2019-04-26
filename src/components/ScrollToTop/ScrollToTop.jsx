@@ -1,27 +1,25 @@
 import React from 'react';
 import ScrollToTop from 'react-scroll-up';
-import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 
-const classes = {
-  container: css`
-    width: 30px;
-    height: 30px;
-    background-color: #89bcfe;
-    border-radius: 50%;
-    opacity: 0.6;
-  `,
-  icon: css`
-    color: #fff;
-    font-size: 30px;
-    font-weight: 300;
-  `,
-};
+const Container = styled('div')`
+  width: 30px;
+  height: 30px;
+  background-color: #89bcfe;
+  border-radius: 50%;
+  opacity: 0.6;
+`;
+
+const IconSvg = styled('svg')`
+  color: #fff;
+  font-size: 30px;
+  font-weight: 300;
+`;
 
 export default () => (
   <ScrollToTop showUnder={300}>
-    <div className={classes.container}>
-      <svg
-        className={classes.icon}
+    <Container>
+      <IconSvg
         fill="currentColor"
         preserveAspectRatio="xMidYMid meet"
         height="1em"
@@ -31,7 +29,7 @@ export default () => (
         <g>
           <path d="m12.3 25.7l-2.3-2.3 10-10 10 10-2.3 2.3-7.7-7.7z" />
         </g>
-      </svg>
-    </div>
+      </IconSvg>
+    </Container>
   </ScrollToTop>
 );
