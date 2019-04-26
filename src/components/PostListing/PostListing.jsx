@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "react-emotion";
-import sortBy from "lodash/sortBy";
-import keys from "lodash/keys";
-import Link from "gatsby-link";
-import { FancyH2 } from "../FancyHeader/FancyHeader";
+import React from 'react';
+import styled from '@emotion/styled';
+import sortBy from 'lodash/sortBy';
+import keys from 'lodash/keys';
+import Link from 'gatsby-link';
+import { FancyH2 } from '../FancyHeader/FancyHeader';
 
-const PostListingContainer = styled("div")`
+const PostListingContainer = styled('div')`
   margin: 60px auto 0px auto;
   max-width: 560px;
 `;
@@ -14,7 +14,7 @@ const groupPostsByYear = posts => {
   const groups = {};
   posts.forEach(post => {
     const date = post.date;
-    const year = date.split("-")[0];
+    const year = date.split('-')[0];
     if (groups[year]) {
       groups[year].push(post);
     } else {
@@ -24,7 +24,7 @@ const groupPostsByYear = posts => {
   const years = sortBy(keys(groups), year => -year);
   return years.map(year => ({
     label: year,
-    posts: groups[year]
+    posts: groups[year],
   }));
 };
 
@@ -39,7 +39,7 @@ class PostListing extends React.Component {
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.frontmatter.date,
         excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
+        timeToRead: postEdge.node.timeToRead,
       });
     });
     return postList;

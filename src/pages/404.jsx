@@ -1,8 +1,8 @@
-import React from "react";
-import Helmet from "react-helmet";
-import config from "../../config";
-import Layout from "../components/Layout";
-import { FancyH1, FancyH2 } from "../components/FancyHeader/FancyHeader";
+import React from 'react';
+import Helmet from 'react-helmet';
+import config from '../../config';
+import Layout from '../components/Layout';
+import { FancyH1, FancyH2 } from '../components/FancyHeader/FancyHeader';
 
 class Blog extends React.Component {
   render() {

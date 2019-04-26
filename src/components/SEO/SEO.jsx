@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import get from "lodash/get";
-import Helmet from "react-helmet";
-import config from "../../../config";
+import React, { Component } from 'react';
+import get from 'lodash/get';
+import Helmet from 'react-helmet';
+import config from '../../../config';
 
 class SEO extends Component {
   render() {
@@ -17,7 +17,7 @@ class SEO extends Component {
         ? postMeta.description
         : postNode.excerpt;
       image =
-        get(postMeta.cover, "childImageSharp.resize.src", null) ||
+        get(postMeta.cover, 'childImageSharp.resize.src', null) ||
         config.siteLogo;
       postURL = config.siteUrl + config.pathPrefix + postPath;
     } else {
@@ -25,48 +25,48 @@ class SEO extends Component {
       description = config.siteDescription;
       image = config.siteLogo;
     }
-    const realPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
+    const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
     image = config.siteUrl + realPrefix + image;
     const blogURL = config.siteUrl + config.pathPrefix;
     const schemaOrgJSONLD = [
       {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
+        '@context': 'http://schema.org',
+        '@type': 'WebSite',
         url: blogURL,
         name: title,
-        alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
-      }
+        alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
+      },
     ];
     if (postSEO) {
       schemaOrgJSONLD.push([
         {
-          "@context": "http://schema.org",
-          "@type": "BreadcrumbList",
+          '@context': 'http://schema.org',
+          '@type': 'BreadcrumbList',
           itemListElement: [
             {
-              "@type": "ListItem",
+              '@type': 'ListItem',
               position: 1,
               item: {
-                "@id": postURL,
+                '@id': postURL,
                 name: title,
-                image
-              }
-            }
-          ]
+                image,
+              },
+            },
+          ],
         },
         {
-          "@context": "http://schema.org",
-          "@type": "BlogPosting",
+          '@context': 'http://schema.org',
+          '@type': 'BlogPosting',
           url: blogURL,
           name: title,
-          alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
+          alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
           headline: title,
           image: {
-            "@type": "ImageObject",
-            url: image
+            '@type': 'ImageObject',
+            url: image,
           },
-          description
-        }
+          description,
+        },
       ]);
     }
     return (
@@ -88,14 +88,14 @@ class SEO extends Component {
         <meta property="og:image" content={image} />
         <meta
           property="fb:app_id"
-          content={config.siteFBAppID ? config.siteFBAppID : ""}
+          content={config.siteFBAppID ? config.siteFBAppID : ''}
         />
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:creator"
-          content={config.userTwitter ? config.userTwitter : ""}
+          content={config.userTwitter ? config.userTwitter : ''}
         />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />

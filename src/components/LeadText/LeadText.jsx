@@ -1,13 +1,13 @@
-import React, { Fragment } from "react";
-import styled from "react-emotion";
-import { FancyH1 } from "../FancyHeader/FancyHeader";
+import React, { Fragment } from 'react';
+import styled from '@emotion/styled';
+import { FancyH1 } from '../FancyHeader/FancyHeader';
 
-const H2 = styled("h2")`
+const H2 = styled('h2')`
   margin: 0;
   padding: 0;
 `;
 
-const Text = styled("p")`
+const Text = styled('p')`
   margin: 0;
   padding: 0;
   font-size: 0.9em;
@@ -20,7 +20,7 @@ const Text = styled("p")`
 
 export default class LeadText extends React.Component {
   static defaultProps = {
-    className: ""
+    className: '',
   };
 
   render() {
@@ -31,7 +31,7 @@ export default class LeadText extends React.Component {
         <FancyH1>Hi, I{"'"}m Alex</FancyH1>
         <H2>Senior JavaScript developer, based&nbsp;in&nbsp;Berlin.</H2>
         <H2>
-          Work at{" "}
+          Work at{' '}
           <a className="animated" href="http://contentful.com">
             Contentful
           </a>
@@ -48,12 +48,12 @@ export default class LeadText extends React.Component {
           things done.
         </Text>
         <Text>
-          Currently interested in{" "}
+          Currently interested in{' '}
           {this.props.techs.map((tech, index) => {
             const isLast = index === this.props.techs.length - 1;
             return (
               <Fragment key={tech.href}>
-                {isLast && "and "}
+                {isLast && 'and '}
                 <a
                   className="animated"
                   href={tech.href}
@@ -62,7 +62,7 @@ export default class LeadText extends React.Component {
                 >
                   {tech.label}
                 </a>
-                {!isLast && ", "}
+                {!isLast && ', '}
               </Fragment>
             );
           })}

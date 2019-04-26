@@ -1,32 +1,32 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Helmet from "react-helmet";
-import styled from "react-emotion";
-import Image from "gatsby-image";
-import { Location } from "@reach/router";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
+import styled from '@emotion/styled';
+import Image from 'gatsby-image';
+import { Location } from '@reach/router';
 import {
   DEFAULT_MEDIA_QUERY,
   MOBILE_MEDIA_QUERY,
-  TABLET_MEDIA_QUERY
-} from "typography-breakpoint-constants";
-import Layout from "../components/Layout";
-import PostTags from "../components/PostTags/PostTags";
-import SocialLinks from "../components/SocialLinks/SocialLinks";
-import SEO from "../components/SEO/SEO";
-import { FancyH1 } from "../components/FancyHeader/FancyHeader";
-import config from "../../config";
-import "./code-highlight.css";
-import "./post.css";
-import TableOfContents from "../components/TableOfContent/TableOfContent";
-import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
+  TABLET_MEDIA_QUERY,
+} from 'typography-breakpoint-constants';
+import Layout from '../components/Layout';
+import PostTags from '../components/PostTags/PostTags';
+import SocialLinks from '../components/SocialLinks/SocialLinks';
+import SEO from '../components/SEO/SEO';
+import { FancyH1 } from '../components/FancyHeader/FancyHeader';
+import config from '../../config';
+import './code-highlight.css';
+import './post.css';
+import TableOfContents from '../components/TableOfContent/TableOfContent';
+import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 
-const HiddenOnTablet = styled("div")`
+const HiddenOnTablet = styled('div')`
   ${TABLET_MEDIA_QUERY} {
     display: none;
   }
 `;
 
-const PostContainer = styled("div")`
+const PostContainer = styled('div')`
   max-width: 660px;
   margin: 0 auto;
 
@@ -96,7 +96,7 @@ const PostContainer = styled("div")`
     display: inline-block;
 
     :before {
-      content: "";
+      content: '';
       width: 90%;
       height: 15px;
       position: absolute;
@@ -167,7 +167,7 @@ const PostContainer = styled("div")`
   }
 `;
 
-const MetaRow = styled("div")`
+const MetaRow = styled('div')`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -184,7 +184,7 @@ const MetaRow = styled("div")`
   }
 
   span:after {
-    content: "\\00B7";
+    content: '\\00B7';
     color: rgba(0, 0, 0, 0.54);
   }
 
@@ -222,7 +222,7 @@ export default class PostTemplate extends React.Component {
             </Helmet>
             <SEO postPath={slug} postNode={postNode} postSEO />
             <main>
-              <FancyH1 style={{ marginBottom: 20, lineHeight: "3.5rem" }}>
+              <FancyH1 style={{ marginBottom: 20, lineHeight: '3.5rem' }}>
                 {post.title}
               </FancyH1>
               <PostContainer>
@@ -240,7 +240,7 @@ export default class PostTemplate extends React.Component {
                 {showCoverInPost && post.cover && (
                   <div
                     style={{
-                      marginBottom: 30
+                      marginBottom: 30,
                     }}
                   >
                     <Image sizes={post.cover.childImageSharp.sizes} />
@@ -253,7 +253,7 @@ export default class PostTemplate extends React.Component {
                   <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
                 </article>
                 <SocialLinks postPath={slug} postNode={postNode} />
-                <div style={{ textAlign: "center" }}>
+                <div style={{ textAlign: 'center' }}>
                   <PostTags tags={post.tags} />
                 </div>
               </PostContainer>

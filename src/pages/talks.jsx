@@ -1,19 +1,19 @@
-import React from "react";
-import Helmet from "react-helmet";
-import styled from "react-emotion";
-import keys from "lodash/keys";
-import sortBy from "lodash/sortBy";
-import Layout from "../components/Layout";
-import config from "../../config";
-import { FancyH2 } from "../components/FancyHeader/FancyHeader";
-import Talk from "../components/Talk";
-import allTalks from "../../content/talks.json";
+import React from 'react';
+import Helmet from 'react-helmet';
+import styled from '@emotion/styled';
+import keys from 'lodash/keys';
+import sortBy from 'lodash/sortBy';
+import Layout from '../components/Layout';
+import config from '../../config';
+import { FancyH2 } from '../components/FancyHeader/FancyHeader';
+import Talk from '../components/Talk';
+import allTalks from '../../content/talks.json';
 
 const groupTalksByYear = talks => {
   const groups = {};
   talks.forEach(talk => {
     const date = talk.date;
-    const year = date.split(".")[2];
+    const year = date.split('.')[2];
     if (groups[year]) {
       groups[year].push(talk);
     } else {
@@ -23,21 +23,21 @@ const groupTalksByYear = talks => {
   const years = sortBy(keys(groups), year => -year);
   return years.map(year => ({
     label: year,
-    talks: groups[year]
+    talks: groups[year],
   }));
 };
 
-const GroupsContainer = styled("div")`
+const GroupsContainer = styled('div')`
   margin: 60px auto 0 auto;
   max-width: 560px;
 `;
 
-const Group = styled("div")`
+const Group = styled('div')`
   width: 100%;
   margin-bottom: 60px;
 `;
 
-const TalksList = styled("ul")`
+const TalksList = styled('ul')`
   list-style: none;
   margin: 0;
   margin-bottom: 40px;

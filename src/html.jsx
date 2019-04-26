@@ -1,5 +1,5 @@
-import React from "react";
-import favicon from "./favicon.png";
+import React from 'react';
+import favicon from './favicon.png';
 
 export default class HTML extends React.Component {
   render() {

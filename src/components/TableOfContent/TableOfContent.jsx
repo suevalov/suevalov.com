@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "react-emotion";
-import { DEFAULT_MEDIA_QUERY } from "typography-breakpoint-constants";
-import { FancyH2 } from "../FancyHeader/FancyHeader";
+import React from 'react';
+import styled from '@emotion/styled';
+import { DEFAULT_MEDIA_QUERY } from 'typography-breakpoint-constants';
+import { FancyH2 } from '../FancyHeader/FancyHeader';
 
 const Heading = styled(FancyH2)`
   font-size: 1.2em;
@@ -9,7 +9,7 @@ const Heading = styled(FancyH2)`
   margin-top: 0 !important;
 `;
 
-const Container = styled("div")`
+const Container = styled('div')`
   display: inline-block;
   float: right;
   margin-right: -100px;

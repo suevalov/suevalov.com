@@ -1,14 +1,14 @@
 ---
-title: "What Technologies I Want to Learn in 2018"
-slug: "what-technologies-i-want-to-learn-2018"
-date: "2018-03-06"
+title: 'What Technologies I Want to Learn in 2018'
+slug: 'what-technologies-i-want-to-learn-2018'
+date: '2018-03-06'
 draft: false
-cover: "./learn.jpg"
+cover: './learn.jpg'
 showCoverInPost: true
 tags:
-    - learn
-    - programming
-    - plans
+  - learn
+  - programming
+  - plans
 ---
 
 Programming world evolves extremely quick and it's impossible to track all the news and be up to date with all technologies. We have to narrow down and pick carefully.
@@ -25,9 +25,9 @@ The next big thing might be [ReasonML](https://reasonml.github.io/). It's not a 
 
 [Kotlin](https://kotlinlang.org/) is a new official language for Android platform, statically typed and seamlessly interoperable with Java.
 
-* Approximately 40% fewer lines of code compared to Java
-* Easy to learn especially if you know Java.
-* Avoids errors such as null exceptions
+- Approximately 40% fewer lines of code compared to Java
+- Easy to learn especially if you know Java.
+- Avoids errors such as null exceptions
 
 The good thing about Kotlin is that if you already have started a project in Java, no need to worry
 as you can use Kotlin syntax in existing Java code and it will work perfectly.
@@ -36,13 +36,13 @@ as you can use Kotlin syntax in existing Java code and it will work perfectly.
 
 [Apollo](https://www.apollographql.com/) allows to build GraphQL API on top of your existing REST APIs. It is a family of technologies you can incrementally add to your stack: Apollo Client to connect data to your UI, Apollo Engine for infrastructure and tooling, and Apollo Server to translate your REST API and backends into a GraphQL schema.
 
-* Eliminates boilerplate.
+- Eliminates boilerplate.
 
-* You can put computed fields, data transformations, and security logic into your API so your front-ends don't have to reimplement them every time.
+- You can put computed fields, data transformations, and security logic into your API so your front-ends don't have to reimplement them every time.
 
-* Add fields to GraphQL as you go and deprecate old fields when you no longer need them. Mock some or all of your API and build the front-end in parallel.
+- Add fields to GraphQL as you go and deprecate old fields when you no longer need them. Mock some or all of your API and build the front-end in parallel.
 
-* Fetch exactly data you need, no more and no less. Improve performance with GraphQL specific caching and optimizations across the stack.
+- Fetch exactly data you need, no more and no less. Improve performance with GraphQL specific caching and optimizations across the stack.
 
 ## Cypress
 

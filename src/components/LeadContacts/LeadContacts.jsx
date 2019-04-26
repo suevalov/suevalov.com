@@ -1,13 +1,14 @@
-import React from "react";
-import styled, { css } from "react-emotion";
-import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
-import TwitterIcon from "../Icons/TwitterIcon";
-import GithubIcon from "../Icons/GithubIcon";
-import LinkedInIcon from "../Icons/LinkedInIcon";
-import GmailIcon from "../Icons/GmailIcon";
-import InstagramIcon from "../Icons/InstagramIcon";
+import React from 'react';
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
+import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
+import TwitterIcon from '../Icons/TwitterIcon';
+import GithubIcon from '../Icons/GithubIcon';
+import LinkedInIcon from '../Icons/LinkedInIcon';
+import GmailIcon from '../Icons/GmailIcon';
+import InstagramIcon from '../Icons/InstagramIcon';
 
-const LeadContactsContainer = styled("div")`
+const LeadContactsContainer = styled('div')`
   font-size: 0.9em;
 
   ul {
@@ -47,7 +48,7 @@ const classes = {
     opacity: 0.6;
     color: #89bcfe;
     vertical-align: middle;
-  `
+  `,
 };
 
 export default class LeadContacts extends React.Component {
@@ -57,23 +58,23 @@ export default class LeadContacts extends React.Component {
         <ul>
           {this.props.links.map(link => {
             let IconComponent = null;
-            let target = "_blank";
+            let target = '_blank';
 
             switch (link.type) {
-              case "gmail":
+              case 'gmail':
                 IconComponent = GmailIcon;
-                target = "_self";
+                target = '_self';
                 break;
-              case "github":
+              case 'github':
                 IconComponent = GithubIcon;
                 break;
-              case "twitter":
+              case 'twitter':
                 IconComponent = TwitterIcon;
                 break;
-              case "linkedin":
+              case 'linkedin':
                 IconComponent = LinkedInIcon;
                 break;
-              case "instagram":
+              case 'instagram':
                 IconComponent = InstagramIcon;
                 break;
               default:
@@ -87,7 +88,7 @@ export default class LeadContacts extends React.Component {
             return (
               <li key={link.type}>
                 <a
-                  style={{ boxShadow: "none" }}
+                  style={{ boxShadow: 'none' }}
                   target={target}
                   rel="noopener noreferrer"
                   href={link.href}

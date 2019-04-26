@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "react-emotion";
-import { FancyH2 } from "../FancyHeader/FancyHeader";
-import Config from "../../../config";
+import React from 'react';
+import styled from '@emotion/styled';
+import { FancyH2 } from '../FancyHeader/FancyHeader';
+import Config from '../../../config';
 
-const Container = styled("div")`
+const Container = styled('div')`
   blockquote {
     min-height: 180px;
     border-left-width: 2px;
@@ -26,8 +26,8 @@ const Container = styled("div")`
   }
 `;
 
-const linkedInLink = Config.userLinks.filter(link => link.type === "linkedin");
-const linkedInLinkValue = linkedInLink ? linkedInLink[0].href : "";
+const linkedInLink = Config.userLinks.filter(link => link.type === 'linkedin');
+const linkedInLinkValue = linkedInLink ? linkedInLink[0].href : '';
 
 class RecommendationsBlock extends React.Component {
   constructor(props) {
@@ -37,7 +37,7 @@ class RecommendationsBlock extends React.Component {
     const index = Math.floor(Math.random() * (max - min + 1) + min);
     this.state = {
       index,
-      maxIndex: max
+      maxIndex: max,
     };
   }
 
@@ -46,11 +46,11 @@ class RecommendationsBlock extends React.Component {
     const index = this.state.index;
     if (index < maxIndex) {
       this.setState({
-        index: index + 1
+        index: index + 1,
       });
     } else {
       this.setState({
-        index: 0
+        index: 0,
       });
     }
   };
@@ -61,11 +61,11 @@ class RecommendationsBlock extends React.Component {
 
     if (index > 0) {
       this.setState({
-        index: index - 1
+        index: index - 1,
       });
     } else {
       this.setState({
-        index: maxIndex - 1
+        index: maxIndex - 1,
       });
     }
   };
@@ -82,7 +82,7 @@ class RecommendationsBlock extends React.Component {
             {recommendation.name} / {recommendation.position}
           </cite>
         </blockquote>
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: 'center' }}>
           <button type="button" onClick={this.onPrevClick}>
             Prev
           </button>
@@ -91,7 +91,7 @@ class RecommendationsBlock extends React.Component {
           </button>
         </div>
         <p>
-          See all recommendations on{" "}
+          See all recommendations on{' '}
           <a
             className="animated"
             href={linkedInLinkValue}

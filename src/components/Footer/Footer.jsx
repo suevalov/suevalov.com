@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import styled from "react-emotion";
-import Link from "gatsby-link";
-import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
+import React, { Component } from 'react';
+import styled from '@emotion/styled';
+import Link from 'gatsby-link';
+import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
 
-const Footer = styled("footer")`
+const Footer = styled('footer')`
   justify-content: center;
   align-content: center;
   padding: 10px 5px 20px;
@@ -11,7 +11,7 @@ const Footer = styled("footer")`
   h5 {
     font-size: 0.9em;
     margin: 0;
-    font-family: "Open Sans", "-apple-system", "BlinkMacSystemFont", "Arial",
+    font-family: 'Open Sans', '-apple-system', 'BlinkMacSystemFont', 'Arial',
       sans-serif;
   }
 
@@ -21,7 +21,7 @@ const Footer = styled("footer")`
   }
 `;
 
-const NoticeContainer = styled("div")`
+const NoticeContainer = styled('div')`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

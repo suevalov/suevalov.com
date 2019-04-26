@@ -1,12 +1,12 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Helmet from "react-helmet";
-import { Location } from "@reach/router";
-import Layout from "../components/Layout";
-import PostListing from "../components/PostListing/PostListing";
-import { FancyH1 } from "../components/FancyHeader/FancyHeader";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
+import { Location } from '@reach/router';
+import Layout from '../components/Layout';
+import PostListing from '../components/PostListing/PostListing';
+import { FancyH1 } from '../components/FancyHeader/FancyHeader';
 
-import config from "../../config";
+import config from '../../config';
 
 function toTitleCase(str) {
   return str.replace(

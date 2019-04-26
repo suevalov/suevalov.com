@@ -1,6 +1,6 @@
-import React from "react";
-import ScrollToTop from "react-scroll-up";
-import { css } from "react-emotion";
+import React from 'react';
+import ScrollToTop from 'react-scroll-up';
+import { css } from '@emotion/core';
 
 const classes = {
   container: css`
@@ -14,7 +14,7 @@ const classes = {
     color: #fff;
     font-size: 30px;
     font-weight: 300;
-  `
+  `,
 };
 
 export default () => (

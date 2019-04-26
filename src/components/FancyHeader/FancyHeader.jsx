@@ -1,6 +1,6 @@
-import styled from "react-emotion";
+import styled from '@emotion/styled';
 
-export const FancyH1 = styled("h1")`
+export const FancyH1 = styled('h1')`
   margin: 0;
   margin-bottom: 30px;
   padding: 0;
@@ -8,7 +8,7 @@ export const FancyH1 = styled("h1")`
   position: relative;
 
   :before {
-    content: "";
+    content: '';
     width: 30px;
     height: 30px;
     position: absolute;
@@ -29,7 +29,7 @@ export const FancyH2 = styled(`h2`)`
   margin-bottom: 30px;
 
   :before {
-    content: "";
+    content: '';
     width: 90%;
     height: 15px;
     position: absolute;

@@ -1,6 +1,6 @@
-import React from "react";
-import { FancyH2 } from "../FancyHeader/FancyHeader";
-import SkillBar from "./SkillBar";
+import React from 'react';
+import { FancyH2 } from '../FancyHeader/FancyHeader';
+import SkillBar from './SkillBar';
 
 export default class SkillsBlock extends React.Component {
   render() {

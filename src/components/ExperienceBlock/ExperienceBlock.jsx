@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "react-emotion";
-import { FancyH2 } from "../FancyHeader/FancyHeader";
+import React from 'react';
+import styled from '@emotion/styled';
+import { FancyH2 } from '../FancyHeader/FancyHeader';
 
-const Timeline = styled("section")`
+const Timeline = styled('section')`
   position: relative;
   margin-top: 30px;
   min-height: 600px;
   width: 100%;
   font-size: 0.9em;
-  font-family: "Montserrat", "Helvetica Neue", serif;
+  font-family: 'Montserrat', 'Helvetica Neue', serif;
 
   ul {
     margin: 0;
@@ -27,7 +27,7 @@ const Timeline = styled("section")`
   }
 
   ul li::after {
-    content: "";
+    content: '';
     position: absolute;
     left: -60px;
     top: 1px;
@@ -39,14 +39,14 @@ const Timeline = styled("section")`
   }
 `;
 
-const Event = styled("div")`
+const Event = styled('div')`
   position: relative;
   bottom: -2px;
   padding: 0;
   margin: 0;
 `;
 
-const EventTime = styled("div")`
+const EventTime = styled('div')`
   height: 30px;
   width: 120px;
   position: absolute;
@@ -63,7 +63,7 @@ const EventTime = styled("div")`
     position: relative;
   }
   time:before {
-    content: "";
+    content: '';
     width: 100%;
     height: 7px;
     position: absolute;
@@ -75,11 +75,11 @@ const EventTime = styled("div")`
   }
 `;
 
-const EventTitle = styled("div")`
+const EventTitle = styled('div')`
   font-size: 1.1em;
 `;
 
-const MoveToEvent = styled("div")`
+const MoveToEvent = styled('div')`
   font-size: 0.9em;
   border-top: 1px solid #888;
   border-bottom: 1px solid #888;
@@ -87,22 +87,22 @@ const MoveToEvent = styled("div")`
   display: inline-block;
 `;
 
-const EventSubtitle = styled("div")`
+const EventSubtitle = styled('div')`
   font-size: 0.9em;
   color: #999;
   padding-left: 10px;
   line-height: 0.9em;
 `;
 
-const EventDescription = styled("div")`
+const EventDescription = styled('div')`
   margin-top: 10px;
   margin-left: 10px;
   font-size: 0.9em;
   line-height: 1.3em;
-  font-family: "Open Sans", "Helvetica Neue", serif;
+  font-family: 'Open Sans', 'Helvetica Neue', serif;
 `;
 
-const Line = styled("div")`
+const Line = styled('div')`
   position: absolute;
   left: 50px;
   top: -40px;

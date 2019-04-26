@@ -1,18 +1,18 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import Link from "gatsby-link";
-import { css } from "emotion";
-import styled from "react-emotion";
-import { TABLET_MEDIA_QUERY } from "typography-breakpoint-constants";
-import LeadText from "../components/LeadText/LeadText";
-import Layout from "../components/Layout";
-import LeadContacts from "../components/LeadContacts/LeadContacts";
-import Config from "../../config";
-import Talk from "../components/Talk";
-import allTalks from "../../content/talks.json";
+import React from 'react';
+import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+import Link from 'gatsby-link';
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
+import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
+import LeadText from '../components/LeadText/LeadText';
+import Layout from '../components/Layout';
+import LeadContacts from '../components/LeadContacts/LeadContacts';
+import Config from '../../config';
+import Talk from '../components/Talk';
+import allTalks from '../../content/talks.json';
 
-const Row = styled("div")`
+const Row = styled('div')`
   display: flex;
   flex-direction: row;
   justify-content: ${props => props.justifyContent};
@@ -23,7 +23,7 @@ const Row = styled("div")`
   }
 `;
 
-const TalksList = styled("div")`
+const TalksList = styled('div')`
   font-size: 0.9em;
 
   min-width: 50%;
@@ -37,7 +37,7 @@ const TalksList = styled("div")`
       margin-left: 10px;
       font-size: 0.6em;
       vertical-align: middle;
-      font-family: "Open Sans", "Helvetica Neue", serif;
+      font-family: 'Open Sans', 'Helvetica Neue', serif;
     }
   }
 
@@ -71,7 +71,7 @@ const classes = {
       margin-right: 0;
       margin-bottom: 20px;
     }
-  `
+  `,
 };
 
 class Index extends React.Component {
@@ -81,7 +81,7 @@ class Index extends React.Component {
       .map(edge => edge.node)
       .map(node => ({
         title: node.frontmatter.title,
-        slug: node.fields.slug
+        slug: node.fields.slug,
       }));
     return (
       <Layout location={this.props.location}>

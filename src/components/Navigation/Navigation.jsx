@@ -1,13 +1,13 @@
-import React from "react";
-import { css } from "emotion";
-import styled from "react-emotion";
-import Link from "gatsby-link";
+import React from 'react';
+import { css } from 'emotion';
+import styled from '@emotion/styled';
+import Link from 'gatsby-link';
 import {
   DEFAULT_WIDTH,
-  DEFAULT_MEDIA_QUERY
-} from "typography-breakpoint-constants";
-import HexImage from "../HexImage/HexImage";
-import Config from "../../../config";
+  DEFAULT_MEDIA_QUERY,
+} from 'typography-breakpoint-constants';
+import HexImage from '../HexImage/HexImage';
+import Config from '../../../config';
 
 const activeLinkClass = css`
   color: black;
@@ -25,7 +25,7 @@ const ProfileHexImage = styled(HexImage)`
   }
 `;
 
-const Nav = styled("nav")`
+const Nav = styled('nav')`
   display: flex;
   padding-top: 10px;
   margin: 0 auto 40px auto;
@@ -36,7 +36,7 @@ const Nav = styled("nav")`
   }
 `;
 
-const Menu = styled("ul")`
+const Menu = styled('ul')`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -46,7 +46,7 @@ const Menu = styled("ul")`
   list-style: none;
 `;
 
-const MenuItem = styled("li")`
+const MenuItem = styled('li')`
   margin: 0 20px 0 0;
 `;
 
@@ -71,7 +71,7 @@ export default class Header extends React.Component {
             <Link
               className="animated"
               getProps={props => {
-                if (props.location.pathname === "/") {
+                if (props.location.pathname === '/') {
                   return { className: activeLinkClass };
                 }
                 return null;
@@ -86,7 +86,7 @@ export default class Header extends React.Component {
             <Link
               className="animated"
               getProps={props => {
-                if (props.location.pathname.indexOf("/blog") === 0) {
+                if (props.location.pathname.indexOf('/blog') === 0) {
                   return { className: activeLinkClass };
                 }
                 return null;
@@ -100,7 +100,7 @@ export default class Header extends React.Component {
             <Link
               className="animated"
               getProps={props => {
-                if (props.location.pathname.indexOf("/talks") === 0) {
+                if (props.location.pathname.indexOf('/talks') === 0) {
                   return { className: activeLinkClass };
                 }
                 return null;
@@ -114,7 +114,7 @@ export default class Header extends React.Component {
             <Link
               className="animated"
               getProps={props => {
-                if (props.location.pathname.indexOf("/resume") === 0) {
+                if (props.location.pathname.indexOf('/resume') === 0) {
                   return { className: activeLinkClass };
                 }
                 return null;

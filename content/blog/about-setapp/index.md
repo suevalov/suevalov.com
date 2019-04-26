@@ -1,14 +1,14 @@
 ---
-title: "Setapp: Subscription Service For Your Mac Apps"
-slug: "about-setapp"
-date: "2018-02-01"
+title: 'Setapp: Subscription Service For Your Mac Apps'
+slug: 'about-setapp'
+date: '2018-02-01'
 draft: false
-cover: "./setapp.png"
+cover: './setapp.png'
 showCoverInPost: true
 tags:
-    - apps
-    - productivity
-    - tools
+  - apps
+  - productivity
+  - tools
 ---
 
 What is [Setapp]? First of all, it's a product I fell in love with from the very first day of using it and I'm really keen to share it with you.
@@ -93,16 +93,15 @@ Actually, it's not. Let's do a quick calculation.
 
 [Setapp] costs $9.99 + VAT per month, so would spend these $286 only after 2 years of having subscription, but there some other facts that should be considered along with price:
 
-* With Setapp you get free updates of all current apps and get all new apps that arrive each month.
-* Most of the "one-time-payment" licenses are limited to be used on one computer. With Setapp you can use all apps on all your Macs without any limitation.
-* The first week is for free and you can get free month by inviting friends.
-* There is an educational discount, so if you're a student you can get subscription for 50% of original price.
+- With Setapp you get free updates of all current apps and get all new apps that arrive each month.
+- Most of the "one-time-payment" licenses are limited to be used on one computer. With Setapp you can use all apps on all your Macs without any limitation.
+- The first week is for free and you can get free month by inviting friends.
+- There is an educational discount, so if you're a student you can get subscription for 50% of original price.
 
-***
+---
 
-Haven't convienced yet? [Try 7-day free trial](https://go.setapp.com/invite/o3c4i1zc). 
+Haven't convienced yet? [Try 7-day free trial](https://go.setapp.com/invite/o3c4i1zc).
 It's awesome!
-
 
 [setapp]: https://go.setapp.com/invite/o3c4i1zc
 [bartender]: https://www.macbartender.com/

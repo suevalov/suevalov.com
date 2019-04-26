@@ -1,15 +1,15 @@
-import React from "react";
-import styled from "react-emotion";
+import React from 'react';
+import styled from '@emotion/styled';
 
-const SkillBarRoot = styled("div")`
+const SkillBarRoot = styled('div')`
   margin-bottom: 10px;
 `;
 
-const SkillTitle = styled("div")`
+const SkillTitle = styled('div')`
   font-size: 0.8em;
 `;
 
-const SkillValue = styled("div")`
+const SkillValue = styled('div')`
   margin-top: 5px;
   width: 100%;
   border-bottom: 2px solid #555;
@@ -17,7 +17,7 @@ const SkillValue = styled("div")`
   height: 8px;
 `;
 
-const SkillValueBar = styled("div")`
+const SkillValueBar = styled('div')`
   display: block;
   transition: width 0.7s ease;
   width: ${props => `${props.width}%`};
@@ -30,7 +30,7 @@ export default class SkillBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mounted: false
+      mounted: false,
     };
   }
 

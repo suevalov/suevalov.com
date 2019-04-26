@@ -1,25 +1,25 @@
 ---
-title: "Lungo: App That Keeps Your Mac Awake"
-slug: "about-lungo"
-date: "2018-01-24"
+title: 'Lungo: App That Keeps Your Mac Awake'
+slug: 'about-lungo'
+date: '2018-01-24'
 draft: false
-cover: "./lungo.png"
+cover: './lungo.png'
 showCoverInPost: true
 tags:
-    - apps
-    - productivity
-    - tools
+  - apps
+  - productivity
+  - tools
 ---
 
 I want to share [one small app](https://sindresorhus.com/lungo) that I find particularly useful for me. There are
-some situations during the day when I need to be sure that my Mac won't sleep or lower the brightness of the screen. 
+some situations during the day when I need to be sure that my Mac won't sleep or lower the brightness of the screen.
 
 There are my use cases:
 
-* Compiling Chromium, which I do approximately once in a week, by staying my laptop overnight.
-* Doing a presentation.
-* Learning German and having a textbook with exercises open on my Mac.
-* Watching videos in non-fullscreen mode.
+- Compiling Chromium, which I do approximately once in a week, by staying my laptop overnight.
+- Doing a presentation.
+- Learning German and having a textbook with exercises open on my Mac.
+- Watching videos in non-fullscreen mode.
 
 Going to `System Preferences -> Energy Saver` and changing it every time doesn't seem productive to me.
 

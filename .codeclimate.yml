@@ -11,10 +11,10 @@ engines:
           mass_threshold: 70
 
 ratings:
-   paths:
-    - "**.js"
-    - "**.jsx"
-    - "**.css"
+  paths:
+    - '**.js'
+    - '**.jsx'
+    - '**.css'
 
 exclude_paths:
-- static/**/*
+  - static/**/*

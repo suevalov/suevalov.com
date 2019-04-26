@@ -1,13 +1,13 @@
 ---
-title: "Terminal Tips: iTerm2, oh-my-zsh and more"
-slug: "terminal-tips"
-date: "2018-04-17"
+title: 'Terminal Tips: iTerm2, oh-my-zsh and more'
+slug: 'terminal-tips'
+date: '2018-04-17'
 draft: false
-cover: "./iterm.jpg"
+cover: './iterm.jpg'
 showCoverInPost: true
 tags:
-    - programming
-    - tools
+  - programming
+  - tools
 ---
 
 My productivity heavily depends on the tool belt I use. Terminal is not an exception and I'd like to share my configuration and tweaks.
@@ -18,45 +18,45 @@ Let's go thought all the steps I would do if I bought the new laptop and I need 
 
 Let's start from replacing default `Terminal.app` by [iTerm2](https://www.iterm2.com/), feature-packed and easily configurable solution that claimed to "do amazing things". Can't disagree with that.
 
-* Download [iTerm2](https://www.iterm2.com/downloads.html)
-* Read [the whole list](https://www.iterm2.com/features.html) of its features
+- Download [iTerm2](https://www.iterm2.com/downloads.html)
+- Read [the whole list](https://www.iterm2.com/features.html) of its features
 
 ## Use ZSH and Oh My ZSH
 
-When you start a terminal application, by default it is running a shell called __Bash__. It's the most popular shell, but there are alternatives that make using the terminal faster and
+When you start a terminal application, by default it is running a shell called **Bash**. It's the most popular shell, but there are alternatives that make using the terminal faster and
 more comfortable for developers.
 
 My choice is ZSH and ZSH framework - [Oh My ZSH](http://ohmyz.sh/). It comes bundled with a hot of helpful functions, helpers and plugins that boost your productivity.
 
-* Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
+- Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-* Read [Become A Command-Line Power User With Oh My ZSH And Z](https://www.smashingmagazine.com/2015/07/become-command-line-power-user-oh-my-zsh-z/)
+- Read [Become A Command-Line Power User With Oh My ZSH And Z](https://www.smashingmagazine.com/2015/07/become-command-line-power-user-oh-my-zsh-z/)
 
 ## Make Your Terminal Pretty
 
 I tried a lot of ZSH prompt themes and finally stayed with [Pure](https://github.com/sindresorhus/pure).
 
-* Install [Pure](https://github.com/sindresorhus/pure)
-* Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-* Import [Snazzy.itermcolors](https://github.com/sindresorhus/iterm2-snazzy) to `Profiles -> Colors` in iTerm2 Settings
+- Install [Pure](https://github.com/sindresorhus/pure)
+- Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- Import [Snazzy.itermcolors](https://github.com/sindresorhus/iterm2-snazzy) to `Profiles -> Colors` in iTerm2 Settings
 
 ## Learn iTerm2 Tips & Tricks
 
 ### Useful Hotkeys
 
-| Keys                 | Purpose                       |
-| -------------------- | ----------------------------: |
-| `Cmd + Shift + H`    | Show paste history            |
-| `Cmd + /`            | Find current input            |
-| `Cmd + D`            | Split pane horizontally       |
-| `Cmd + Shift + D`    | Split pane vertically         |
-| `Cmd + ]`            | Next pane                     |
-| `Cmd + [`            | Previous pane                 |
-| `Cmd + +`            | Increase font size            |
-| `Cmd + -`            | Decrease font size            |
-| `Cmd + T`            | Open new tab                  |
-| `Cmd + Number`       | Switch to window              |
-| `Cmd + K`            | Clear buffer                  |
+| Keys              |                 Purpose |
+| ----------------- | ----------------------: |
+| `Cmd + Shift + H` |      Show paste history |
+| `Cmd + /`         |      Find current input |
+| `Cmd + D`         | Split pane horizontally |
+| `Cmd + Shift + D` |   Split pane vertically |
+| `Cmd + ]`         |               Next pane |
+| `Cmd + [`         |           Previous pane |
+| `Cmd + +`         |      Increase font size |
+| `Cmd + -`         |      Decrease font size |
+| `Cmd + T`         |            Open new tab |
+| `Cmd + Number`    |        Switch to window |
+| `Cmd + K`         |            Clear buffer |
 
 ### Open links from terminal
 
@@ -85,21 +85,20 @@ You can jump between words by sending some special characters in shell and iTerm
     <img src="./setup-keys.png" title="Setup all the following keys accordingly">
 </figure>
 
-| Keys          |    Action              |  Value |                       Purpose |
+| Keys          |         Action         |  Value |                       Purpose |
 | ------------- | :--------------------: | -----: | ----------------------------: |
-| Cmd ←         |  “Send Hex Code”       | `0x01` | Jump to beginning of the line |
-| Cmd ➝         |  “Send Hex Code”       | `0x05` |       Jump to end of the line |
-| Cmd Backspace |  “Send Hex Code”       | `0x15` |           Delete current line |
+| Cmd ←         |    “Send Hex Code”     | `0x01` | Jump to beginning of the line |
+| Cmd ➝         |    “Send Hex Code”     | `0x05` |       Jump to end of the line |
+| Cmd Backspace |    “Send Hex Code”     | `0x15` |           Delete current line |
 | Alt ←         | “Send Escape Sequence” |    `b` | Jump to beginning of the word |
 | Alt ➝         | “Send Escape Sequence” |    `f` |       Jump to end of the word |
-| Alt Backspace |  “Send Hex Code”       | `0x17` |                   Delete word |
+| Alt Backspace |    “Send Hex Code”     | `0x17` |                   Delete word |
 
 ### Non-native fullscreen mode
 
 It's quite controversial step, but it works perfectly for me.
 
 iTerm offers the option to disable “native full screen mode.” This makes it easy to switch back-and-forth between an editor and shell. How? Rather than opening a native full-screen app with the accompanying slow animation, iTerm instantly places a terminal over the desktop.
-
 
 <figure>
     <img src="./fullscreen-1.png" title="Under the “General” tab uncheck “Native full screen windows.”">
@@ -112,7 +111,6 @@ iTerm offers the option to disable “native full screen mode.” This makes it 
 <figure>
     <img src="./fullscreen-3.png" title="Enable the system-wide hotkey for showing/hiding the app.">
 </figure>
-
 
 ## Add Plugins and Aliases
 
@@ -167,10 +165,9 @@ alias showdesktop='defaults write com.apple.finder CreateDesktop -bool true && k
 
 ## More cool CLI that I use
 
-* [trash](https://github.com/sindresorhus/trash-cli) and [empty-trash](https://github.com/sindresorhus/empty-trash-cli) for deleting files
-* [fkill](https://github.com/sindresorhus/fkill-cli) for convenient killing processes
-* [imgcat](https://github.com/eddieantonio/imgcat) for checking images in terminal
-* [itermocil](https://github.com/TomAnthony/itermocil) for pre-defined window/pane configuration in iTerm2
-* [thefuck](https://github.com/nvbn/thefuck) for correcting wrong console commands
-* [z](https://github.com/rupa/z) for jumping around the most used folders
-
+- [trash](https://github.com/sindresorhus/trash-cli) and [empty-trash](https://github.com/sindresorhus/empty-trash-cli) for deleting files
+- [fkill](https://github.com/sindresorhus/fkill-cli) for convenient killing processes
+- [imgcat](https://github.com/eddieantonio/imgcat) for checking images in terminal
+- [itermocil](https://github.com/TomAnthony/itermocil) for pre-defined window/pane configuration in iTerm2
+- [thefuck](https://github.com/nvbn/thefuck) for correcting wrong console commands
+- [z](https://github.com/rupa/z) for jumping around the most used folders

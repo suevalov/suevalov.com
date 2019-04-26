@@ -1,6 +1,6 @@
 [
   {
-    "label": "Javascript",
+    "label": "Javascript, Typescript",
     "value": 95
   },
   {
@@ -22,10 +22,6 @@
   {
     "label": "React Native",
     "value": 75
-  },
-  {
-    "label": "Vue",
-    "value": 65
   },
   {
     "label": "Database Modelling",
