@@ -5,6 +5,8 @@ import { Location } from '@reach/router';
 import Layout from '../components/Layout';
 import PostTags from '../components/PostTags/PostTags';
 import { FancyH1 } from '../components/FancyHeader/FancyHeader';
+import SocialLinks from '../components/SocialLinks/SocialLinks';
+import SEO from '../components/SEO/SEO';
 import PostContainer, {
   MetaRow,
   HiddenOnTablet,
@@ -15,12 +17,15 @@ import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 
 export default class NoteTemplate extends React.Component {
   render() {
+    const { slug } = this.props.pageContext;
+    const path = `/blog/til/${slug}`;
     const node = this.props.data.contentfulTodayILearned;
 
     const title = node.title;
     const date = node.date;
     const tags = node.tags.map(item => item.title);
     const timeToRead = node.body.childMarkdownRemark.timeToRead;
+    const excerpt = node.body.childMarkdownRemark.excerpt;
     const html = node.body.childMarkdownRemark.html;
 
     return (
@@ -30,6 +35,13 @@ export default class NoteTemplate extends React.Component {
             <Helmet>
               <title>{`${title} | ${config.siteTitle}`}</title>
             </Helmet>
+            <SEO
+              post={{
+                title,
+                excerpt,
+                path,
+              }}
+            />
             <main>
               <FancyH1 style={{ marginBottom: 20, lineHeight: '3.5rem' }}>
                 {title}
@@ -49,6 +61,7 @@ export default class NoteTemplate extends React.Component {
                 <article>
                   <div dangerouslySetInnerHTML={{ __html: html }} />
                 </article>
+                <SocialLinks path={path} title={title} description={excerpt} />
               </PostContainer>
             </main>
             <HiddenOnTablet>

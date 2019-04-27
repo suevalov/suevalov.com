@@ -23,6 +23,7 @@ export default class PostTemplate extends React.Component {
     const postNode = this.props.data.markdownRemark;
     const post = postNode.frontmatter;
     const timeToRead = postNode.timeToRead;
+    const excerpt = postNode.excerpt;
     const headings = (postNode.headings || []).filter(
       heading => heading.depth === 2
     );
@@ -38,7 +39,15 @@ export default class PostTemplate extends React.Component {
             <Helmet>
               <title>{`${post.title} | ${config.siteTitle}`}</title>
             </Helmet>
-            <SEO postPath={slug} postNode={postNode} postSEO />
+            <SEO
+              post={{
+                title: post.title,
+                description: post.description,
+                excerpt,
+                cover: post.cover,
+                path: slug,
+              }}
+            />
             <main>
               <FancyH1 style={{ marginBottom: 20, lineHeight: '3.5rem' }}>
                 {post.title}
@@ -70,7 +79,12 @@ export default class PostTemplate extends React.Component {
                   )}
                   <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
                 </article>
-                <SocialLinks postPath={slug} postNode={postNode} />
+                <SocialLinks
+                  path={slug}
+                  title={post.title}
+                  description={excerpt}
+                  cover={post.cover}
+                />
                 <div style={{ textAlign: 'center' }}>
                   <PostTags tags={post.tags} />
                 </div>

@@ -5,29 +5,24 @@ import config from '../../../config';
 
 class SEO extends Component {
   render() {
-    const { postNode, postPath, postSEO } = this.props;
+    const { post } = this.props;
     let title;
     let description;
     let image;
     let postURL;
-    if (postSEO) {
-      const postMeta = postNode.frontmatter;
-      title = postMeta.title;
-      description = postMeta.description
-        ? postMeta.description
-        : postNode.excerpt;
+    if (post) {
+      title = post.title;
+      description = post.description ? post.description : post.excerpt;
       image =
-        get(postMeta.cover, 'childImageSharp.resize.src', null) ||
-        config.siteLogo;
-      postURL = config.siteUrl + config.pathPrefix + postPath;
+        get(post.cover, 'childImageSharp.resize.src', null) || config.siteLogo;
+      postURL = config.siteUrl + post.path;
     } else {
       title = config.siteTitle;
       description = config.siteDescription;
       image = config.siteLogo;
     }
-    const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
-    image = config.siteUrl + realPrefix + image;
-    const blogURL = config.siteUrl + config.pathPrefix;
+    image = config.siteUrl + image;
+    const blogURL = config.siteUrl;
     const schemaOrgJSONLD = [
       {
         '@context': 'http://schema.org',
@@ -37,7 +32,7 @@ class SEO extends Component {
         alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
       },
     ];
-    if (postSEO) {
+    if (post) {
       schemaOrgJSONLD.push([
         {
           '@context': 'http://schema.org',
@@ -81,8 +76,8 @@ class SEO extends Component {
         </script>
 
         {/* OpenGraph tags */}
-        <meta property="og:url" content={postSEO ? postURL : blogURL} />
-        {postSEO ? <meta property="og:type" content="article" /> : null}
+        <meta property="og:url" content={post ? postURL : blogURL} />
+        {post ? <meta property="og:type" content="article" /> : null}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
