@@ -1,68 +1,52 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import sortBy from 'lodash/sortBy';
-import keys from 'lodash/keys';
 import Link from 'gatsby-link';
+import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
 import { FancyH2 } from '../FancyHeader/FancyHeader';
 
-const PostListingContainer = styled('div')`
+const Container = styled('div')`
   margin: 60px auto 0px auto;
-  max-width: 560px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+
+  ${TABLET_MEDIA_QUERY} {
+    flex-direction: column;
+  }
 `;
 
-const groupPostsByYear = posts => {
-  const groups = {};
-  posts.forEach(post => {
-    const date = post.date;
-    const year = date.split('-')[0];
-    if (groups[year]) {
-      groups[year].push(post);
-    } else {
-      groups[year] = [post];
-    }
-  });
-  const years = sortBy(keys(groups), year => -year);
-  return years.map(year => ({
-    label: year,
-    posts: groups[year],
-  }));
-};
+const Column = styled('div')`
+  width: 50%;
+  margin-bottom: 60px;
+  ${TABLET_MEDIA_QUERY} {
+    width: 100%;
+  }
+`;
 
 class PostListing extends React.Component {
-  getPostList() {
-    const postList = [];
-    this.props.postEdges.forEach(postEdge => {
-      postList.push({
-        path: postEdge.node.fields.slug,
-        tags: postEdge.node.frontmatter.tags,
-        cover: postEdge.node.frontmatter.cover,
-        title: postEdge.node.frontmatter.title,
-        date: postEdge.node.frontmatter.date,
-        excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead,
-      });
-    });
-    return postList;
-  }
-
   render() {
-    const postList = this.getPostList();
-    const groupsPostList = groupPostsByYear(postList);
+    const { posts } = this.props;
     return (
-      <PostListingContainer>
-        {groupsPostList.map(group => (
-          <div key={group.label}>
-            <div>
-              <FancyH2>{group.label}</FancyH2>
-            </div>
-            {group.posts.map(post => (
+      <Container>
+        {posts.length > 0 && (
+          <Column>
+            <FancyH2>Posts</FancyH2>
+            {posts.map(post => (
               <div key={post.title} style={{ marginBottom: 10 }}>
                 <Link to={post.path}>{post.title}</Link>
               </div>
             ))}
-          </div>
-        ))}
-      </PostListingContainer>
+          </Column>
+        )}
+        <Column>
+          <FancyH2>Today I Learned</FancyH2>
+          {posts.map(post => (
+            <div key={post.title} style={{ marginBottom: 10 }}>
+              <Link to={post.path}>{post.title}</Link>
+            </div>
+          ))}
+        </Column>
+      </Container>
     );
   }
 }

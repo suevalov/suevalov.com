@@ -50,7 +50,7 @@ class Resume extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
-        <Helmet title={Config.siteTitle} />
+        <Helmet title={`Resume - ${Config.siteTitle}`} />
         <FancyH1>Resume</FancyH1>
         <Row style={{ marginTop: 50 }}>
           <div>

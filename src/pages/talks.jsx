@@ -29,6 +29,7 @@ const groupTalksByYear = talks => {
 
 const GroupsContainer = styled('div')`
   margin: 60px auto 0 auto;
+  padding: 0 10px;
   max-width: 560px;
 `;
 
@@ -48,7 +49,7 @@ class Talks extends React.Component {
     const groupedTalks = groupTalksByYear(allTalks);
     return (
       <Layout location={this.props.location}>
-        <Helmet title={config.siteTitle} />
+        <Helmet title={`Talks - ${config.siteTitle}`} />
         <GroupsContainer>
           {groupedTalks.map(group => (
             <Group key={group.label}>

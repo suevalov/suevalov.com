@@ -4,7 +4,7 @@ const _ = require('lodash');
 module.exports = ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  return new Promise((resolve, reject) => {
+  const blog = new Promise((resolve, reject) => {
     const postPage = path.resolve('src/templates/post.jsx');
     const tagPage = path.resolve('src/templates/tag.jsx');
     resolve(
@@ -68,4 +68,6 @@ module.exports = ({ graphql, actions }) => {
       })
     );
   });
+
+  return Promise.all([blog]);
 };

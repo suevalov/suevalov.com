@@ -93,7 +93,7 @@ class Index extends React.Component {
         <Row justifyContent="flex-start">
           <TalksList>
             <h3>
-              Latest Posts
+              Recent posts
               <Link className="animated" to="/blog">
                 see all
               </Link>
@@ -108,7 +108,7 @@ class Index extends React.Component {
           </TalksList>
           <TalksList>
             <h3>
-              Latest Talks
+              Recent talks
               <Link className="animated" to="/talks">
                 see all
               </Link>

@@ -5,9 +5,7 @@ date: '2018-03-06'
 draft: false
 cover: './learn.jpg'
 tags:
-  - learn
   - programming
-  - plans
 ---
 
 Programming world evolves extremely quick and it's impossible to track all the news and be up to date with all technologies. We have to narrow down and pick carefully.

@@ -1,5 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import sortBy from 'lodash/sortBy';
+
 import Helmet from 'react-helmet';
 import { Location } from '@reach/router';
 import Layout from '../components/Layout';
@@ -21,6 +23,15 @@ export default class TagTemplate extends React.Component {
     const postEdges = this.props.data.allMarkdownRemark
       ? this.props.data.allMarkdownRemark.edges
       : [];
+    let posts = [];
+    postEdges.forEach(postEdge => {
+      posts.push({
+        path: postEdge.node.fields.slug,
+        title: postEdge.node.frontmatter.title,
+        date: postEdge.node.frontmatter.date,
+      });
+    });
+    posts = sortBy(posts, 'date').reverse();
     return (
       <Location>
         {({ location }) => (
@@ -30,7 +41,7 @@ export default class TagTemplate extends React.Component {
                 title={`Posts tagged as "${tag}" | ${config.siteTitle}`}
               />
               <FancyH1>About {toTitleCase(tag)}</FancyH1>
-              <PostListing postEdges={postEdges} />
+              <PostListing posts={posts} />
             </div>
           </Layout>
         )}
