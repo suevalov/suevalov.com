@@ -25,7 +25,7 @@ const Column = styled('div')`
 
 class PostListing extends React.Component {
   render() {
-    const { posts } = this.props;
+    const { posts, notes } = this.props;
     return (
       <Container>
         {posts.length > 0 && (
@@ -38,14 +38,16 @@ class PostListing extends React.Component {
             ))}
           </Column>
         )}
-        <Column>
-          <FancyH2>Today I Learned</FancyH2>
-          {posts.map(post => (
-            <div key={post.title} style={{ marginBottom: 10 }}>
-              <Link to={post.path}>{post.title}</Link>
-            </div>
-          ))}
-        </Column>
+        {notes.length > 0 && (
+          <Column>
+            <FancyH2>Today I Learned</FancyH2>
+            {notes.map(note => (
+              <div key={note.title} style={{ marginBottom: 10 }}>
+                <Link to={note.path}>{note.title}</Link>
+              </div>
+            ))}
+          </Column>
+        )}
       </Container>
     );
   }

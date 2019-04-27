@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import get from 'lodash/get';
 import sortBy from 'lodash/sortBy';
 
 import Helmet from 'react-helmet';
@@ -17,21 +18,39 @@ function toTitleCase(str) {
   );
 }
 
+function getPosts(props) {
+  const edges = get(props, 'data.allMarkdownRemark.edges', []);
+  const posts = [];
+  edges.forEach(postEdge => {
+    posts.push({
+      path: postEdge.node.fields.slug,
+      title: postEdge.node.frontmatter.title,
+      date: postEdge.node.frontmatter.date,
+    });
+  });
+  return sortBy(posts, 'date').reverse();
+}
+
+function getNotes(props, tag) {
+  const edges = get(props, 'data.allContentfulTodayILearned.edges', []);
+  const notes = edges
+    .map(edge => {
+      return {
+        path: `/blog/til/${edge.node.slug}`,
+        title: edge.node.title,
+        date: edge.node.date,
+        tags: edge.node.tags.map(item => item.title),
+      };
+    })
+    .filter(items => items.tags.indexOf(tag) !== -1);
+  return sortBy(notes, 'date').reverse();
+}
+
 export default class TagTemplate extends React.Component {
   render() {
     const tag = this.props.pageContext.tag;
-    const postEdges = this.props.data.allMarkdownRemark
-      ? this.props.data.allMarkdownRemark.edges
-      : [];
-    let posts = [];
-    postEdges.forEach(postEdge => {
-      posts.push({
-        path: postEdge.node.fields.slug,
-        title: postEdge.node.frontmatter.title,
-        date: postEdge.node.frontmatter.date,
-      });
-    });
-    posts = sortBy(posts, 'date').reverse();
+    const posts = getPosts(this.props);
+    const notes = getNotes(this.props, tag);
     return (
       <Location>
         {({ location }) => (
@@ -41,7 +60,7 @@ export default class TagTemplate extends React.Component {
                 title={`Posts tagged as "${tag}" | ${config.siteTitle}`}
               />
               <FancyH1>About {toTitleCase(tag)}</FancyH1>
-              <PostListing posts={posts} />
+              <PostListing posts={posts} notes={notes} />
             </div>
           </Layout>
         )}
@@ -61,18 +80,25 @@ export const pageQuery = graphql`
         fileAbsolutePath: { glob: "**/content/blog/**/*.md" }
       }
     ) {
-      totalCount
       edges {
         node {
           fields {
             slug
           }
-          excerpt
-          timeToRead
           frontmatter {
             title
-            tags
             date
+          }
+        }
+      }
+    }
+    allContentfulTodayILearned(sort: { fields: [date], order: DESC }) {
+      edges {
+        node {
+          title
+          slug
+          tags {
+            title
           }
         }
       }
