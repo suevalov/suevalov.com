@@ -54,6 +54,7 @@ public/
 
 # Gatsby context
 .gatsby-context.js
+.contentful.js
 
 # Bundle stats
 bundle-stats.json

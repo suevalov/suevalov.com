@@ -207,7 +207,6 @@ export default class PostTemplate extends React.Component {
     const headings = (postNode.headings || []).filter(
       heading => heading.depth === 2
     );
-    const showCoverInPost = postNode.fields.showCoverInPost;
     const hasTableOfContents = headings.length > 2;
     const tableOfContents = postNode.tableOfContents;
     if (!post.id) {
@@ -237,7 +236,7 @@ export default class PostTemplate extends React.Component {
               </PostContainer>
               <hr />
               <PostContainer>
-                {showCoverInPost && post.cover && (
+                {post.cover && (
                   <div
                     style={{
                       marginBottom: 30,
@@ -297,7 +296,6 @@ export const pageQuery = graphql`
       }
       fields {
         slug
-        showCoverInPost
       }
     }
   }

@@ -4,7 +4,6 @@ slug: 'terminal-tips'
 date: '2018-04-17'
 draft: false
 cover: './iterm.jpg'
-showCoverInPost: true
 tags:
   - programming
   - tools

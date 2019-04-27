@@ -4,7 +4,6 @@ slug: 'about-lungo'
 date: '2018-01-24'
 draft: false
 cover: './lungo.png'
-showCoverInPost: true
 tags:
   - apps
   - productivity

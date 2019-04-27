@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from '@emotion/styled';
-import Link from 'gatsby-link';
+
 import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
 
 const Footer = styled('footer')`
@@ -37,7 +37,6 @@ const NoticeContainer = styled('div')`
 export default class extends Component {
   render() {
     const { config } = this.props;
-    const url = config.siteRss;
     const currentYear = new Date().getFullYear();
     return (
       <Footer>
@@ -45,9 +44,6 @@ export default class extends Component {
           <h5>
             © 2017...{currentYear} {config.userName}
           </h5>
-          <Link className="animated" to={url}>
-            Subscribe
-          </Link>
         </NoticeContainer>
       </Footer>
     );

@@ -4,7 +4,6 @@ slug: 'about-setapp'
 date: '2018-02-01'
 draft: false
 cover: './setapp.png'
-showCoverInPost: true
 tags:
   - apps
   - productivity

@@ -45,7 +45,10 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { ne: true }, tags: { in: [$tag] } } }
+      filter: {
+        frontmatter: { draft: { ne: true }, tags: { in: [$tag] } }
+        fileAbsolutePath: { glob: "**/content/blog/**/*.md" }
+      }
     ) {
       totalCount
       edges {

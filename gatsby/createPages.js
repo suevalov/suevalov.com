@@ -1,17 +1,19 @@
-const path = require("path");
-const _ = require("lodash");
+const path = require('path');
+const _ = require('lodash');
 
 module.exports = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const postPage = path.resolve("src/templates/post.jsx");
-    const tagPage = path.resolve("src/templates/tag.jsx");
+    const postPage = path.resolve('src/templates/post.jsx');
+    const tagPage = path.resolve('src/templates/tag.jsx');
     resolve(
       graphql(
         `
           {
-            allMarkdownRemark {
+            allMarkdownRemark(
+              filter: { fileAbsolutePath: { glob: "**/content/blog/**/*.md" } }
+            ) {
               edges {
                 node {
                   frontmatter {
@@ -48,8 +50,8 @@ module.exports = ({ graphql, actions }) => {
             path: edge.node.fields.slug,
             component: postPage,
             context: {
-              slug: edge.node.fields.slug
-            }
+              slug: edge.node.fields.slug,
+            },
           });
         });
 
@@ -59,8 +61,8 @@ module.exports = ({ graphql, actions }) => {
             path: `/blog/tags/${_.kebabCase(tag)}/`,
             component: tagPage,
             context: {
-              tag
-            }
+              tag,
+            },
           });
         });
       })

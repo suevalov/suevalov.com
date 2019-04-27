@@ -133,7 +133,10 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 5
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { ne: true } } }
+      filter: {
+        frontmatter: { draft: { ne: true } }
+        fileAbsolutePath: { glob: "**/content/blog/**/*.md" }
+      }
     ) {
       edges {
         node {

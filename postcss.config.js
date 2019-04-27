@@ -8,6 +8,6 @@ module.exports = () => ({
     postcssImport(),
     postcssCssNext(),
     postcssBrowserReporter(),
-    postcssReporter()
-  ]
+    postcssReporter(),
+  ],
 });

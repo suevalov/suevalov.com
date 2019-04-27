@@ -4,7 +4,6 @@ slug: 'what-technologies-i-want-to-learn-2018'
 date: '2018-03-06'
 draft: false
 cover: './learn.jpg'
-showCoverInPost: true
 tags:
   - learn
   - programming
