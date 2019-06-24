@@ -1,5 +1,13 @@
 [
   {
+    "title": "Building an extensible Contentful",
+    "place": "Contentful Community Meetup, Amsterdam",
+    "url": "https://suevalov.com/pdf/building-extensible-contentful.pdf",
+    "date": "21.05.2019",
+    "language": "English",
+    "video": "https://www.youtube.com/watch?v=Qvl_dzHuZtk"
+  },
+  {
     "title": "Driving Migration",
     "place": "JAMStack_Berlin #7, Germany",
     "url": "http://suevalov.github.io/presentations/driving-migration/",
