@@ -87,7 +87,7 @@
     "postcss-import": "^12.0.1",
     "postcss-reporter": "^6.0.1",
     "prettier": "1.17.0",
-    "prismjs": "1.16.0",
+    "prismjs": "1.23.0",
     "remark-cli": "6.0.1",
     "remark-preset-lint-recommended": "3.0.2",
     "stylefmt": "6.0.3",
