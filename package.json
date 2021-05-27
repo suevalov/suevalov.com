@@ -116,5 +116,9 @@
     "hooks": {
       "pre-commit": "./node_modules/.bin/lint-staged"
     }
+  },
+  "volta": {
+    "node": "8.11.1",
+    "yarn": "1.19.2"
   }
 }
