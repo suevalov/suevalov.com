@@ -40,3 +40,76 @@ So, I decided to come up with something that suits my needs.
 ## Solution
 
 > Disclaimer. The solution doesn't claim to be universal, but it worked for me really well.
+
+### Step 1. Utility classes
+
+As I said earlier, basically I wanted to wrap https://github.com/JedWatson/classnames with a custom type-safe function which would all to pass only classes that are valid for the current project Tailwind configuration.
+
+```js
+import cn from 'classnames';
+
+classNames('flex', 'items-center'); // => 'flex items-center'
+
+classNames(
+  'flex',
+  { 'items-center': true, 'items-baseline': false },
+  isJustified ? 'justify-center' : undefined
+); // => 'flex items-center justify-center'
+```
+
+So, the start is really simple:
+
+```js
+import cn from 'classnames';
+
+// we will need to generate this type automatically based on your tailwind.config.js
+type TWClass = 'flex' | 'items-center' | 'items-baseline';
+
+type ClassValue = TWClass | { [key in TWClass]: boolean } | undefined | null;
+
+export const tw = (...classes: ClassValue[]): string => {
+  return cn(...classes);
+};
+```
+
+Let's see how it looks in action in VSCode:
+
+<figure>
+    <img src="./example-1.gif" title="Typesafety and Autocomplete">
+</figure>
+
+It looks great already, really close to what I wanted to see in the end and it's very convenient to use if you have some if/else logic in your classname. But if you don't have any condition this `tw` function is not great because you'll need to separate use class separately. It's especially annoying when your definition is just a list of 10 classes without any logic, or you copy classes from a Tailwind example.
+
+Let's try to come up with a solution for this use case. This solution will require Typescript&nbsp;4.1.
+
+```js
+
+type Split<S extends string, D extends string> = string extends S
+  ? string[]
+  : S extends ''
+  ? []
+  : S extends `${infer T}${D}${infer U}`
+  ? [T, ...Split<U, D>]
+  : [S];
+
+const createFn = <F extends TWClass>() => {
+  type OptionalF = F | null | undefined;
+  return <T extends Split<T, ' '> extends F[] ? string : F>(
+    className: T,
+    ...classes: OptionalF[]
+  ): string => cx(className, ...classes);
+};
+
+export const twf = createFn<TWClass>();
+
+```
+
+<figure>
+    <img src="./example-2.gif" title="Typesafety and Autocomplete">
+</figure>
+
+### Step 2. Generating types
+
+Let's focus on the second part of the goal: generate all possible class names based on `tailwind.config.js`.
+
+> I wish Tailwind CLI had an option to generate an array of all possible class names. There's no such option, so we need to parse CSS.
