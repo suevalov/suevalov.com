@@ -122,7 +122,35 @@ export default class ExperienceBlock extends React.Component {
           <ul>
             <li>
               <EventTime>
-                <time>Aug 2018 - present</time>
+                <time>Feb 2020 - present</time>
+              </EventTime>
+              <Event>
+                <EventTitle>Staff Software Engineer</EventTitle>
+                <EventSubtitle>
+                  <a
+                    className="animated"
+                    href="http://www.contentful.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Contentful
+                  </a>
+                  , Berlin
+                </EventSubtitle>
+                <EventDescription>
+                  Leading different org-wide techinical initiatives.
+                  <br />
+                  <br />
+                  Leading a refactoring of the web app from Angular to React.
+                  <br />
+                  <br />
+                  Front-end chapter coordinator.
+                </EventDescription>
+              </Event>
+            </li>
+            <li>
+              <EventTime>
+                <time>Aug 2018 - Feb 2020</time>
               </EventTime>
               <Event>
                 <EventTitle>Fullstack JavaScript Developer</EventTitle>
@@ -137,6 +165,13 @@ export default class ExperienceBlock extends React.Component {
                   </a>
                   , Berlin
                 </EventSubtitle>
+                <EventDescription>
+                  Building Extensibility features at Contentful. UI Extensions,
+                  command line tools built with JavaScript/Typescript.
+                  <br />
+                  <br />
+                  Leading a refactoring of the web app from Angular to React.
+                </EventDescription>
               </Event>
             </li>
             <li>

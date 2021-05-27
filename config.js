@@ -41,28 +41,6 @@ module.exports = {
       type: 'linkedin',
     },
   ],
-  techInterestedIn: [
-    {
-      label: 'React',
-      href: 'https://reactjs.org',
-    },
-    {
-      label: 'React Native',
-      href: 'https://facebook.github.io/react-native/',
-    },
-    {
-      label: 'Reason',
-      href: 'https://reasonml.github.io',
-    },
-    {
-      label: 'Kotlin',
-      href: 'https://kotlinlang.org/',
-    },
-    {
-      label: 'GraphQL',
-      href: 'http://graphql.org/',
-    },
-  ],
   themeColor: '#89bcfe', // Used for setting manifest and progress theme colors.
   backgroundColor: '#e0e0e0', // Used for setting manifest background color.
 };

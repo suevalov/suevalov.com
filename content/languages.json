@@ -5,14 +5,14 @@
   },
   {
     "label": "English",
-    "value": 90
+    "value": 95
+  },
+  {
+    "label": "German",
+    "value": 25
   },
   {
     "label": "Polish",
     "value": 20
-  },
-  {
-    "label": "German",
-    "value": 10
   }
 ]
