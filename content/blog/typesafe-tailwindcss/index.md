@@ -2,7 +2,7 @@
 title: 'Typesafe Tailwind CSS'
 slug: 'typesafe-tailwindcss'
 date: '2021-05-27'
-draft: false
+draft: true
 tags:
   - programming
   - typescript
