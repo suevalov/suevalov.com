@@ -70,7 +70,7 @@ export default class PostTemplate extends React.Component {
                       marginBottom: 30,
                     }}
                   >
-                    <Image sizes={post.cover.childImageSharp.sizes} />
+                    <Image sizes={post.cover.childImageSharp.fluid} />
                   </div>
                 )}
                 <article>
@@ -120,8 +120,8 @@ export const pageQuery = graphql`
             resize(width: 1000) {
               src
             }
-            sizes(maxWidth: 786) {
-              ...GatsbyImageSharpSizes
+            fluid(maxWidth: 786) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
