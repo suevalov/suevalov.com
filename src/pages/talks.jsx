@@ -9,9 +9,9 @@ import { FancyH2 } from '../components/FancyHeader/FancyHeader';
 import Talk from '../components/Talk';
 import allTalks from '../../content/talks.json';
 
-const groupTalksByYear = talks => {
+const groupTalksByYear = (talks) => {
   const groups = {};
-  talks.forEach(talk => {
+  talks.forEach((talk) => {
     const date = talk.date;
     const year = date.split('.')[2];
     if (groups[year]) {
@@ -20,8 +20,8 @@ const groupTalksByYear = talks => {
       groups[year] = [talk];
     }
   });
-  const years = sortBy(keys(groups), year => -year);
-  return years.map(year => ({
+  const years = sortBy(keys(groups), (year) => -year);
+  return years.map((year) => ({
     label: year,
     talks: groups[year],
   }));
@@ -51,11 +51,11 @@ class Talks extends React.Component {
       <Layout location={this.props.location}>
         <Helmet title={`Talks - ${config.siteTitle}`} />
         <GroupsContainer>
-          {groupedTalks.map(group => (
+          {groupedTalks.map((group) => (
             <Group key={group.label}>
               <FancyH2>{group.label}</FancyH2>
               <TalksList>
-                {group.talks.map(talk => (
+                {group.talks.map((talk) => (
                   <li key={talk.title}>
                     <Talk talk={talk} />
                   </li>

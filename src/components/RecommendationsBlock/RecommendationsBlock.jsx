@@ -26,7 +26,9 @@ const Container = styled('div')`
   }
 `;
 
-const linkedInLink = Config.userLinks.filter(link => link.type === 'linkedin');
+const linkedInLink = Config.userLinks.filter(
+  (link) => link.type === 'linkedin'
+);
 const linkedInLinkValue = linkedInLink ? linkedInLink[0].href : '';
 
 class RecommendationsBlock extends React.Component {

@@ -20,16 +20,12 @@ const Text = styled('p')`
 `;
 
 export default class LeadText extends React.Component {
-  static defaultProps = {
-    className: '',
-  };
-
   render() {
     const currentYear = new Date().getFullYear();
     const experience = currentYear - 2010;
     return (
       <div className={this.props.className}>
-        <FancyH1>Hi, I{"'"}m Alex</FancyH1>
+        <FancyH1>Hi, I&apos;m Alex</FancyH1>
         <H2>Staff Software Engineer.</H2>
         <H2 style={{ textAlign: 'right' }}>
           Based&nbsp;in&nbsp;Berlin. Work at{' '}
@@ -52,3 +48,7 @@ export default class LeadText extends React.Component {
     );
   }
 }
+
+LeadText.defaultProps = {
+  className: '',
+};

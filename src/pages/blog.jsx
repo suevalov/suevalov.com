@@ -11,7 +11,7 @@ import config from '../../config';
 function getPosts(props) {
   const edges = get(props, 'data.allMarkdownRemark.edges', []);
   const posts = [];
-  edges.forEach(postEdge => {
+  edges.forEach((postEdge) => {
     posts.push({
       path: postEdge.node.fields.slug,
       title: postEdge.node.frontmatter.title,
@@ -24,7 +24,7 @@ function getPosts(props) {
 function getNotes(props) {
   const edges = get(props, 'data.allContentfulTodayILearned.edges', []);
   const notes = [];
-  edges.forEach(edge => {
+  edges.forEach((edge) => {
     notes.push({
       path: `/blog/til/${edge.node.slug}`,
       title: edge.node.title,
@@ -34,7 +34,7 @@ function getNotes(props) {
   return sortBy(notes, 'date').reverse();
 }
 
-const Blog = props => {
+const Blog = (props) => {
   const posts = getPosts(props);
   const notes = getNotes(props);
 

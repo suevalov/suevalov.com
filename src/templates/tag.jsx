@@ -14,14 +14,14 @@ import config from '../../config';
 function toTitleCase(str) {
   return str.replace(
     /\w\S*/g,
-    txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+    (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
   );
 }
 
 function getPosts(props) {
   const edges = get(props, 'data.allMarkdownRemark.edges', []);
   const posts = [];
-  edges.forEach(postEdge => {
+  edges.forEach((postEdge) => {
     posts.push({
       path: postEdge.node.fields.slug,
       title: postEdge.node.frontmatter.title,
@@ -34,15 +34,13 @@ function getPosts(props) {
 function getNotes(props, tag) {
   const edges = get(props, 'data.allContentfulTodayILearned.edges', []);
   const notes = edges
-    .map(edge => {
-      return {
-        path: `/blog/til/${edge.node.slug}`,
-        title: edge.node.title,
-        date: edge.node.date,
-        tags: edge.node.tags.map(item => item.title),
-      };
-    })
-    .filter(items => items.tags.indexOf(tag) !== -1);
+    .map((edge) => ({
+      path: `/blog/til/${edge.node.slug}`,
+      title: edge.node.title,
+      date: edge.node.date,
+      tags: edge.node.tags.map((item) => item.title),
+    }))
+    .filter((items) => items.tags.indexOf(tag) !== -1);
   return sortBy(notes, 'date').reverse();
 }
 

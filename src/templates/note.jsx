@@ -23,7 +23,7 @@ export default class NoteTemplate extends React.Component {
 
     const title = node.title;
     const date = node.date;
-    const tags = node.tags.map(item => item.title);
+    const tags = node.tags.map((item) => item.title);
     const timeToRead = node.body.childMarkdownRemark.timeToRead;
     const excerpt = node.body.childMarkdownRemark.excerpt;
     const html = node.body.childMarkdownRemark.html;

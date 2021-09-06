@@ -20,7 +20,7 @@ const SkillValue = styled('div')`
 const SkillValueBar = styled('div')`
   display: block;
   transition: width 0.7s ease;
-  width: ${props => `${props.width}%`};
+  width: ${(props) => `${props.width}%`};
   height: 8px;
   background-color: #89bcfe;
   opacity: 0.6;

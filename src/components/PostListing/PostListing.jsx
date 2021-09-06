@@ -31,7 +31,7 @@ class PostListing extends React.Component {
         {posts.length > 0 && (
           <Column>
             <FancyH2>Posts</FancyH2>
-            {posts.map(post => (
+            {posts.map((post) => (
               <div key={post.title} style={{ marginBottom: 10 }}>
                 <Link to={post.path}>{post.title}</Link>
               </div>
@@ -41,7 +41,7 @@ class PostListing extends React.Component {
         {notes.length > 0 && (
           <Column>
             <FancyH2>Today I Learned</FancyH2>
-            {notes.map(note => (
+            {notes.map((note) => (
               <div key={note.title} style={{ marginBottom: 10 }}>
                 <Link to={note.path}>{note.title}</Link>
               </div>

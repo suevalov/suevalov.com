@@ -10,7 +10,7 @@ class Blog extends React.Component {
       <Layout location={this.props.location}>
         <Helmet title={`Not Found - ${config.siteTitle}`} />
         <FancyH1 style={{ paddingTop: 100 }}>404</FancyH1>
-        <FancyH2>Page you{"'"}re looking for is not found</FancyH2>
+        <FancyH2>Page you&apos;re looking for is not found</FancyH2>
       </Layout>
     );
   }

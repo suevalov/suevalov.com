@@ -15,7 +15,7 @@ class PostTags extends Component {
     return (
       <PostTagsContainer>
         {tags &&
-          tags.map(tag => (
+          tags.map((tag) => (
             <Link
               className="animated"
               key={tag}

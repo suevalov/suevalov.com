@@ -56,7 +56,7 @@ export default class LeadContacts extends React.Component {
     return (
       <LeadContactsContainer className={this.props.className}>
         <ul>
-          {this.props.links.map(link => {
+          {this.props.links.map((link) => {
             let IconComponent = null;
             let target = '_blank';
 

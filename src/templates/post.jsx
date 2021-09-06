@@ -25,7 +25,7 @@ export default class PostTemplate extends React.Component {
     const timeToRead = postNode.timeToRead;
     const excerpt = postNode.excerpt;
     const headings = (postNode.headings || []).filter(
-      heading => heading.depth === 2
+      (heading) => heading.depth === 2
     );
     const hasTableOfContents = headings.length > 2;
     const tableOfContents = postNode.tableOfContents;

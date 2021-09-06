@@ -1,7 +1,13 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "extends": ["airbnb", "prettier"],
   "plugins": ["react", "jsx-a11y", "import"],
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
   "rules": {
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
@@ -9,7 +15,8 @@
     "prefer-destructuring": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "react/destructuring-assignment": "off",
-    "react/jsx-one-expression-per-line": "off"
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off"
   },
   "settings": {
     "import/core-modules": []

@@ -15,7 +15,7 @@ import allTalks from '../../content/talks.json';
 const Row = styled('div')`
   display: flex;
   flex-direction: row;
-  justify-content: ${props => props.justifyContent};
+  justify-content: ${(props) => props.justifyContent};
   margin-bottom: 20px;
 
   ${TABLET_MEDIA_QUERY} {
@@ -78,8 +78,8 @@ class Index extends React.Component {
   render() {
     const talks = allTalks.slice(0, 3);
     const posts = this.props.data.allMarkdownRemark.edges
-      .map(edge => edge.node)
-      .map(node => ({
+      .map((edge) => edge.node)
+      .map((node) => ({
         title: node.frontmatter.title,
         slug: node.fields.slug,
       }));
@@ -99,7 +99,7 @@ class Index extends React.Component {
               </Link>
             </h3>
             <ul>
-              {posts.map(post => (
+              {posts.map((post) => (
                 <li key={post.slug}>
                   <Link to={post.slug}>{post.title}</Link>
                 </li>
@@ -114,7 +114,7 @@ class Index extends React.Component {
               </Link>
             </h3>
             <ul>
-              {talks.map(talk => (
+              {talks.map((talk) => (
                 <li key={talk.title}>
                   <Talk talk={talk} />
                 </li>
