@@ -63,13 +63,12 @@ export default class Header extends React.Component {
   render() {
     return (
       <Nav>
-        <LogoLink to="/">
+        <LogoLink to="/" className="not-animated">
           <ProfileHexImage image={Config.userAvatar} title={Config.userName} />
         </LogoLink>
         <Menu>
           <MenuItem>
             <Link
-              className="animated"
               getProps={(props) => {
                 if (props.location.pathname === '/') {
                   return { className: activeLinkClass };
@@ -84,7 +83,6 @@ export default class Header extends React.Component {
           </MenuItem>
           <MenuItem>
             <Link
-              className="animated"
               getProps={(props) => {
                 if (props.location.pathname.indexOf('/blog') === 0) {
                   return { className: activeLinkClass };
@@ -98,7 +96,6 @@ export default class Header extends React.Component {
           </MenuItem>
           <MenuItem>
             <Link
-              className="animated"
               getProps={(props) => {
                 if (props.location.pathname.indexOf('/talks') === 0) {
                   return { className: activeLinkClass };
@@ -112,7 +109,6 @@ export default class Header extends React.Component {
           </MenuItem>
           <MenuItem>
             <Link
-              className="animated"
               getProps={(props) => {
                 if (props.location.pathname.indexOf('/resume') === 0) {
                   return { className: activeLinkClass };

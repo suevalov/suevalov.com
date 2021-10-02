@@ -41,6 +41,7 @@ export default class Talk extends React.Component {
               href={video}
               target="_blank"
               rel="noopener noreferrer"
+              className="not-animated"
             >
               <TalkVideoIcon />
             </TalkVideoLink>

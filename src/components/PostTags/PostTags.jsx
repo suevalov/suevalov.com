@@ -17,7 +17,6 @@ class PostTags extends Component {
         {tags &&
           tags.map((tag) => (
             <Link
-              className="animated"
               key={tag}
               style={{ textDecoration: 'none' }}
               to={`/blog/tags/${kebabCase(tag)}`}

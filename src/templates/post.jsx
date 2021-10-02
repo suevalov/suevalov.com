@@ -70,7 +70,7 @@ export default class PostTemplate extends React.Component {
                       marginBottom: 30,
                     }}
                   >
-                    <Image sizes={post.cover.childImageSharp.fluid} />
+                    <Image fluid={post.cover.childImageSharp.fluid} />
                   </div>
                 )}
                 <article>

@@ -128,7 +128,6 @@ export default class ExperienceBlock extends React.Component {
                 <EventTitle>Staff Software Engineer</EventTitle>
                 <EventSubtitle>
                   <a
-                    className="animated"
                     href="http://www.contentful.com/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -156,7 +155,6 @@ export default class ExperienceBlock extends React.Component {
                 <EventTitle>Fullstack JavaScript Developer</EventTitle>
                 <EventSubtitle>
                   <a
-                    className="animated"
                     href="http://www.contentful.com/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -190,7 +188,6 @@ export default class ExperienceBlock extends React.Component {
                 <EventTitle>Senior Front-end Developer</EventTitle>
                 <EventSubtitle>
                   <a
-                    className="animated"
                     href="http://www.opera.com/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -216,7 +213,6 @@ export default class ExperienceBlock extends React.Component {
                 <EventTitle>Front-end Team Lead</EventTitle>
                 <EventSubtitle>
                   <a
-                    className="animated"
                     href="http://dataart.com/"
                     target="_blank"
                     rel="noopener noreferrer"

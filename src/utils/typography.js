@@ -80,24 +80,25 @@ const typography = new Typography({
       textDecoration: 'none',
       position: 'relative',
       transition: 'color 0.2s ease-out',
-    },
-    'a:hover, a:active': {
-      boxShadow: 'none',
+      outline: 'none',
     },
     'a.anchor': {
       boxShadow: 'none',
     },
-    'a.animated:hover': {
+    'a:focus': {
+      outline: 'none',
+    },
+    'a:hover, a:focus': {
       color: '#fff',
       transitionDelay: '0.1s',
       outline: 'none',
     },
-    'a.animated:hover:before': {
+    'a:hover:before, a:focus:before': {
       transition: 'transform 0.2s ease-in',
       transitionDelay: '0.1s',
       transform: 'scaleX(1)',
     },
-    'a.animated:before': {
+    'a:before': {
       transitionDelay: '0.1s',
       content: "''",
       position: 'absolute',
@@ -110,6 +111,12 @@ const typography = new Typography({
       height: '100%',
       transformOrigin: 'left top',
       zIndex: '-1',
+    },
+    'a.anchor:hover, a.not-animated:hover, a.not-animated:focus': {
+      color: '#007acc',
+    },
+    'a.anchor:before, a.not-animated:before': {
+      display: 'none',
     },
     'mark,ins': {
       background: '#007acc',

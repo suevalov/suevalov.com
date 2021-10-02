@@ -94,9 +94,7 @@ class Index extends React.Component {
           <TalksList>
             <h3>
               Recent posts
-              <Link className="animated" to="/blog">
-                see all
-              </Link>
+              <Link to="/blog">see all</Link>
             </h3>
             <ul>
               {posts.map((post) => (
@@ -109,9 +107,7 @@ class Index extends React.Component {
           <TalksList>
             <h3>
               Recent talks
-              <Link className="animated" to="/talks">
-                see all
-              </Link>
+              <Link to="/talks">see all</Link>
             </h3>
             <ul>
               {talks.map((talk) => (
