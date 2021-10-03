@@ -9,19 +9,6 @@ import Layout from '../components/Layout';
 import config from '../../config';
 
 function getPosts(props) {
-  const edges = get(props, 'data.allMarkdownRemark.edges', []);
-  const posts = [];
-  edges.forEach((postEdge) => {
-    posts.push({
-      path: postEdge.node.fields.slug,
-      title: postEdge.node.frontmatter.title,
-      date: postEdge.node.frontmatter.date,
-    });
-  });
-  return sortBy(posts, 'date').reverse();
-}
-
-function getNewPosts(props) {
   const edges = get(props, 'data.allContentfulPost.edges', []);
   const notes = [];
   edges.forEach((edge) => {
@@ -48,7 +35,7 @@ function getNotes(props) {
 }
 
 const Blog = (props) => {
-  const posts = [...getPosts(props), ...getNewPosts(props)];
+  const posts = getPosts(props);
   const notes = getNotes(props);
 
   return (
@@ -63,27 +50,6 @@ const Blog = (props) => {
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogQuery {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        frontmatter: { draft: { ne: true } }
-        fileAbsolutePath: { glob: "**/content/blog/**/*.md" }
-      }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          excerpt
-          timeToRead
-          frontmatter {
-            title
-            date
-          }
-        }
-      }
-    }
     allContentfulPost(sort: { fields: [date], order: ASC }) {
       edges {
         node {

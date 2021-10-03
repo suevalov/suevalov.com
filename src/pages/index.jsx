@@ -1,4 +1,5 @@
 import React from 'react';
+import get from 'lodash/get';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
@@ -77,12 +78,13 @@ const classes = {
 class Index extends React.Component {
   render() {
     const talks = allTalks.slice(0, 3);
-    const posts = this.props.data.allMarkdownRemark.edges
-      .map((edge) => edge.node)
-      .map((node) => ({
-        title: node.frontmatter.title,
-        slug: node.fields.slug,
-      }));
+
+    const edges = get(this.props, 'data.allContentfulPost.edges', []);
+    const posts = edges.map((edge) => ({
+      path: `/blog/${edge.node.slug}`,
+      title: edge.node.title,
+    }));
+
     return (
       <Layout location={this.props.location}>
         <Helmet title={Config.siteTitle} />
@@ -98,8 +100,8 @@ class Index extends React.Component {
             </h3>
             <ul>
               {posts.map((post) => (
-                <li key={post.slug}>
-                  <Link to={post.slug}>{post.title}</Link>
+                <li key={post.path}>
+                  <Link to={post.path}>{post.title}</Link>
                 </li>
               ))}
             </ul>
@@ -126,22 +128,12 @@ class Index extends React.Component {
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(
-      limit: 5
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        frontmatter: { draft: { ne: true } }
-        fileAbsolutePath: { glob: "**/content/blog/**/*.md" }
-      }
-    ) {
+    allContentfulPost(limit: 5, sort: { fields: [date], order: DESC }) {
       edges {
         node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
+          title
+          slug
+          date
         }
       }
     }

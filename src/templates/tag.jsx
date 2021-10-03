@@ -18,17 +18,17 @@ function toTitleCase(str) {
   );
 }
 
-function getPosts(props) {
-  const edges = get(props, 'data.allMarkdownRemark.edges', []);
-  const posts = [];
-  edges.forEach((postEdge) => {
-    posts.push({
-      path: postEdge.node.fields.slug,
-      title: postEdge.node.frontmatter.title,
-      date: postEdge.node.frontmatter.date,
-    });
-  });
-  return sortBy(posts, 'date').reverse();
+function getPosts(props, tag) {
+  const edges = get(props, 'data.allContentfulPost.edges', []);
+  const notes = edges
+    .map((edge) => ({
+      path: `/blog/${edge.node.slug}`,
+      title: edge.node.title,
+      date: edge.node.date,
+      tags: edge.node.tags.map((item) => item.title),
+    }))
+    .filter((items) => items.tags.indexOf(tag) !== -1);
+  return sortBy(notes, 'date').reverse();
 }
 
 function getNotes(props, tag) {
@@ -47,7 +47,7 @@ function getNotes(props, tag) {
 export default class TagTemplate extends React.Component {
   render() {
     const tag = this.props.pageContext.tag;
-    const posts = getPosts(this.props);
+    const posts = getPosts(this.props, tag);
     const notes = getNotes(this.props, tag);
     return (
       <Location>
@@ -69,28 +69,19 @@ export default class TagTemplate extends React.Component {
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query TagPage($tag: String) {
-    allMarkdownRemark(
-      limit: 1000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        frontmatter: { draft: { ne: true }, tags: { in: [$tag] } }
-        fileAbsolutePath: { glob: "**/content/blog/**/*.md" }
-      }
-    ) {
+  query TagPage {
+    allContentfulPost(sort: { fields: [date], order: ASC }) {
       edges {
         node {
-          fields {
-            slug
-          }
-          frontmatter {
+          title
+          slug
+          tags {
             title
-            date
           }
         }
       }
     }
-    allContentfulTodayILearned(sort: { fields: [date], order: DESC }) {
+    allContentfulTodayILearned(sort: { fields: [date], order: ASC }) {
       edges {
         node {
           title
