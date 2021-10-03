@@ -37,7 +37,7 @@ module.exports = {
     },
     {
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/alexander-suevalov-748b6731/',
+      href: 'https://www.linkedin.com/in/suevalov/',
       type: 'linkedin',
     },
   ],
