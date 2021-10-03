@@ -91,6 +91,7 @@ module.exports = ({ graphql, actions }) => {
 
   const notes = new Promise((resolve) => {
     const tilPage = path.resolve(`./src/templates/til.jsx`);
+    const newPostPage = path.resolve(`./src/templates/new-post.jsx`);
     graphql(`
       {
         allContentfulTodayILearned {
@@ -100,13 +101,34 @@ module.exports = ({ graphql, actions }) => {
             }
           }
         }
+        allContentfulPost {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
       }
     `).then((result) => {
-      const edges = _.get(result, 'data.allContentfulTodayILearned.edges', []);
-      edges.forEach(({ node }) => {
+      const tilNotes = _.get(
+        result,
+        'data.allContentfulTodayILearned.edges',
+        []
+      );
+      const posts = _.get(result, 'data.allContentfulPost.edges', []);
+      tilNotes.forEach(({ node }) => {
         createPage({
           path: `/blog/til/${node.slug}/`,
           component: tilPage,
+          context: {
+            slug: node.slug,
+          },
+        });
+      });
+      posts.forEach(({ node }) => {
+        createPage({
+          path: `/blog/${node.slug}/`,
+          component: newPostPage,
           context: {
             slug: node.slug,
           },

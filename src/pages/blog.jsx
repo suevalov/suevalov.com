@@ -21,6 +21,19 @@ function getPosts(props) {
   return sortBy(posts, 'date').reverse();
 }
 
+function getNewPosts(props) {
+  const edges = get(props, 'data.allContentfulPost.edges', []);
+  const notes = [];
+  edges.forEach((edge) => {
+    notes.push({
+      path: `/blog/${edge.node.slug}`,
+      title: edge.node.title,
+      date: edge.node.date,
+    });
+  });
+  return sortBy(notes, 'date').reverse();
+}
+
 function getNotes(props) {
   const edges = get(props, 'data.allContentfulTodayILearned.edges', []);
   const notes = [];
@@ -35,7 +48,7 @@ function getNotes(props) {
 }
 
 const Blog = (props) => {
-  const posts = getPosts(props);
+  const posts = [...getPosts(props), ...getNewPosts(props)];
   const notes = getNotes(props);
 
   return (
@@ -71,7 +84,15 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulTodayILearned(sort: { fields: [date], order: DESC }) {
+    allContentfulPost(sort: { fields: [date], order: ASC }) {
+      edges {
+        node {
+          title
+          slug
+        }
+      }
+    }
+    allContentfulTodayILearned(sort: { fields: [date], order: ASC }) {
       edges {
         node {
           title
