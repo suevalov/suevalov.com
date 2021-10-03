@@ -1,11 +1,10 @@
 module.exports = {
-  siteTitle: 'Alex Suevalov | Senior Web Developer', // Site title.
+  siteTitle: 'Alex Suevalov | Staff Software Engineer', // Site title.
   shortSiteTitle: 'suevalov.com',
-  siteTitleAlt: 'Alex Suevalov | Senior Web Developer', // Alternative site title for SEO.
+  siteTitleAlt: 'Alex Suevalov | Staff Software Engineer', // Alternative site title for SEO.
   siteLogo: '/logos/logo-192x192.png', // Logo used for SEO and manifest.
   siteUrl: 'https://suevalov.com', // Domain of your website
-  siteDescription:
-    "Alex Suevalov's personal website and blog about programming", // Website description used for RSS feeds/meta description tag.
+  siteDescription: "Alex Suevalov's personal website and blog", // Website description used for RSS feeds/meta description tag.
   siteFBAppID: '', // FB Application ID for using app insights
   googleAnalyticsID: 'UA-112843005-1', // GA tracking ID.
   userName: 'Alex Suevalov', // Username to display in the author segment.
