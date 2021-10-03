@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { FancyH2 } from '../FancyHeader/FancyHeader';
-import Config from '../../../config';
 
 const Container = styled('div')`
+  margin-top: 50px;
+
   blockquote {
     min-height: 180px;
     border-left-width: 2px;
@@ -25,11 +26,6 @@ const Container = styled('div')`
     font-size: 0.9em;
   }
 `;
-
-const linkedInLink = Config.userLinks.filter(
-  (link) => link.type === 'linkedin'
-);
-const linkedInLinkValue = linkedInLink ? linkedInLink[0].href : '';
 
 class RecommendationsBlock extends React.Component {
   constructor(props) {
@@ -92,12 +88,6 @@ class RecommendationsBlock extends React.Component {
             Next
           </button>
         </div>
-        <p>
-          See all recommendations on{' '}
-          <a href={linkedInLinkValue} target="_blank" rel="noopener noreferrer">
-            my LinkedIn profile
-          </a>
-        </p>
       </Container>
     );
   }

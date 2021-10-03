@@ -110,14 +110,14 @@ export default class Header extends React.Component {
           <MenuItem>
             <Link
               getProps={(props) => {
-                if (props.location.pathname.indexOf('/resume') === 0) {
+                if (props.location.pathname.indexOf('/cv') === 0) {
                   return { className: activeLinkClass };
                 }
                 return null;
               }}
-              to="/resume"
+              to="/cv"
             >
-              Resume
+              CV
             </Link>
           </MenuItem>
         </Menu>

@@ -14,6 +14,20 @@ import personalQualities from '../../content/personalQualities.json';
 import designSkills from '../../content/designSkills.json';
 import developmentSkills from '../../content/developmentSkills.json';
 
+const HeaderRow = styled('div')`
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-left: 20px;
+    font-size: 0.9em;
+  }
+`;
+
+const Header = styled(FancyH1)`
+  margin-bottom: 0;
+`;
+
 const Row = styled('div')`
   display: flex;
   flex-direction: row;
@@ -46,16 +60,26 @@ const Row = styled('div')`
   }
 `;
 
-class Resume extends React.Component {
+class CV extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
-        <Helmet title={`Resume - ${Config.siteTitle}`} />
-        <FancyH1>Resume</FancyH1>
+        <Helmet title={`CV - ${Config.siteTitle}`} />
+        <HeaderRow>
+          <Header>CV</Header>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={
+              Config.userLinks.find((item) => item.type === 'linkedin').href
+            }
+          >
+            Reach me out on LinkedIn
+          </a>
+        </HeaderRow>
         <Row style={{ marginTop: 50 }}>
           <div>
             <ExperienceBlock />
-            <RecommendationsBlock recommendations={recommendations} />
           </div>
           <div>
             <SkillsBlock
@@ -64,6 +88,7 @@ class Resume extends React.Component {
               designSkills={designSkills}
               developmentSkills={developmentSkills}
             />
+            <RecommendationsBlock recommendations={recommendations} />
           </div>
         </Row>
       </Layout>
@@ -71,4 +96,4 @@ class Resume extends React.Component {
   }
 }
 
-export default Resume;
+export default CV;
