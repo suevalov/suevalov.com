@@ -5,6 +5,7 @@ import keys from 'lodash/keys';
 import sortBy from 'lodash/sortBy';
 import Layout from '../components/Layout';
 import config from '../../config';
+import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
 import { FancyH2 } from '../components/FancyHeader/FancyHeader';
 import Talk from '../components/Talk';
 import allTalks from '../../content/talks.json';
@@ -30,7 +31,17 @@ const groupTalksByYear = (talks) => {
 const GroupsContainer = styled('div')`
   margin: 60px auto 0 auto;
   padding: 0 10px;
-  max-width: 560px;
+  max-width: 960px;
+`;
+
+const Grid = styled('div')`
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  ${TABLET_MEDIA_QUERY} {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 `;
 
 const Group = styled('div')`
@@ -51,18 +62,20 @@ class Talks extends React.Component {
       <Layout location={this.props.location}>
         <Helmet title={`Talks - ${config.siteTitle}`} />
         <GroupsContainer>
-          {groupedTalks.map((group) => (
-            <Group key={group.label}>
-              <FancyH2>{group.label}</FancyH2>
-              <TalksList>
-                {group.talks.map((talk) => (
-                  <li key={talk.title}>
-                    <Talk talk={talk} />
-                  </li>
-                ))}
-              </TalksList>
-            </Group>
-          ))}
+          <Grid>
+            {groupedTalks.map((group) => (
+              <Group key={group.label}>
+                <FancyH2>{group.label}</FancyH2>
+                <TalksList>
+                  {group.talks.map((talk) => (
+                    <li key={talk.title}>
+                      <Talk talk={talk} />
+                    </li>
+                  ))}
+                </TalksList>
+              </Group>
+            ))}
+          </Grid>
         </GroupsContainer>
       </Layout>
     );
