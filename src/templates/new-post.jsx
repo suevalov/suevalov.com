@@ -10,21 +10,27 @@ export default class Post extends React.Component {
 
     const title = node.title;
     const date = node.date;
+    const heroImage = node.heroImage;
+    const hasTableOfContents = node.hasTableOfContents || false;
     const tags = node.tags.map((item) => item.title);
     const timeToRead = node.body.childMarkdownRemark.timeToRead;
     const excerpt = node.body.childMarkdownRemark.excerpt;
     const html = node.body.childMarkdownRemark.html;
+    const tableOfContents = node.body.childMarkdownRemark.tableOfContents;
 
     return (
       <AsPost
         {...{
           title,
           excerpt,
+          heroImage,
           path,
           tags,
           date,
           timeToRead,
           html,
+          tableOfContents,
+          hasTableOfContents,
         }}
       />
     );
@@ -38,12 +44,20 @@ export const pageQuery = graphql`
       title
       id
       slug
+      hasTableOfContents
       date(formatString: "MMMM Do, YYYY")
       tags {
         title
       }
+      heroImage {
+        title
+        fluid(maxWidth: 786) {
+          ...GatsbyContentfulFluid
+        }
+      }
       body {
         childMarkdownRemark {
+          tableOfContents
           timeToRead
           excerpt
           html

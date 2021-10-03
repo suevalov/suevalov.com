@@ -1,11 +1,13 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import Image from 'gatsby-image';
 import { Location } from '@reach/router';
 import Layout from '../../components/Layout';
 import PostTags from '../../components/PostTags/PostTags';
 import { FancyH1 } from '../../components/FancyHeader/FancyHeader';
 import SocialLinks from '../../components/SocialLinks/SocialLinks';
 import SEO from '../../components/SEO/SEO';
+import TableOfContents from '../../components/TableOfContent/TableOfContent';
 import PostContainer, {
   MetaRow,
   HiddenOnTablet,
@@ -22,6 +24,9 @@ export default function AsPost({
   tags,
   date,
   timeToRead,
+  heroImage,
+  hasTableOfContents,
+  tableOfContents,
   html,
 }) {
   return (
@@ -54,7 +59,19 @@ export default function AsPost({
             </PostContainer>
             <hr />
             <PostContainer>
+              {heroImage && (
+                <div
+                  style={{
+                    marginBottom: 30,
+                  }}
+                >
+                  <Image fluid={heroImage.fluid} alt={heroImage.title} />
+                </div>
+              )}
               <article>
+                {hasTableOfContents && (
+                  <TableOfContents tableOfContents={tableOfContents} />
+                )}
                 <div dangerouslySetInnerHTML={{ __html: html }} />
               </article>
               <SocialLinks path={path} title={title} description={excerpt} />
