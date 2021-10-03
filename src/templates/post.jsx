@@ -13,7 +13,7 @@ import SocialLinks from '../components/SocialLinks/SocialLinks';
 import SEO from '../components/SEO/SEO';
 import { FancyH1 } from '../components/FancyHeader/FancyHeader';
 import config from '../../config';
-import './code-highlight.css';
+import './common/code-highlight.css';
 import TableOfContents from '../components/TableOfContent/TableOfContent';
 import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 

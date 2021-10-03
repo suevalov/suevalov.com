@@ -18,7 +18,7 @@ module.exports = ({ graphql, actions }) => {
           }
         }
       `
-    ).then(result => {
+    ).then((result) => {
       if (result.errors) {
         /* eslint no-console: "off" */
         console.log(result.errors);
@@ -27,7 +27,7 @@ module.exports = ({ graphql, actions }) => {
 
       const edges = _.get(result, 'data.allContentfulTag.edges', []);
 
-      edges.forEach(edge => {
+      edges.forEach((edge) => {
         const tag = edge.node.title;
         createPage({
           path: `/blog/tags/${_.kebabCase(tag)}/`,
@@ -64,7 +64,7 @@ module.exports = ({ graphql, actions }) => {
           }
         }
       `
-    ).then(result => {
+    ).then((result) => {
       if (result.errors) {
         /* eslint no-console: "off" */
         console.log(result.errors);
@@ -75,7 +75,7 @@ module.exports = ({ graphql, actions }) => {
         result.data.allMarkdownRemark && result.data.allMarkdownRemark.edges
           ? result.data.allMarkdownRemark.edges
           : [];
-      edges.forEach(edge => {
+      edges.forEach((edge) => {
         createPage({
           path: edge.node.fields.slug,
           component: postPage,
@@ -89,8 +89,8 @@ module.exports = ({ graphql, actions }) => {
     });
   });
 
-  const notes = new Promise(resolve => {
-    const notePage = path.resolve(`./src/templates/note.jsx`);
+  const notes = new Promise((resolve) => {
+    const tilPage = path.resolve(`./src/templates/til.jsx`);
     graphql(`
       {
         allContentfulTodayILearned {
@@ -101,12 +101,12 @@ module.exports = ({ graphql, actions }) => {
           }
         }
       }
-    `).then(result => {
+    `).then((result) => {
       const edges = _.get(result, 'data.allContentfulTodayILearned.edges', []);
       edges.forEach(({ node }) => {
         createPage({
           path: `/blog/til/${node.slug}/`,
-          component: notePage,
+          component: tilPage,
           context: {
             slug: node.slug,
           },
