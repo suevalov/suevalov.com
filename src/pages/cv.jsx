@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
+import { injectIntl } from 'gatsby-plugin-intl';
 import Config from '../../config';
 import { FancyH1 } from '../components/FancyHeader/FancyHeader';
 import ExperienceBlock from '../components/ExperienceBlock/ExperienceBlock';
@@ -96,4 +97,4 @@ class CV extends React.Component {
   }
 }
 
-export default CV;
+export default injectIntl(CV);

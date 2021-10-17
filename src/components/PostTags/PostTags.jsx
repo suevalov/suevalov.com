@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from '@emotion/styled';
 import kebabCase from 'lodash/kebabCase';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby-plugin-intl';
 
 const PostTagsContainer = styled('div')`
   a {

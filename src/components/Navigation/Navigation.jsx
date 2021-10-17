@@ -1,13 +1,14 @@
 import React from 'react';
 import { css } from 'emotion';
 import styled from '@emotion/styled';
-import Link from 'gatsby-link';
+import { Link, FormattedMessage } from 'gatsby-plugin-intl';
 import {
   DEFAULT_WIDTH,
   DEFAULT_MEDIA_QUERY,
 } from 'typography-breakpoint-constants';
 import HexImage from '../HexImage/HexImage';
 import Config from '../../../config';
+import Language from '../Language';
 
 const activeLinkClass = css`
   color: black;
@@ -78,7 +79,7 @@ export default class Header extends React.Component {
               activeClassName={activeLinkClass}
               to="/"
             >
-              Alex Suevalov
+              <FormattedMessage id="alex-suevalov" />
             </Link>
           </MenuItem>
           <MenuItem>
@@ -91,7 +92,7 @@ export default class Header extends React.Component {
               }}
               to="/blog"
             >
-              Blog
+              <FormattedMessage id="blog" />
             </Link>
           </MenuItem>
           <MenuItem>
@@ -104,7 +105,7 @@ export default class Header extends React.Component {
               }}
               to="/talks"
             >
-              Talks
+              <FormattedMessage id="talks" />
             </Link>
           </MenuItem>
           <MenuItem>
@@ -117,10 +118,11 @@ export default class Header extends React.Component {
               }}
               to="/cv"
             >
-              CV
+              <FormattedMessage id="cv" />
             </Link>
           </MenuItem>
         </Menu>
+        <Language />
       </Nav>
     );
   }

@@ -30,6 +30,7 @@
     "gatsby-plugin-emotion": "4.5.0",
     "gatsby-plugin-google-analytics": "3.13.0",
     "gatsby-plugin-image": "^1.13.0",
+    "gatsby-plugin-intl": "^0.3.3",
     "gatsby-plugin-manifest": "3.13.0",
     "gatsby-plugin-netlify": "3.13.0",
     "gatsby-plugin-nprogress": "3.13.0",

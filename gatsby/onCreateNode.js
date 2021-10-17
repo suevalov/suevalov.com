@@ -25,4 +25,12 @@ module.exports = ({ node, actions, getNode }) => {
     }
     createNodeField({ node, name: 'slug', value: prefix + slug });
   }
+  // deletePage(page);
+  // createPage({
+  //   ...page,
+  //   context: {
+  //     ...page.context,
+  //     locale: page.context.intl.language,
+  //   },
+  // });
 };

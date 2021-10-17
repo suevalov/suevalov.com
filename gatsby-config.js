@@ -58,6 +58,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`en`, `ru`],
+        // language file path
+        defaultLanguage: `en`,
+        // option to redirect to `/en` when connecting `/`
+        redirect: true,
+      },
+    },
+    {
       resolve: 'gatsby-source-contentful',
       options: {
         ...(process.env.NODE_ENV === 'development'

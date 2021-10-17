@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import keys from 'lodash/keys';
 import sortBy from 'lodash/sortBy';
+import { injectIntl } from 'gatsby-plugin-intl';
 import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
 import Layout from '../components/Layout';
 import config from '../../config';
@@ -82,4 +83,4 @@ class Talks extends React.Component {
   }
 }
 
-export default Talks;
+export default injectIntl(Talks);

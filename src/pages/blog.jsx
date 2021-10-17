@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import sortBy from 'lodash/sortBy';
+import { injectIntl } from 'gatsby-plugin-intl';
 import get from 'lodash/get';
 import Helmet from 'react-helmet';
 import PostListing from '../components/PostListing/PostListing';
@@ -69,4 +70,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Blog;
+export default injectIntl(Blog);

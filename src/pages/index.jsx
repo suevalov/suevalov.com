@@ -2,9 +2,9 @@ import React from 'react';
 import get from 'lodash/get';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import Link from 'gatsby-link';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
+import { injectIntl, Link, FormattedMessage } from 'gatsby-plugin-intl';
 import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
 import LeadText from '../components/LeadText/LeadText';
 import Layout from '../components/Layout';
@@ -95,8 +95,10 @@ class Index extends React.Component {
         <Row justifyContent="flex-start">
           <TalksList>
             <h3>
-              Recent posts
-              <Link to="/blog">see all</Link>
+              <FormattedMessage id="recent-posts" />
+              <Link to="/blog">
+                <FormattedMessage id="see-all" />
+              </Link>
             </h3>
             <ul>
               {posts.map((post) => (
@@ -108,8 +110,10 @@ class Index extends React.Component {
           </TalksList>
           <TalksList>
             <h3>
-              Recent talks
-              <Link to="/talks">see all</Link>
+              <FormattedMessage id="recent-talks" />
+              <Link to="/talks">
+                <FormattedMessage id="see-all" />
+              </Link>
             </h3>
             <ul>
               {talks.map((talk) => (
@@ -140,4 +144,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Index;
+export default injectIntl(Index);

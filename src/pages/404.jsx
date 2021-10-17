@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { injectIntl } from 'gatsby-plugin-intl';
 import config from '../../config';
 import Layout from '../components/Layout';
 import { FancyH1, FancyH2 } from '../components/FancyHeader/FancyHeader';
@@ -16,4 +17,4 @@ class Blog extends React.Component {
   }
 }
 
-export default Blog;
+export default injectIntl(Blog);

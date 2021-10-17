@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby-plugin-intl';
 import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
 import { FancyH2 } from '../FancyHeader/FancyHeader';
 
