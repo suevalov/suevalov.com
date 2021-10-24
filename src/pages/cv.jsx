@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
-import { injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
+import { injectIntl, useIntl } from 'gatsby-plugin-intl';
 import Config from '../../config';
 import { FancyH1 } from '../components/FancyHeader/FancyHeader';
 import ExperienceBlock from '../components/ExperienceBlock/ExperienceBlock';
@@ -61,42 +61,41 @@ const Row = styled('div')`
   }
 `;
 
-class CV extends React.Component {
-  render() {
-    return (
-      <Layout location={this.props.location}>
-        <Helmet title={`CV - ${Config.siteTitle}`} />
-        <HeaderRow>
-          <Header>
-            <FormattedMessage id="cv" />
-          </Header>
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href={
-              Config.userLinks.find((item) => item.type === 'linkedin').href
-            }
-          >
-            <FormattedMessage id="reach-me-out-on-linkedin" />
-          </a>
-        </HeaderRow>
-        <Row style={{ marginTop: 50 }}>
-          <div>
-            <ExperienceBlock />
-          </div>
-          <div>
-            <SkillsBlock
-              languages={languages}
-              personalQualities={personalQualities}
-              designSkills={designSkills}
-              developmentSkills={developmentSkills}
-            />
-            <RecommendationsBlock recommendations={recommendations} />
-          </div>
-        </Row>
-      </Layout>
-    );
-  }
+function CV(props) {
+  const { formatMessage } = useIntl();
+  return (
+    <Layout location={props.location}>
+      <Helmet
+        title={`${formatMessage({ id: 'cv' })} - ${formatMessage({
+          id: 'site-title',
+        })}`}
+      />
+      <HeaderRow>
+        <Header>{formatMessage({ id: 'cv' })}</Header>
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href={Config.userLinks.find((item) => item.type === 'linkedin').href}
+        >
+          {formatMessage({ id: 'reach-me-out-on-linkedin' })}
+        </a>
+      </HeaderRow>
+      <Row style={{ marginTop: 50 }}>
+        <div>
+          <ExperienceBlock />
+        </div>
+        <div>
+          <SkillsBlock
+            languages={languages}
+            personalQualities={personalQualities}
+            designSkills={designSkills}
+            developmentSkills={developmentSkills}
+          />
+          <RecommendationsBlock recommendations={recommendations} />
+        </div>
+      </Row>
+    </Layout>
+  );
 }
 
 export default injectIntl(CV);

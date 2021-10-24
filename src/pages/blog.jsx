@@ -1,13 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import sortBy from 'lodash/sortBy';
-import { injectIntl } from 'gatsby-plugin-intl';
+import { injectIntl, useIntl } from 'gatsby-plugin-intl';
 import get from 'lodash/get';
 import Helmet from 'react-helmet';
 import PostListing from '../components/PostListing/PostListing';
 import SEO from '../components/SEO/SEO';
 import Layout from '../components/Layout';
-import config from '../../config';
 
 function getPosts(props) {
   const edges = get(props, 'data.allContentfulPost.edges', []);
@@ -36,12 +35,17 @@ function getNotes(props) {
 }
 
 const Blog = (props) => {
+  const { formatMessage } = useIntl();
   const posts = getPosts(props);
   const notes = getNotes(props);
 
   return (
     <Layout location={props.location}>
-      <Helmet title={`Blog - ${config.siteTitle}`} />
+      <Helmet
+        title={`${formatMessage({ id: 'blog' })} - ${formatMessage({
+          id: 'site-title',
+        })}`}
+      />
       <SEO />
       <PostListing posts={posts} notes={notes} />
     </Layout>

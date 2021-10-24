@@ -3,10 +3,10 @@ import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import keys from 'lodash/keys';
 import sortBy from 'lodash/sortBy';
-import { injectIntl } from 'gatsby-plugin-intl';
+import { injectIntl, useIntl } from 'gatsby-plugin-intl';
 import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
 import Layout from '../components/Layout';
-import config from '../../config';
+
 import { FancyH2 } from '../components/FancyHeader/FancyHeader';
 import Talk from '../components/Talk';
 import allTalks from '../../content/talks.json';
@@ -56,31 +56,34 @@ const TalksList = styled('ul')`
   margin-bottom: 40px;
 `;
 
-class Talks extends React.Component {
-  render() {
-    const groupedTalks = groupTalksByYear(allTalks);
-    return (
-      <Layout location={this.props.location}>
-        <Helmet title={`Talks - ${config.siteTitle}`} />
-        <GroupsContainer>
-          <Grid>
-            {groupedTalks.map((group) => (
-              <Group key={group.label}>
-                <FancyH2>{group.label}</FancyH2>
-                <TalksList>
-                  {group.talks.map((talk) => (
-                    <li key={talk.title}>
-                      <Talk talk={talk} />
-                    </li>
-                  ))}
-                </TalksList>
-              </Group>
-            ))}
-          </Grid>
-        </GroupsContainer>
-      </Layout>
-    );
-  }
+function Talks(props) {
+  const { formatMessage } = useIntl();
+  const groupedTalks = groupTalksByYear(allTalks);
+  return (
+    <Layout location={props.location}>
+      <Helmet
+        title={`${formatMessage({ id: 'talks' })} - ${formatMessage({
+          id: 'site-title',
+        })}`}
+      />
+      <GroupsContainer>
+        <Grid>
+          {groupedTalks.map((group) => (
+            <Group key={group.label}>
+              <FancyH2>{group.label}</FancyH2>
+              <TalksList>
+                {group.talks.map((talk) => (
+                  <li key={talk.title}>
+                    <Talk talk={talk} />
+                  </li>
+                ))}
+              </TalksList>
+            </Group>
+          ))}
+        </Grid>
+      </GroupsContainer>
+    </Layout>
+  );
 }
 
 export default injectIntl(Talks);

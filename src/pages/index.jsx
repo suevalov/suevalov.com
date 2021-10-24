@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
-import { injectIntl, Link, FormattedMessage } from 'gatsby-plugin-intl';
+import { injectIntl, Link, useIntl } from 'gatsby-plugin-intl';
 import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
 import LeadText from '../components/LeadText/LeadText';
 import Layout from '../components/Layout';
@@ -75,58 +75,53 @@ const classes = {
   `,
 };
 
-class Index extends React.Component {
-  render() {
-    const talks = allTalks.slice(0, 3);
+function Index(props) {
+  const talks = allTalks.slice(0, 3);
+  const { formatMessage } = useIntl();
 
-    const edges = get(this.props, 'data.allContentfulPost.edges', []);
-    const posts = edges.map((edge) => ({
-      path: `/blog/${edge.node.slug}`,
-      title: edge.node.title,
-    }));
+  const edges = get(props, 'data.allContentfulPost.edges', []);
+  const posts = edges.map((edge) => ({
+    path: `/blog/${edge.node.slug}`,
+    title: edge.node.title,
+  }));
 
-    return (
-      <Layout location={this.props.location}>
-        <Helmet title={Config.siteTitle} />
-        <Row justifyContent="space-between" style={{ marginBottom: 0 }}>
-          <LeadText techs={Config.techInterestedIn} css={classes.leadText} />
-          <LeadContacts links={Config.userLinks} css={classes.leadContacts} />
-        </Row>
-        <Row justifyContent="flex-start">
-          <TalksList>
-            <h3>
-              <FormattedMessage id="recent-posts" />
-              <Link to="/blog">
-                <FormattedMessage id="see-all" />
-              </Link>
-            </h3>
-            <ul>
-              {posts.map((post) => (
-                <li key={post.path}>
-                  <Link to={post.path}>{post.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </TalksList>
-          <TalksList>
-            <h3>
-              <FormattedMessage id="recent-talks" />
-              <Link to="/talks">
-                <FormattedMessage id="see-all" />
-              </Link>
-            </h3>
-            <ul>
-              {talks.map((talk) => (
-                <li key={talk.title}>
-                  <Talk talk={talk} />
-                </li>
-              ))}
-            </ul>
-          </TalksList>
-        </Row>
-      </Layout>
-    );
-  }
+  return (
+    <Layout location={props.location}>
+      <Helmet title={formatMessage({ id: 'site-title' })} />
+      <Row justifyContent="space-between" style={{ marginBottom: 0 }}>
+        <LeadText techs={Config.techInterestedIn} css={classes.leadText} />
+        <LeadContacts links={Config.userLinks} css={classes.leadContacts} />
+      </Row>
+      <Row justifyContent="flex-start">
+        <TalksList>
+          <h3>
+            {formatMessage({ id: 'recent-posts' })}
+            <Link to="/blog">{formatMessage({ id: 'see-all' })}</Link>
+          </h3>
+          <ul>
+            {posts.map((post) => (
+              <li key={post.path}>
+                <Link to={post.path}>{post.title}</Link>
+              </li>
+            ))}
+          </ul>
+        </TalksList>
+        <TalksList>
+          <h3>
+            {formatMessage({ id: 'recent-talks' })}
+            <Link to="/talks">{formatMessage({ id: 'see-all' })}</Link>
+          </h3>
+          <ul>
+            {talks.map((talk) => (
+              <li key={talk.title}>
+                <Talk talk={talk} />
+              </li>
+            ))}
+          </ul>
+        </TalksList>
+      </Row>
+    </Layout>
+  );
 }
 
 /* eslint no-undef: "off" */

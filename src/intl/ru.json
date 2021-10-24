@@ -1,4 +1,5 @@
 {
+  "site-title": "Александр Суевалов | Staff Software Engineer",
   "alex-suevalov": "Александр Суевалов",
   "blog": "Блог",
   "talks": "Выступления",
@@ -15,5 +16,10 @@
   "personal": "Личностные",
   "recommendations": "Отзывы",
   "prev": "Назад",
-  "next": "Вперед"
+  "next": "Вперед",
+  "based-in-berlin": "Живу в Берлине.",
+  "hi-iam-alex": "Привет, меня зовут Александр",
+  "work-at": "Работаю в",
+  "lead-text-1": "{years} лет опыта работы в веб-разработке и создании сложных SPA-приложений.",
+  "lead-text-2": "I interviewed over 30 engineers and was actively involved in sharing knowledge and good practices in companies I worked for. Focused on performance and maintainability, simplifying processes and getting things done."
 }
