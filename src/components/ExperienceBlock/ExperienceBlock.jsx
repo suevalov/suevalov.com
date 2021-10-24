@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { FormattedMessage } from 'gatsby-plugin-intl';
 import { FancyH2 } from '../FancyHeader/FancyHeader';
 
 const Timeline = styled('section')`
@@ -116,7 +117,9 @@ export default class ExperienceBlock extends React.Component {
   render() {
     return (
       <>
-        <FancyH2>Experience</FancyH2>
+        <FancyH2>
+          <FormattedMessage id="experience" />
+        </FancyH2>
         <Timeline>
           <Line />
           <ul>

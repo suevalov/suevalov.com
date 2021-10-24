@@ -1,18 +1,22 @@
 [
   {
     "label": "Russian",
+    "label_ru": "Русский",
     "value": 100
   },
   {
     "label": "English",
+    "label_ru": "Английский",
     "value": 95
   },
   {
     "label": "German",
+    "label_ru": "Немецкий",
     "value": 25
   },
   {
     "label": "Polish",
+    "label_ru": "Польский",
     "value": 20
   }
 ]

@@ -1,6 +1,7 @@
 [
   {
     "label": "Design Systems",
+    "label_ru": "Дизайн системы",
     "value": 80
   },
   {
@@ -8,11 +9,11 @@
     "value": 75
   },
   {
-    "label": "Photoshop",
+    "label": "Sketch, Figma",
     "value": 60
   },
   {
-    "label": "Sketch",
-    "value": 20
+    "label": "Photoshop",
+    "value": 30
   }
 ]

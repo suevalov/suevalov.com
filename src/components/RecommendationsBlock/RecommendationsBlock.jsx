@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { FormattedMessage } from 'gatsby-plugin-intl';
 import { FancyH2 } from '../FancyHeader/FancyHeader';
 
 const Container = styled('div')`
@@ -72,7 +73,9 @@ class RecommendationsBlock extends React.Component {
     const recommendation = this.props.recommendations[this.state.index];
     return (
       <Container>
-        <FancyH2>Recommendations</FancyH2>
+        <FancyH2>
+          <FormattedMessage id="recommendations" />
+        </FancyH2>
         <blockquote>
           {recommendation.text}
           <br />
@@ -82,10 +85,10 @@ class RecommendationsBlock extends React.Component {
         </blockquote>
         <div style={{ textAlign: 'center' }}>
           <button type="button" onClick={this.onPrevClick}>
-            Prev
+            <FormattedMessage id="prev" />
           </button>
           <button type="button" onClick={this.onNextClick}>
-            Next
+            <FormattedMessage id="next" />
           </button>
         </div>
       </Container>

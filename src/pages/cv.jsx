@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import { TABLET_MEDIA_QUERY } from 'typography-breakpoint-constants';
-import { injectIntl } from 'gatsby-plugin-intl';
+import { injectIntl, FormattedMessage } from 'gatsby-plugin-intl';
 import Config from '../../config';
 import { FancyH1 } from '../components/FancyHeader/FancyHeader';
 import ExperienceBlock from '../components/ExperienceBlock/ExperienceBlock';
@@ -67,7 +67,9 @@ class CV extends React.Component {
       <Layout location={this.props.location}>
         <Helmet title={`CV - ${Config.siteTitle}`} />
         <HeaderRow>
-          <Header>CV</Header>
+          <Header>
+            <FormattedMessage id="cv" />
+          </Header>
           <a
             rel="noopener noreferrer"
             target="_blank"
@@ -75,7 +77,7 @@ class CV extends React.Component {
               Config.userLinks.find((item) => item.type === 'linkedin').href
             }
           >
-            Reach me out on LinkedIn
+            <FormattedMessage id="reach-me-out-on-linkedin" />
           </a>
         </HeaderRow>
         <Row style={{ marginTop: 50 }}>

@@ -1,22 +1,27 @@
 [
   {
     "label": "Self Management",
+    "label_ru": "Независимость",
     "value": 90
   },
   {
     "label": "Proactivity",
+    "label_ru": "Проактивность",
     "value": 90
   },
   {
+    "label": "Communication",
+    "label_ru": "Коммуникации",
+    "value": 80
+  },
+  {
     "label": "Creativity",
+    "label_ru": "Креативность",
     "value": 75
   },
   {
-    "label": "Communication",
-    "value": 70
-  },
-  {
     "label": "Team Player",
+    "label_ru": "Командная работа",
     "value": 65
   }
 ]
