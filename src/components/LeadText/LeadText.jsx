@@ -28,15 +28,7 @@ export default class LeadText extends React.Component {
         <FancyH1>Hi, I&apos;m Alex</FancyH1>
         <H2>Staff Software Engineer.</H2>
         <H2 style={{ textAlign: 'right' }}>
-          Based&nbsp;in&nbsp;Berlin. Currently at{' '}
-          <a
-            href="http://contentful.com"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Contentful
-          </a>
-          .
+          Based&nbsp;in&nbsp;Berlin.
         </H2>
         <Text style={{ marginTop: 20 }}>
           {experience} years of professional expertise in web development and

@@ -122,7 +122,7 @@ export default class ExperienceBlock extends React.Component {
           <ul>
             <li>
               <EventTime>
-                <time>Feb 2020 - present</time>
+                <time>Feb 2020 - Jan 2022</time>
               </EventTime>
               <Event>
                 <EventTitle>Staff Software Engineer</EventTitle>
