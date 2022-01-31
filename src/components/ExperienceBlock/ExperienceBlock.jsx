@@ -122,6 +122,27 @@ export default class ExperienceBlock extends React.Component {
           <ul>
             <li>
               <EventTime>
+                <time>Feb 2022 - now</time>
+              </EventTime>
+              <Event>
+                <EventTitle>Senior Software Engineer</EventTitle>
+                <EventSubtitle>
+                  <a
+                    href="http://www.linear.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Linear
+                  </a>
+                  , Remote
+                </EventSubtitle>
+                <EventDescription>
+                  Building a next generation project management tool.
+                </EventDescription>
+              </Event>
+            </li>
+            <li>
+              <EventTime>
                 <time>Feb 2020 - Jan 2022</time>
               </EventTime>
               <Event>
