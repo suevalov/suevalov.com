@@ -51,7 +51,7 @@
     "gatsby-source-contentful": "5.13.0",
     "gatsby-source-filesystem": "3.13.0",
     "gatsby-transformer-json": "3.13.0",
-    "gatsby-transformer-remark": "4.10.0",
+    "gatsby-transformer-remark": "5.25.1",
     "gatsby-transformer-sharp": "3.13.0",
     "gray-percentage": "2.0.0",
     "lodash": "4.17.21",
