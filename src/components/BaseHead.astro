@@ -1,0 +1,52 @@
+---
+import '@fontsource/open-sans/400.css';
+import '@fontsource/open-sans/500.css';
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/600.css';
+import { ViewTransitions } from 'astro:transitions';
+import { SITE } from '@/consts';
+import '../styles/global.css';
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon-16x16.png" />
+<meta name="generator" content={Astro.generator} />
+
+<ViewTransitions />
+
+<!--  Other stuff -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-16x16.png" />
+<link
+  rel="shortcut icon"
+  type="image/png"
+  sizes="16x16"
+  href="/favicon-16x16.png"
+/>
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="msapplication-TileColor" content={SITE.themeColor} />
+<meta name="msapplication-config" content="/browserconfig.xml" />
+<meta name="theme-color" content={SITE.themeColor} />
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+    }
+    return 'light';
+  })();
+
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.querySelector('meta[name="twitter:widgets:theme"]').content =
+      'dark';
+  }
+</script>
+
+<script is:inline async src="https://platform.twitter.com/widgets.js"></script>

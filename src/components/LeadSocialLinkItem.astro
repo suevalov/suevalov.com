@@ -1,0 +1,41 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export type Props = {
+  href: string;
+  type: 'gmail' | 'linkedin' | 'github' | 'twitter' | 'instagram';
+  label: string;
+};
+
+const { type, href, label } = Astro.props;
+
+const target = type === 'gmail' ? '_self' : '_blank';
+---
+
+<li>
+  <a
+    target={target}
+    rel="noopener noreferrer"
+    href={href}
+    class="not-animated shadow-none"
+    tabindex="-1"
+  >
+    {type === 'github' && <Icon name="github" />}
+    {type === 'linkedin' && <Icon name="linkedin" />}
+    {type === 'gmail' && <Icon name="gmail" />}
+    {type === 'twitter' && <Icon name="twitter" />}
+    {type === 'instagram' && <Icon name="instagram" />}
+  </a>
+  <a target={target} rel="noopener noreferrer" href={href}>
+    {label}
+  </a>
+</li>
+
+<style>
+  li {
+    @apply list-none m-0 p-0;
+  }
+  li svg {
+    @apply text-theme-primary dark:text-theme-dark-primary opacity-60 align-middle w-6 h-6 inline mr-2;
+  }
+</style>

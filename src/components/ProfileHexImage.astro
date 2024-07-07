@@ -1,0 +1,27 @@
+---
+import { SITE } from '@/consts';
+import MyFace from '../assets/suevalov-192x192.png';
+---
+
+<img src={MyFace.src} class="profile-image" alt={SITE.title} />
+
+<style>
+  .profile-image {
+    @apply md:w-16 md:h-16 w-10 h-10;
+    transition: 0.5s;
+    transform: rotate(0deg);
+    clip-path: polygon(
+      50% 0%,
+      90% 20%,
+      100% 60%,
+      75% 100%,
+      25% 100%,
+      0% 60%,
+      10% 20%
+    );
+
+    &:hover {
+      transform: rotate(-3deg);
+    }
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+type Props = {
+  id?: string;
+  smaller?: boolean;
+  class?: string;
+};
+
+const { id, smaller, class: className } = Astro.props;
+---
+
+<h3 id={id} class:list={['fancy', smaller ? 'fancy-smaller' : '', className]}>
+  <slot />
+</h3>
+<style>
+  .fancy {
+    position: relative;
+  }
+
+  .fancy-smaller {
+    @apply text-lg;
+  }
+  .fancy:before {
+    @apply bg-theme-primary dark:bg-theme-dark-primary;
+    content: '';
+    min-width: 25px;
+    height: 10px;
+    position: absolute;
+    left: -10px;
+    bottom: -1px;
+    opacity: 0.6;
+    z-index: -2;
+  }
+</style>

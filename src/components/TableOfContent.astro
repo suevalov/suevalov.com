@@ -1,0 +1,111 @@
+---
+import type { MarkdownHeading } from 'astro';
+import type { MarkdownHeadingWithSubheadings } from '@/types';
+import TableOfContentHeading from './TableOfContentHeading.astro';
+
+export type Props = {
+  headings: MarkdownHeading[];
+};
+
+function buildHierarchy(headings: MarkdownHeading[]) {
+  const toc: MarkdownHeadingWithSubheadings[] = [];
+  const parentHeadings = new Map();
+
+  if (!headings) return toc;
+
+  headings.forEach((h: MarkdownHeading) => {
+    const heading = { ...h, subheadings: [] };
+    parentHeadings.set(heading.depth, heading);
+    // Change 2 to 1 if your markdown includes your <h1>
+    if (heading.depth === 2) {
+      toc.push(heading);
+    } else {
+      //parentHeadings.get(heading.depth - 1).subheadings.push(heading);
+    }
+  });
+
+  return toc;
+}
+
+const { headings } = Astro.props;
+
+const toc = buildHierarchy(headings);
+---
+
+{
+  toc && toc.length > 0 && (
+    <nav data-toc class="article-toc">
+      <ul class="m-0 pl-2">
+        {toc.map((heading) => (
+          <TableOfContentHeading heading={heading} />
+        ))}
+      </ul>
+    </nav>
+  )
+}
+
+<script>
+  function scrollToTargetAdjusted(element: HTMLElement) {
+    var headerOffset = 20;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
+  }
+
+  function addIntersectionObserver() {
+    const observer = new IntersectionObserver((sections) => {
+      sections.forEach((section) => {
+        const heading = section.target.querySelector('h2, h3, h4, h5');
+        if (!heading) return;
+        const id = heading.getAttribute('id');
+
+        // Get the link to this section's heading
+        const link = document.querySelector(`[data-toc] li a[href="#${id}"]`);
+        if (!link) return;
+
+        // Add/remove the .active class based on whether the
+        // section is visible
+        const addRemove = section.intersectionRatio > 0 ? 'add' : 'remove';
+
+        if (addRemove === 'add') {
+          link.parentElement!.setAttribute('data-toc-active', 'true');
+        } else {
+          link.parentElement!.removeAttribute('data-toc-active');
+        }
+      });
+    });
+
+    document.querySelectorAll('#post-content section').forEach((section) => {
+      observer.observe(section);
+    });
+  }
+
+  function run() {
+    const links = document.querySelectorAll('[data-toc] a');
+
+    links.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = link.getAttribute('href');
+
+        if (!id) return;
+        const heading = document.getElementById(id.replace('#', ''));
+
+        if (!heading) return;
+
+        scrollToTargetAdjusted(heading);
+      });
+    });
+
+    addIntersectionObserver();
+  }
+
+  run();
+
+  // Re-initialize after swapping pages
+  document.addEventListener('astro:after-swap', run);
+</script>

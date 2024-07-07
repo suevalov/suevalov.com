@@ -1,0 +1,66 @@
+---
+export const prerender = true;
+
+import DefaultPageLayout from '@/layouts/default.astro';
+import LeadHero from '@/components/LeadHero.astro';
+import LeadSocialLinks from '@/components/LeadSocialLinks.astro';
+import TalkItem from '@/components/TalkItem.astro';
+import { getSortedPosts, getSortedTalks } from '@/content/utils';
+import Metadata from '@/components/Metadata.astro';
+
+const latestTalks = (await getSortedTalks()).slice(0, 4);
+const latestPosts = (await getSortedPosts()).slice(0, 4);
+---
+
+<DefaultPageLayout>
+  <Metadata slot="head" type="website" />
+  <div
+    class="main-container row justify-between prose dark:prose-invert max-w-none"
+  >
+    <div><LeadHero /></div>
+    <div class="min-w-64 hidden md:flex">
+      <LeadSocialLinks />
+    </div>
+  </div>
+
+  <div
+    class="main-container grow row mt-10 prose dark:prose-invert max-w-none w-full"
+  >
+    <div class="grow mb-6">
+      <div class="flex items-center gap-3">
+        <h3 style={{ margin: 0 }}>Recent posts</h3>
+        <a href="/blog" class="text-sm">see all</a>
+      </div>
+      <div class="mt-4 flex flex-col items-start gap-4">
+        {
+          latestPosts.map((post) => (
+            <a class="inline text-sm" href={`/blog/${post.slug}`}>
+              {post.data.title}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="grow mb-6">
+      <div class="flex items-center gap-3 grow">
+        <h3 style={{ margin: 0 }}>Recent talks</h3>
+        <a href="/talks" class="text-sm">see all</a>
+      </div>
+      <div class="mt-4 flex flex-col items-start gap-3">
+        {latestTalks.map((talk) => <TalkItem talk={talk.data} />)}
+      </div>
+    </div>
+  </div>
+
+  <!-- Links on mobile -->
+  <div class="flex md:hidden main-container">
+    <LeadSocialLinks />
+  </div>
+
+  <style>
+    .row {
+      @apply flex md:flex-row flex-col gap-6 md:gap-14;
+    }
+  </style>
+</DefaultPageLayout>

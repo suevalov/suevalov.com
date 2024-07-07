@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-container {
+  @apply mx-auto max-w-5xl px-4 lg:px-0;
+}
+
+a {
+  @apply text-theme-link duration-[250ms] ease-in-out dark:text-theme-dark-link hover:text-theme-background dark:hover:text-theme-dark-background outline-none focus-visible:ring-2 ring-theme-primary;
+  transition-property: background-size color;
+}
+
+a:not(.not-animated) {
+  @apply bg-gradient-to-r bg-left-bottom bg-no-repeat bg-[length:0%_100%] hover:bg-[length:100%_100%] from-theme-primary/90 to-theme-primary/70 dark:from-theme-dark-primary/90 dark:to-theme-dark-primary/70 pl-1 pr-1 -ml-1 -mr-1;
+}
+
+astro-embed-tweet {
+  @apply flex items-center justify-center rounded;
+}
+
+astro-embed-tweet .twitter-tweet iframe {
+  @apply rounded-xl;
+}
+
+.prose code:not([data-theme]) {
+  @apply text-theme-text dark:text-theme-dark-text px-1 py-0.5 rounded font-medium bg-theme-primary/30 dark:bg-theme-dark-primary/40;
+}
+
+.prose code:not([data-theme])::before {
+  display: none;
+}
+
+.prose code:not([data-theme])::after {
+  display: none;
+}
+
+.prose li::marker {
+  @apply text-theme-primary/70 dark:text-theme-dark-primary/70 transition-colors duration-200;
+}
+
+figure[data-rehype-pretty-code-figure] {
+  @apply xl:-ml-28 lg:mr-0 ml-0 mr-0 grid;
+}
+
+figure[data-rehype-pretty-code-figure] pre {
+}

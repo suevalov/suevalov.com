@@ -1,0 +1,15 @@
+---
+import Themes from 'astro-themes';
+import BaseLayout from './BaseLayout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+---
+
+<BaseLayout>
+  <Themes />
+  <Header />
+  <main class="grow flex flex-col">
+    <slot />
+  </main>
+  <Footer />
+</BaseLayout>

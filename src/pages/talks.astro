@@ -1,0 +1,57 @@
+---
+export const prerender = true;
+
+import FancyH1 from '@/components/FancyH1.astro';
+import FancyH2 from '@/components/FancyH2.astro';
+import TalkItem from '@/components/TalkItem.astro';
+import { getSortedTalks } from '@/content/utils';
+import DefaultPageLayout from '@/layouts/default.astro';
+import type { TalkType } from '@/types';
+import Metadata from '@/components/Metadata.astro';
+
+const talks = await getSortedTalks();
+
+const groupTalksByYear = () => {
+  const groups: Record<string, TalkType[]> = {};
+  talks.forEach((talk) => {
+    const date = talk.data.date;
+    const year = date.split('/')[0];
+    (groups[year] || (groups[year] = [])).push(talk.data);
+  });
+  const years = Object.keys(groups).sort((a, b) => Number(b) - Number(a));
+  return years.map((year) => ({
+    label: year,
+    talks: groups[year],
+  }));
+};
+
+const groupedTalks = groupTalksByYear();
+---
+
+<DefaultPageLayout>
+  <Metadata
+    slot="head"
+    title={`Alex Suevalov's public talks`}
+    description="All public meet-ups and conferences, Alex Suevalov attended as a speaker"
+    type="website"
+  />
+  <div class="main-container prose dark:prose-invert max-w-none w-full">
+    <FancyH1>Talks</FancyH1>
+    <div class="mt-12 grid grid-cols-1 px-4 md:grid-cols-2 gap-12">
+      {
+        groupedTalks.map((group) => (
+          <div>
+            <FancyH2 class="mt-0">{group.label}</FancyH2>
+            <ul class="list-none mb-8 px-0">
+              {group.talks.map((talk) => (
+                <li class="px-0">
+                  <TalkItem talk={talk} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</DefaultPageLayout>

@@ -1,0 +1,55 @@
+---
+export const prerender = true;
+
+import DefaultPageLayout from '@/layouts/default.astro';
+import { getSortedPosts } from '@/content/utils';
+import FancyH2 from '@/components/FancyH2.astro';
+import ArticleListItem from '@/components/ArticleListItem.astro';
+import Metadata from '@/components/Metadata.astro';
+
+export async function getStaticPaths({}) {
+  const allPosts = await getSortedPosts();
+  const allTags = new Set<string>();
+  allPosts.map((post) => {
+    post.data.tags && post.data.tags.map((tag) => allTags.add(tag));
+  });
+
+  return Array.from(allTags).map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      (post.data.tags || []).includes(tag)
+    );
+    return {
+      params: { tag },
+      props: {
+        posts: filteredPosts,
+      },
+    };
+  });
+}
+
+const { posts } = Astro.props;
+const { tag } = Astro.params;
+---
+
+<DefaultPageLayout>
+  <Metadata
+    slot="head"
+    title={`Alex Suevalov's posts by Tag: ${tag}`}
+    type="website"
+  />
+  <div class="main-container prose dark:prose-invert max-w-none w-full">
+    <label
+      class="uppercase text-xs font-montserrat font-semibold text-theme-link"
+      >tagged</label
+    >
+    <FancyH2 class="mt-0">{tag}</FancyH2>
+
+    <div class="flex flex-col gap-4 items-start">
+      {
+        posts.map((post) => (
+          <ArticleListItem slug={post.slug} post={post.data} />
+        ))
+      }
+    </div>
+  </div>
+</DefaultPageLayout>

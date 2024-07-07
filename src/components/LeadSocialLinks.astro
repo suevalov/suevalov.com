@@ -1,0 +1,23 @@
+---
+import { SITE } from '@/consts';
+import LeadSocialLinkItem from './LeadSocialLinkItem.astro';
+
+const { github, gmail, twitter, linkedin } = SITE.userLinks;
+---
+
+<ul
+  class="flex md:flex-col flex-row justify-center md:justify-start m-0 p-0 md:gap-2 gap-4 flex-wrap"
+>
+  <LeadSocialLinkItem href={gmail.href} type="gmail" label={gmail.label} />
+  <LeadSocialLinkItem
+    href={twitter.href}
+    type="twitter"
+    label={twitter.label}
+  />
+  <LeadSocialLinkItem href={github.href} type="github" label={github.label} />
+  <LeadSocialLinkItem
+    href={linkedin.href}
+    type="linkedin"
+    label={linkedin.label}
+  />
+</ul>

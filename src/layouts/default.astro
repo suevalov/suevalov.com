@@ -1,0 +1,15 @@
+---
+import BaseHead from '@/components/BaseHead.astro';
+import MainLayout from '@/components/MainLayout.astro';
+---
+
+<!doctype html>
+<html lang="en" class="relative">
+  <head>
+    <BaseHead />
+    <slot name="head" />
+  </head>
+  <MainLayout>
+    <slot />
+  </MainLayout>
+</html>
