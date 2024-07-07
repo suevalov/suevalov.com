@@ -1,0 +1,35 @@
+---
+import type { MarkdownHeadingWithSubheadings } from '@/types';
+
+type Props = {
+  heading: MarkdownHeadingWithSubheadings;
+  withSubheadings?: boolean;
+};
+
+const { heading, withSubheadings = true } = Astro.props;
+---
+
+<li class="item pl-1">
+  <a data-toc-link href={'#' + heading.slug} onclick="">
+    {heading.text}
+  </a>
+  {
+    withSubheadings && heading.subheadings.length > 0 && (
+      <ul>
+        {heading.subheadings.map((subheading: any) => (
+          <Astro.self heading={subheading} />
+        ))}
+      </ul>
+    )
+  }
+</li>
+
+<style>
+  .item::marker {
+    @apply text-theme-primary/30 dark:text-theme-dark-primary/30 transition-colors duration-200;
+  }
+
+  .item[data-toc-active]::marker {
+    @apply text-theme-primary dark:text-theme-dark-primary;
+  }
+</style>

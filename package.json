@@ -1,0 +1,75 @@
+{
+  "name": "suevalov.com",
+  "description": "",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "author": "Alexander Suevalov <suevalov.work@gmail.com>",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "prettier": "prettier 'src/**/*.{js,jsx,ts,tsx,md,mdx,json,astro,svelte}' --write"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.7.0",
+    "@astrojs/markdoc": "^0.11.1",
+    "@astrojs/mdx": "3.0.0",
+    "@astrojs/rss": "4.0.6",
+    "@astrojs/sitemap": "3.1.4",
+    "@astrojs/svelte": "^5.6.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/montserrat": "^5.0.18",
+    "@fontsource/open-sans": "^5.0.28",
+    "@hbsnow/rehype-sectionize": "^1.0.7",
+    "@rehype-pretty/transformers": "^0.13.2",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "@typescript-eslint/parser": "^7.15.0",
+    "@vercel/og": "^0.6.2",
+    "astro": "4.8.6",
+    "astro-embed": "^0.7.2",
+    "astro-icon": "^1.1.0",
+    "astro-themes": "^0.2.5",
+    "eslint": "^9.6.0",
+    "eslint-plugin-astro": "^1.2.2",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "husky": "9.0.11",
+    "lint-staged": "15.2.2",
+    "mdast-util-to-string": "^4.0.0",
+    "prettier": "3.2.5",
+    "prettier-plugin-astro": "0.13.0",
+    "prettier-plugin-svelte": "^3.2.5",
+    "reading-time": "^1.5.0",
+    "rehype-external-links": "^3.0.0",
+    "rehype-pretty-code": "^0.13.2",
+    "remark-code-titles": "^0.1.2",
+    "sharp": "^0.33.4",
+    "svelte": "^4.2.18",
+    "tailwindcss": "^3.4.4",
+    "typescript": "5.4.5"
+  },
+  "packageManager": "pnpm@9.1.1+sha512.14e915759c11f77eac07faba4d019c193ec8637229e62ec99eefb7cf3c3b75c64447882b7c485142451ee3a6b408059cdfb7b7fa0341b975f12d0f7629c71195",
+  "volta": {
+    "node": "20.11.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "./node_modules/.bin/eslint --fix",
+      "./node_modules/.bin/prettier --write",
+      "git add"
+    ],
+    "*.{astro,json,md,mdx,svelte,svg}": [
+      "./node_modules/.bin/prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "./node_modules/.bin/lint-staged"
+    }
+  }
+}

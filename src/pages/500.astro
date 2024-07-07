@@ -1,0 +1,16 @@
+---
+import DefaultPageLayout from '@/layouts/default.astro';
+interface Props {
+  error: unknown;
+}
+
+const { error } = Astro.props;
+---
+
+<DefaultPageLayout>
+  <div
+    class="main-container grow row mt-10 prose dark:prose-invert max-w-none w-full"
+  >
+    <div>{error instanceof Error ? error.message : 'Unknown error'}</div>
+  </div>
+</DefaultPageLayout>

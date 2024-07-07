@@ -1,0 +1,16 @@
+---
+export const prerender = true;
+import Metadata from '@/components/Metadata.astro';
+import DefaultPageLayout from '@/layouts/default.astro';
+---
+
+<DefaultPageLayout>
+  <Metadata slot="head" title={`Alex Suevalov's blog posts`} type="website" />
+  <div
+    class="main-container grow mt-10 prose dark:prose-invert max-w-none w-full"
+  >
+    <p>
+      The page is not found. Please go back to the <a href="/">home page</a>.
+    </p>
+  </div>
+</DefaultPageLayout>

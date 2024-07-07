@@ -1,0 +1,40 @@
+---
+export const prerender = true;
+
+import DefaultPageLayout from '@/layouts/default.astro';
+import { PAGE_SIZE } from '@/consts';
+import { getSortedPosts } from '@/content/utils';
+import FancyH1 from '@/components/FancyH1.astro';
+import ArticleListItem from '@/components/ArticleListItem.astro';
+import Metadata from '@/components/Metadata.astro';
+
+type Props = {
+  page: {
+    data: Awaited<ReturnType<typeof getSortedPosts>>;
+  };
+};
+
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+  const sortedPosts = await getSortedPosts();
+  return paginate(sortedPosts, {
+    pageSize: PAGE_SIZE,
+  });
+}
+
+const { page } = Astro.props;
+---
+
+<DefaultPageLayout>
+  <Metadata slot="head" title={`Alex Suevalov's blog posts`} type="website" />
+  <div class="main-container prose dark:prose-invert max-w-none w-full">
+    <FancyH1>Blog posts</FancyH1>
+
+    <div class="flex flex-col gap-4 items-start">
+      {
+        page.data.map((post) => (
+          <ArticleListItem slug={post.slug} post={post.data} />
+        ))
+      }
+    </div>
+  </div>
+</DefaultPageLayout>

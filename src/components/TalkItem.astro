@@ -1,0 +1,49 @@
+---
+import FormattedDate from './FormattedDate.astro';
+import { Icon } from 'astro-icon/components';
+import type { TalkType } from '@/types';
+
+export type Props = {
+  talk: TalkType;
+};
+
+const { talk } = Astro.props;
+---
+
+<div>
+  <div class="flex items-center">
+    <a
+      href={talk.url}
+      class="inline text-sm"
+      target="_blank"
+      rel="noreferrer nofollower"
+    >
+      {talk.title} / <span class="text-xs">{talk.language}</span>
+    </a>
+    {
+      talk.video && (
+        <a
+          href={talk.video}
+          class="video-link not-animated"
+          target="_blank"
+          rel="noreferrer nofollower"
+        >
+          <Icon name="youtube" />
+        </a>
+      )
+    }
+  </div>
+  <div class="block text-xs mt-1">
+    <FormattedDate date={new Date(talk.date)} />, {talk.place}
+  </div>
+</div>
+
+<style>
+  .video-link {
+    @apply inline text-xs ml-2 no-underline shadow-none;
+  }
+
+  .video-link svg {
+    @apply w-6 h-6 text-theme-primary dark:text-theme-dark-primary opacity-60 hover:opacity-100 transition-opacity duration-200;
+  }
+</style>

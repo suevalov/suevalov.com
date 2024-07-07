@@ -1,0 +1,120 @@
+---
+export const prerender = true;
+import { getEntry, getCollection } from 'astro:content';
+import DefaultPageLayout from '@/layouts/default.astro';
+import FancyH1 from '@/components/FancyH1.astro';
+import FormattedDate from '@/components/FormattedDate.astro';
+import ArticleImage from '@/components/ArticleImage.astro';
+import FancyH2 from '@/components/FancyH2.astro';
+import FancyH3 from '@/components/FancyH3.astro';
+import TableOfContent from '@/components/TableOfContent.astro';
+import ArticleThumbnail from '@/components/ArticleThumbnail.astro';
+import ScrollTop from '@/components/ScrollTop.svelte';
+import TwitterInit from '@/components/TwitterInit.svelte';
+import Metadata from '@/components/Metadata.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  return allPosts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+  }));
+}
+
+const { slug } = Astro.params;
+const entry = await getEntry('blog', slug!);
+
+const { data } = entry;
+const { Content, remarkPluginFrontmatter, headings } = await entry.render();
+
+const makesSenseShowToc = headings && headings.length > 1;
+---
+
+<DefaultPageLayout>
+  <Metadata
+    slot="head"
+    title={data.title}
+    description={data.description}
+    image={`${import.meta.env.SITE}/blog/${slug}/og.png`}
+    publishedTime={new Date(data.date).toISOString()}
+    type="article"
+  />
+  <div
+    class="post-header prose dark:prose-invert max-w-none main-container w-full"
+  >
+    <div class="flex gap-8 flex-col items-center md:flex-row">
+      <ArticleThumbnail slug={slug} post={data} size="w-[130px] h-[130px]" />
+      <FancyH1 class="mt-0 mb-0">{data.title}</FancyH1>
+    </div>
+    <div
+      class="text-sm m-auto flex-col md:flex-row gap-6 flex items-center justify-between mt-6"
+    >
+      <div class="tags-list">
+        {
+          (data.tags || []).map((tag) => {
+            return (
+              <a href={`/blog/tags/${tag}`} class="tag-list__item">
+                #{tag}
+              </a>
+            );
+          })
+        }
+      </div>
+      <div>
+        <FormattedDate date={new Date(data.date)} />
+        <span class="ml-2 mr-2">&middot;</span>
+        <time>{remarkPluginFrontmatter.minutesRead}</time>
+      </div>
+    </div>
+  </div>
+  <div
+    id="post-content"
+    class:list={[
+      'prose dark:prose-invert m-auto mt-8 mb-16 flex relative mx-auto px-4 lg:px-0',
+      makesSenseShowToc ? 'lg:max-w-5xl max-w-3xl' : 'max-w-3xl',
+    ]}
+  >
+    <div>
+      <Content
+        components={{
+          img: ArticleImage,
+          h1: FancyH1,
+          h2: FancyH2,
+          h3: FancyH3,
+        }}
+      />
+    </div>
+    {
+      makesSenseShowToc && (
+        <div class="article-toc-container">
+          <nav class="article-toc">
+            <FancyH3 smaller class="mt-3">
+              On this page
+            </FancyH3>
+            <TableOfContent headings={headings} />
+          </nav>
+        </div>
+      )
+    }
+  </div>
+  <ScrollTop client:only="svelte" />
+  <TwitterInit client:only="svelte" />
+
+  <style>
+    .post-header {
+      @apply border-gray-200 dark:border-gray-800 pb-8 border-b;
+    }
+
+    .tags-list {
+      @apply flex gap-2;
+    }
+
+    .article-toc-container {
+      @apply hidden lg:block w-[220px] ml-10 shrink-0;
+    }
+    .article-toc {
+      @apply sticky top-4;
+    }
+  </style>
+</DefaultPageLayout>

@@ -1,0 +1,72 @@
+---
+import { NAV_ITEMS } from '@/consts';
+import ProfileHexImage from './ProfileHexImage.astro';
+import ModeSwitcherBtn from './ModeSwitcherBtn.svelte';
+---
+
+<header class="header main-container">
+  <nav class="nav">
+    <a href="/" class="logo-link not-animated flex-shrink-0" tabindex="-1">
+      <ProfileHexImage />
+    </a>
+    <ul class="nav-list" transition:animate="fade">
+      {
+        Object.keys(NAV_ITEMS).map((navItemKey) => {
+          let isActive = false;
+
+          const isBlogPath = NAV_ITEMS[navItemKey].path === '/blog';
+
+          if (isBlogPath) {
+            isActive =
+              Astro.url.pathname.startsWith('/blog/') ||
+              Astro.url.pathname === '/blog';
+          } else {
+            isActive = Astro.url.pathname === NAV_ITEMS[navItemKey].path;
+          }
+
+          return (
+            <li class="md:mr-6 mr-4">
+              <a
+                class:list={[
+                  `nav-item`,
+                  isActive ? 'nav-item__active' : 'nav-item__inactive',
+                ]}
+                href={NAV_ITEMS[navItemKey].path}
+                title={NAV_ITEMS[navItemKey].title}
+              >
+                {NAV_ITEMS[navItemKey].title}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </nav>
+  <ModeSwitcherBtn client:only="svelte" />
+</header>
+
+<style>
+  .header {
+    @apply flex flex-row pt-4 pb-10 items-center justify-around w-full;
+  }
+
+  .nav {
+    @apply flex flex-row items-center w-full;
+  }
+
+  .nav-list {
+    @apply flex flex-wrap items-center m-0 ml-4 p-0;
+  }
+
+  .nav-item {
+    @apply text-base font-normal font-montserrat;
+  }
+
+  .nav-item__active {
+    @apply text-theme-text dark:text-theme-dark-text shadow-none hover:text-theme-background dark:hover:text-theme-dark-background;
+  }
+
+  .logo-link {
+    @apply outline-none inline-flex shadow-none;
+  }
+</style>

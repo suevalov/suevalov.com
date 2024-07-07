@@ -1,0 +1,29 @@
+---
+type Props = {
+  id?: string;
+  class?: string;
+};
+
+const { id, class: className } = Astro.props;
+---
+
+<h1 id={id} class:list={['fancy', className]}><slot /></h1>
+<style>
+  .fancy {
+    padding: 0;
+    padding-left: 10px;
+    position: relative;
+  }
+  .fancy:before {
+    @apply bg-theme-primary dark:bg-theme-dark-primary;
+    content: '';
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: -5px;
+    bottom: -10px;
+    opacity: 0.6;
+    border-radius: 50%;
+    z-index: -2;
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+import FancyH1 from '@/components/FancyH1.astro';
+
+const yearsOfExperience = new Date().getFullYear() - 2010;
+---
+
+<>
+  <FancyH1>Hi, I'm Alex</FancyH1>
+  <h2 class="mt-0 mb-2">
+    Senior Product Engineer. Building <a
+      href="https://linear.app"
+      rel="noreferrer noopener"
+      target="_blank">Linear</a
+    >.
+  </h2>
+  <h2 class="mt-0 mb-2 md:text-right">Working remotely, based in Berlin.</h2>
+  <h2 class="mt-0 mb-2 md:text-right"></h2>
+  <p class="mt-4 mb-0" style={{ textWrap: 'balance' }}>
+    {yearsOfExperience} years of experience in web development and crafting complex
+    user interfaces.<br />
+    Experienced in startups at growth and beginner stages, leading teams, and sharing
+    knowledge. Passionate about simplicity, building magical experiences, and getting
+    things done.<br />Previously at <a
+      href="https://contentful.com"
+      target="_blank"
+      rel="noreferrer noopener">Contentful</a
+    >, <a href="https://opera.com" target="_blank" rel="noreferrer noopener"
+      >Opera</a
+    >, and <a
+      href="https://dataart.com"
+      target="_blank"
+      rel="noreferrer noopener">DataArt</a
+    >.
+  </p>
+</>
