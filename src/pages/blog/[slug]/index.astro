@@ -41,7 +41,7 @@ const makesSenseShowToc = headings && headings.length > 1;
     type="article"
   />
   <div
-    class="post-header prose dark:prose-invert max-w-none main-container w-full"
+    class="main-container post-header prose dark:prose-invert max-w-none w-full"
   >
     <div class="flex gap-8 flex-col items-center md:flex-row">
       <ArticleThumbnail slug={slug} post={data} size="w-[130px] h-[130px]" />
@@ -71,7 +71,7 @@ const makesSenseShowToc = headings && headings.length > 1;
   <div
     id="post-content"
     class:list={[
-      'prose dark:prose-invert m-auto mt-8 mb-16 flex relative mx-auto px-4 lg:px-0',
+      'main-container prose dark:prose-invert m-auto mt-8 mb-16 flex relative mx-auto px-4 lg:px-0',
       makesSenseShowToc ? 'lg:max-w-5xl max-w-3xl' : 'max-w-3xl',
     ]}
   >
@@ -111,7 +111,7 @@ const makesSenseShowToc = headings && headings.length > 1;
     }
 
     .article-toc-container {
-      @apply hidden lg:block w-[220px] ml-10 shrink-0;
+      @apply hidden lg:block ml-10 shrink-0 lg:mr-0 lg:pl-0 xl:-mr-10 xl:pl-10 2xl:-mr-16 2xl:pl-16;
     }
     .article-toc {
       @apply sticky top-4;

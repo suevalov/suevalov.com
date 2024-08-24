@@ -4,7 +4,7 @@ import MainLayout from '@/components/MainLayout.astro';
 ---
 
 <!doctype html>
-<html lang="en" class="relative">
+<html lang="en" class="relative stable-scrollbar">
   <head>
     <BaseHead />
     <slot name="head" />
@@ -12,4 +12,9 @@ import MainLayout from '@/components/MainLayout.astro';
   <MainLayout>
     <slot />
   </MainLayout>
+  <style>
+    .stable-scrollbar {
+      scrollbar-gutter: stable;
+    }
+  </style>
 </html>
