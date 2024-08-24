@@ -6,8 +6,7 @@ type Props = { post: BlogType; slug: string; size?: string };
 const { post, slug, size = 'w-[80px] h-[80px]' } = Astro.props;
 ---
 
-<a
-  href={`/blog/${slug}`}
+<div
   class:list={['block shrink-0 rounded-2xl overflow-hidden not-animated', size]}
   transition:name={'article-image-' + slug}
 >
@@ -16,6 +15,6 @@ const { post, slug, size = 'w-[80px] h-[80px]' } = Astro.props;
     alt={post.imageAlt || post.title}
     class="object-cover object-center !m-0 aspect-square block"
   />
-</a>
+</div>
 
 <style></style>

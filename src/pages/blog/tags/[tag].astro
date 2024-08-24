@@ -44,7 +44,7 @@ const { tag } = Astro.params;
     >
     <FancyH2 class="mt-0">{tag}</FancyH2>
 
-    <div class="flex flex-col gap-4 items-start">
+    <div class="flex flex-col gap-8 items-start">
       {
         posts.map((post) => (
           <ArticleListItem slug={post.slug} post={post.data} />
