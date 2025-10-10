@@ -30,7 +30,7 @@
     "@tailwindcss/typography": "^0.5.13",
     "@typescript-eslint/parser": "^7.15.0",
     "@vercel/og": "^0.6.2",
-    "astro": "4.8.6",
+    "astro": "5.14.3",
     "astro-embed": "^0.7.2",
     "astro-icon": "^1.1.0",
     "astro-themes": "^0.2.5",
